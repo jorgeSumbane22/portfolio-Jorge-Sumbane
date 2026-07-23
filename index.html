@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <!-- ===== SEO ===== -->
+    <title>Jorge Sumbane | Portfólio Profissional | Disponível para Estágios</title>
+    <meta name="description" content="Portfólio de Jorge Lourenço Sumbane - Desenvolvedor Front-end e Estudante de Informática de Sistemas. Disponível para estágios e oportunidades de trabalho em Moçambique."/>
+    <meta name="keywords" content="Jorge Sumbane, Portfólio, Desenvolvedor Front-end, Moçambique, Programador, HTML, CSS, JavaScript, Estágio"/>
+    <meta name="author" content="Jorge Lourenço Sumbane"/>
+    <meta name="robots" content="index, follow"/>
+    
+    <!-- ===== OPEN GRAPH ===== -->
+    <meta property="og:title" content="Jorge Sumbane | Portfólio Profissional"/>
+    <meta property="og:description" content="Desenvolvedor Front-end disponível para estágios"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://jorgesumbane.vercel.app"/>
+    
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231e3a8a' rx='20'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial'%3EJS%3C/text%3E%3C/svg%3E">
+    
+    <style>
+        /* ============================================
+           RESET & VARIÁVEIS
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a4fa0;
+            --primary-light: #2563eb;
+            --primary-dark: #1e3a8a;
+            --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #3b82f6 100%);
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --whatsapp: #25D366;
+            --linkedin: #0077b5;
+            --github: #333;
+            --danger: #dc2626;
+            
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-nav: #1e3a8a;
+            --text-primary: #111827;
+            --text-secondary: #4b5563;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --shadow: 0 2px 10px rgba(0,0,0,0.07);
+            --shadow-hover: 0 10px 30px rgba(37,99,235,0.15);
+            --radius: 12px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --container-max: 1050px;
+            --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        [data-theme="dark"] {
+            --bg-body: #0a0e1a;
+            --bg-card: #141b2d;
+            --bg-nav: #0d1225;
+            --text-primary: #e8edf5;
+            --text-secondary: #b0c4de;
+            --text-muted: #8899bb;
+            --border-color: #2a3a5c;
+            --shadow: 0 2px 10px rgba(0,0,0,0.4);
+            --shadow-hover: 0 10px 30px rgba(37,99,235,0.25);
+            --github: #e8edf5;
+        }
+
+        /* ===== BASE ===== */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-primary);
+            background: var(--bg-body);
+            transition: background var(--transition), color var(--transition);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-body); }
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-light);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+
+        ::selection {
+            background: var(--primary-light);
+            color: #fff;
+        }
+
+        /* ============================================
+           COMPONENTES GLOBAIS
+           ============================================ */
+
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            border-left: 4px solid var(--primary-light);
+            padding-left: 12px;
+            margin-bottom: 24px;
+            transition: color var(--transition);
+        }
+        .section-title span {
+            font-size: 1.1rem;
+            margin-right: 8px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+        }
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        /* ===== BOTÃO DARK MODE ===== */
+        .theme-toggle {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 999;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 50%;
+            width: 54px;
+            height: 54px;
+            font-size: 1.6rem;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            transition: all var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.08);
+            border-color: var(--primary-light);
+        }
+        .theme-toggle .icon-sun { display: none; }
+        .theme-toggle .icon-moon { display: block; }
+        [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+        [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+        /* ============================================
+           NAVEGAÇÃO
+           ============================================ */
+        nav {
+            background: var(--bg-nav);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+            transition: background var(--transition);
+        }
+        .nav-inner {
+            max-width: var(--container-max);
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 24px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .logo {
+            color: #fff;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            height: 32px;
+            width: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-size: .82rem;
+            font-weight: 500;
+            transition: color .2s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #fff;
+            transition: width var(--transition);
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .nav-links .theme-nav-btn {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-links .theme-nav-btn:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            background: var(--primary-gradient);
+            color: #fff;
+            padding: 80px 24px 50px;
+            position: relative;
+            overflow: hidden;
+            transition: background var(--transition);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,.05);
+            border-radius: 50%;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -40px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,.04);
+            border-radius: 50%;
+        }
+        .hero-inner {
+            max-width: var(--container-max);
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.15);
+            border: 4px solid rgba(255,255,255,.4);
+            flex-shrink: 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,.2);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .avatar-placeholder {
+            font-size: 3.5rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,.2);
+        }
+        .hero-text .subtitle {
+            font-size: 1rem;
+            color: #bfdbfe;
+            margin-bottom: 6px;
+        }
+        .hero-text .position {
+            font-size: .95rem;
+            color: #93c5fd;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            background: rgba(255,255,255,.15);
+            border: 1px solid rgba(255,255,255,.25);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: .8rem;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .tag img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+        }
+
+        .hero-btns {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-size: .9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all .2s;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary {
+            background: #fff;
+            color: var(--primary);
+        }
+        .btn-primary:hover {
+            background: #e0e7ff;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,.5);
+        }
+        .btn-outline:hover {
+            background: rgba(255,255,255,.1);
+            transform: translateY(-2px);
+        }
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: #fff;
+            border: 2px solid rgba(255,255,255,.3);
+        }
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #dcfce7;
+            color: var(--success);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: .8rem;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: background var(--transition), color var(--transition);
+        }
+        [data-theme="dark"] .status-badge {
+            background: #0a2a1a;
+            color: #4ade80;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .4; }
+        }
+
+        .visitor-counter {
+            background: rgba(0,0,0,0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: .75rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            color: #e8edf5;
+        }
+        .counter-number {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+        .visitor-location {
+            margin-left: 8px;
+        }
+
+        /* ============================================
+           STATS
+           ============================================ */
+        .stats-bar {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .stats-inner {
+            background: var(--primary);
+            border-radius: var(--radius);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+            margin-top: -20px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 24px rgba(26,79,160,.4);
+            transition: background var(--transition);
+        }
+        [data-theme="dark"] .stats-inner {
+            background: var(--primary-dark);
+        }
+        .stat-item {
+            text-align: center;
+            color: #fff;
+            padding: 8px 16px;
+        }
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+        .stat-label {
+            font-size: .75rem;
+            color: #93c5fd;
+            margin-top: 2px;
+        }
+
+        /* ============================================
+           SECTIONS
+           ============================================ */
+        section {
+            padding: 55px 0 0;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-card {
+            padding: 24px;
+            line-height: 1.8;
+        }
+        .about-card p {
+            margin-bottom: 12px;
+        }
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+        .highlight {
+            background: #dbeafe;
+            color: var(--primary);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: .82rem;
+            font-weight: 500;
+            transition: background var(--transition), color var(--transition);
+        }
+        [data-theme="dark"] .highlight {
+            background: #1a2a5a;
+            color: #93c5fd;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px;
+        }
+        .skill-card {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 18px 12px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 3px solid var(--primary-light);
+            transition: transform .2s, box-shadow .2s, background var(--transition), color var(--transition);
+            color: var(--text-primary);
+        }
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 8px;
+        }
+        .skill-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .skill-name {
+            font-size: .85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            transition: color var(--transition);
+        }
+        .skill-bar {
+            height: 4px;
+            background: var(--border-color);
+            border-radius: 2px;
+            overflow: hidden;
+            transition: background var(--transition);
+        }
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            border-radius: 2px;
+        }
+
+        /* Skill fill widths */
+        .skill-fill.html { width: 90%; }
+        .skill-fill.css { width: 85%; }
+        .skill-fill.js { width: 70%; }
+        .skill-fill.php { width: 65%; }
+        .skill-fill.java { width: 60%; }
+        .skill-fill.python { width: 55%; }
+        .skill-fill.mysql { width: 65%; }
+        .skill-fill.spring { width: 65%; }
+        .skill-fill.react { width: 60%; }
+        .skill-fill.bootstrap { width: 80%; }
+        .skill-fill.responsivo { width: 85%; }
+        .skill-fill.git { width: 60%; }
+        .skill-fill.vscode { width: 85%; }
+        .skill-fill.xampp { width: 75%; }
+
+        /* ===== SOFT SKILLS ===== */
+        .soft-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .soft-pill {
+            background: var(--bg-card);
+            border: 1.5px solid var(--border-color);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: .85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all .2s, background var(--transition), border-color var(--transition), color var(--transition);
+        }
+        .soft-pill:hover {
+            border-color: var(--primary-light);
+            color: var(--primary);
+        }
+
+        /* ===== PROJECTS ===== */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+            gap: 22px;
+        }
+        .proj-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 22px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary-light);
+            transition: transform .2s, box-shadow .2s, background var(--transition), color var(--transition);
+            display: flex;
+            flex-direction: column;
+            color: var(--text-primary);
+        }
+        .proj-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        .proj-image {
+            width: 100%;
+            height: 160px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 14px;
+            background: var(--border-color);
+        }
+        .proj-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition);
+        }
+        .proj-card:hover .proj-image img {
+            transform: scale(1.05);
+        }
+        .proj-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .proj-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+        .proj-status {
+            font-size: .72rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .status-completed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        [data-theme="dark"] .status-completed {
+            background: #0a2a1a;
+            color: #4ade80;
+        }
+        .status-ongoing {
+            background: #fef3c7;
+            color: #d97706;
+        }
+        [data-theme="dark"] .status-ongoing {
+            background: #2a1a0a;
+            color: #fbbf24;
+        }
+        .status-planning {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        [data-theme="dark"] .status-planning {
+            background: #1a2a5a;
+            color: #93c5fd;
+        }
+        .proj-desc {
+            font-size: .85rem;
+            color: var(--text-secondary);
+            line-height: 1.65;
+            margin-bottom: 14px;
+            flex: 1;
+            transition: color var(--transition);
+        }
+        .proj-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        .proj-tag {
+            background: #dbeafe;
+            color: var(--primary);
+            font-size: .75rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background var(--transition), color var(--transition);
+        }
+        [data-theme="dark"] .proj-tag {
+            background: #1a2a5a;
+            color: #93c5fd;
+        }
+
+        /* ===== CERTIFICATIONS ===== */
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cert-item {
+            background: var(--bg-card);
+            border-radius: 10px;
+            padding: 16px 20px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border-left: 4px solid var(--primary-light);
+            transition: background var(--transition), box-shadow var(--transition), color var(--transition);
+            color: var(--text-primary);
+        }
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #dbeafe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: background var(--transition);
+            overflow: hidden;
+        }
+        .cert-icon img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+        [data-theme="dark"] .cert-icon {
+            background: #1a2a5a;
+        }
+        .cert-name {
+            font-weight: 600;
+            font-size: .95rem;
+            color: var(--text-primary);
+            transition: color var(--transition);
+        }
+        .cert-source {
+            font-size: .8rem;
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+
+        /* ===== EDUCATION ===== */
+        .edu-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .edu-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary-light);
+            transition: background var(--transition), box-shadow var(--transition), color var(--transition);
+            color: var(--text-primary);
+        }
+        .edu-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .edu-degree {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+        .edu-inst {
+            color: var(--primary-light);
+            font-size: .9rem;
+            margin-bottom: 4px;
+        }
+        .edu-detail {
+            font-size: .85rem;
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+        .edu-card p {
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+
+        /* ===== OPPORTUNITY BANNER ===== */
+        .opportunity-banner {
+            background: linear-gradient(135deg, #f59e0b, #ea580c);
+            border-radius: var(--radius);
+            padding: 25px;
+            margin: 30px auto;
+            text-align: center;
+            color: #fff;
+            max-width: var(--container-max);
+        }
+        .opportunity-banner h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .opportunity-banner p {
+            margin-bottom: 15px;
+        }
+        .opportunity-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .opportunity-btn {
+            background: #fff;
+            color: #ea580c;
+            padding: 10px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform .2s;
+        }
+        .opportunity-btn:hover {
+            transform: translateY(-2px);
+        }
+        .opportunity-btn.whatsapp-btn {
+            background: var(--whatsapp);
+            color: #fff;
+        }
+        .opportunity-btn.whatsapp-btn:hover {
+            background: #128C7E;
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            background: var(--primary-gradient);
+            color: #fff;
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            margin: 40px auto;
+            max-width: var(--container-max);
+            text-align: center;
+            transition: background var(--transition);
+        }
+        [data-theme="dark"] .contact-section {
+            background: linear-gradient(135deg, #0a1a3a 0%, #1a3a8a 100%);
+        }
+        .contact-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .contact-form {
+            margin-top: 24px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-size: .9rem;
+            font-family: inherit;
+            background: rgba(255,255,255,.9);
+            color: #111827;
+            transition: background var(--transition), color var(--transition);
+        }
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group textarea {
+            background: #1a2a4a;
+            color: #e8edf5;
+        }
+        .form-group input::placeholder,
+        [data-theme="dark"] .form-group textarea::placeholder {
+            color: #8a9bb5;
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: .85rem;
+            font-weight: 500;
+            color: #e8edf5;
+        }
+        .btn-submit {
+            background: #fff;
+            color: var(--primary);
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform .2s, background var(--transition);
+            font-size: .9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            background: #e0e7ff;
+        }
+        [data-theme="dark"] .btn-submit {
+            background: #3b82f6;
+            color: #fff;
+        }
+        [data-theme="dark"] .btn-submit:hover {
+            background: #2563eb;
+        }
+        .alert {
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: .85rem;
+            display: none;
+        }
+        .alert-success {
+            display: block;
+            background: #dcfce7;
+            color: var(--success);
+        }
+        [data-theme="dark"] .alert-success {
+            background: #0a2a1a;
+            color: #4ade80;
+        }
+        .alert-error {
+            display: block;
+            background: #fee2e2;
+            color: var(--danger);
+        }
+        [data-theme="dark"] .alert-error {
+            background: #2a0a0a;
+            color: #f87171;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,.2);
+            padding: 10px 20px;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            transition: all .2s;
+        }
+        .contact-link:hover {
+            background: rgba(255,255,255,.3);
+            transform: translateY(-2px);
+        }
+        .contact-link.whatsapp {
+            background: var(--whatsapp);
+        }
+        .contact-link.whatsapp:hover {
+            background: #128C7E;
+        }
+
+        /* ===== SOCIAL ===== */
+        .social-section {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 32px 24px;
+            margin: 20px auto;
+            max-width: var(--container-max);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: background var(--transition), box-shadow var(--transition);
+        }
+        [data-theme="dark"] .social-section {
+            background: #0d1225;
+        }
+        .social-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .social-card {
+            background: var(--bg-body);
+            padding: 20px 30px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all .3s;
+            box-shadow: var(--shadow);
+            color: var(--text-primary);
+            border-bottom: 3px solid transparent;
+        }
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        .social-card.linkedin {
+            border-bottom-color: var(--linkedin);
+        }
+        .social-card.github {
+            border-bottom-color: var(--github);
+        }
+        .social-card.whatsapp {
+            border-bottom-color: var(--whatsapp);
+        }
+        .social-icon {
+            width: 40px;
+            height: 40px;
+        }
+        .social-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .social-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+        .social-info p {
+            font-size: .8rem;
+            color: var(--text-secondary);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            max-width: var(--container-max);
+            margin: 60px auto 0;
+            padding: 32px 24px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: .85rem;
+            border-top: 1px solid var(--border-color);
+            transition: color var(--transition), border-color var(--transition);
+        }
+        footer p {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+        footer strong {
+            color: var(--text-primary);
+        }
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        footer a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+
+        /* ===== EDUCATION CONTENT ===== */
+        .edu-desc {
+            margin-top: 12px;
+            font-size: .85rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            transition: color var(--transition);
+        }
+        .edu-desc strong {
+            color: var(--text-primary);
+        }
+        .edu-date {
+            margin-top: 8px;
+            font-size: .8rem;
+            color: var(--primary);
+        }
+        .edu-text {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            transition: color var(--transition);
+        }
+
+        /* ===== SOFT SKILLS TITLE ===== */
+        .soft-title {
+            margin-top: 32px;
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+            color: var(--primary);
+            transition: color var(--transition);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            .nav-links {
+                gap: 8px;
+            }
+            .nav-links a {
+                font-size: .72rem;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .edu-list {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 40px 0 0;
+            }
+            .section-title {
+                font-size: 1.2rem;
+            }
+            .avatar {
+                width: 120px;
+                height: 120px;
+            }
+            .theme-toggle {
+                width: 44px;
+                height: 44px;
+                font-size: 1.3rem;
+                bottom: 16px;
+                right: 16px;
+            }
+            .social-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-inner {
+                justify-content: center;
+                text-align: center;
+            }
+            .tags {
+                justify-content: center;
+            }
+            .hero-btns {
+                justify-content: center;
+            }
+            .status-badge {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 50px 16px 30px;
+            }
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+            .nav-inner {
+                padding: 10px 16px;
+            }
+            .nav-links {
+                gap: 6px;
+            }
+            .nav-links a {
+                font-size: .65rem;
+            }
+            .hero-btns .btn {
+                font-size: .8rem;
+                padding: 8px 16px;
+            }
+            .stats-inner {
+                padding: 12px;
+            }
+            .stat-item {
+                padding: 4px 8px;
+            }
+            .stat-number {
+                font-size: 1.2rem;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== BOTÃO DARK MODE ===== -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Alternar Dark Mode">
+        <span class="icon-moon">🌙</span>
+        <span class="icon-sun">☀️</span>
+    </button>
+
+    <!-- ===== NAVEGAÇÃO ===== -->
+    <nav>
+        <div class="nav-inner">
+            <div class="logo">
+                <img src="assets/img/profile.png" alt="Jorge Sumbane">
+                Jorge Sumbane
+            </div>
+            <div class="nav-links">
+                <a href="#sobre">Sobre</a>
+                <a href="#skills">Competências</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#educacao">Formação</a>
+                <a href="#contato">Contacto</a>
+                <button class="theme-nav-btn" id="themeNavBtn" aria-label="Alternar Dark Mode">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="avatar">
+                <img src="assets/img/profile.png" alt="Jorge Sumbane - Foto de perfil">
+            </div>
+            <div class="hero-text">
+                <h1>Jorge Lourenço Sumbane</h1>
+                <p class="subtitle">Desenvolvedor Front-end &amp; Estudante de Informática de Sistemas</p>
+                <p class="position">🎓 Instituto Superior de Comunicação e Imagens (ISCIM) — 2022 até ao momento</p>
+
+                <div class="tags">
+                    <span class="tag">
+                        <img src="assets/img/icons/html.svg" alt="HTML">
+                        HTML5 • CSS3 • JavaScript
+                    </span>
+                    <span class="tag">
+                        <img src="assets/img/icons/java.svg" alt="Java">
+                        Java • Python
+                    </span>
+                    <span class="tag">
+                        <img src="assets/img/icons/mysql.svg" alt="MySQL">
+                        SQL • Bases de Dados
+                    </span>
+                    <span class="tag">
+                        <img src="assets/img/icons/bootstrap.svg" alt="Bootstrap">
+                        Responsivo • Bootstrap
+                    </span>
+                    <span class="tag">
+                        <img src="assets/img/icons/php.svg" alt="PHP">
+                        PHP • Backend
+                    </span>
+                </div>
+
+                <div class="status-badge">
+                    <div class="status-dot"></div>
+                    🎯 Aberto a Estágios e Oportunidades de Trabalho
+                </div>
+
+                <div class="hero-btns">
+                    <a href="#contato" class="btn btn-primary">📧 Contactar</a>
+                    <a href="#projetos" class="btn btn-outline">Ver Projetos</a>
+                    <a href="https://wa.me/258845872347" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+                </div>
+
+                <div class="visitor-counter">
+                    <span>👁️</span>
+                    <span>Visitas: <strong class="counter-number" id="visitorCount">0</strong></span>
+                    <span class="visitor-location">📍 Maputo, Moçambique</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <div class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Projetos Académicos</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Tecnologias Estudadas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Certificações</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4º</div>
+                <div class="stat-label">Ano de Curso</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">🎯</div>
+                <div class="stat-label">Disponível para Estágio</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== BANNER DE OPORTUNIDADES ===== -->
+    <div class="opportunity-banner">
+        <h3>🎯 Buscando Primeira Oportunidade Profissional!</h3>
+        <p>Estou à procura de estágio ou posição de entrada na área de Desenvolvimento Web, Programação ou Suporte Técnico. Tenho disponibilidade imediata e muita vontade de aprender e contribuir!</p>
+        <div class="opportunity-buttons">
+            <a href="#contato" class="opportunity-btn">📝 Ofereça uma Oportunidade</a>
+            <a href="https://wa.me/258845872347" class="opportunity-btn whatsapp-btn" target="_blank" rel="noopener noreferrer">💬 Falar no WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title"><span>👤</span> Sobre Mim</h2>
+            <div class="card about-card">
+                <p>
+                    <strong>Olá! 👋</strong> Sou Jorge Lourenço Sumbane, estudante de Informática de Sistemas no ISCIM, em Maputo, desde 2022. 
+                    Apaixonado por tecnologia, programação e desenvolvimento de soluções digitais que resolvem problemas reais.
+                </p>
+                <p>
+                    Tenho desenvolvido projetos académicos nas áreas de <strong>agricultura, comércio, gestão desportiva, sistemas de saúde e empresariais</strong> como parte da minha formação. 
+                    Meu foco está em criar sistemas modernos, funcionais e responsivos, sempre com atenção à organização, usabilidade e boa experiência do utilizador.
+                </p>
+                <p>
+                    <strong>🎯 Objetivo profissional:</strong> Conquistar minha primeira experiência na área de desenvolvimento de software, 
+                    contribuindo com minha dedicação, capacidade de aprendizado e conhecimentos adquiridos durante a graduação.
+                </p>
+                <p>
+                    <strong>🌱 Atualmente:</strong> Estou aprofundando meus conhecimentos em Java com Spring Boot, React com TypeScript e arquitetura de microsserviços, 
+                    desenvolvendo sistemas completos e escaláveis.
+                </p>
+                <div class="about-highlights">
+                    <span class="highlight">✓ Aprendizagem rápida</span>
+                    <span class="highlight">✓ Código organizado</span>
+                    <span class="highlight">✓ Foco em resultados</span>
+                    <span class="highlight">✓ Mobile-first</span>
+                    <span class="highlight">✓ Adaptabilidade</span>
+                    <span class="highlight">✓ Inovação</span>
+                    <span class="highlight">✓ Java/Spring Boot</span>
+                    <span class="highlight">✓ React/TypeScript</span>
+                    <span class="highlight">✓ Trabalho em equipe</span>
+                    <span class="highlight">✓ Disponibilidade para aprender</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title"><span>⚙️</span> Competências Técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/html.svg" alt="HTML5"></div>
+                    <div class="skill-name">HTML5</div>
+                    <div class="skill-bar"><div class="skill-fill html"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/css.svg" alt="CSS3"></div>
+                    <div class="skill-name">CSS3</div>
+                    <div class="skill-bar"><div class="skill-fill css"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/js.svg" alt="JavaScript"></div>
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar"><div class="skill-fill js"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/php.svg" alt="PHP"></div>
+                    <div class="skill-name">PHP</div>
+                    <div class="skill-bar"><div class="skill-fill php"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/java.svg" alt="Java"></div>
+                    <div class="skill-name">Java</div>
+                    <div class="skill-bar"><div class="skill-fill java"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/python.svg" alt="Python"></div>
+                    <div class="skill-name">Python</div>
+                    <div class="skill-bar"><div class="skill-fill python"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/mysql.svg" alt="MySQL"></div>
+                    <div class="skill-name">MySQL</div>
+                    <div class="skill-bar"><div class="skill-fill mysql"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/spring.svg" alt="Spring Boot"></div>
+                    <div class="skill-name">Spring Boot</div>
+                    <div class="skill-bar"><div class="skill-fill spring"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/react.svg" alt="React"></div>
+                    <div class="skill-name">React</div>
+                    <div class="skill-bar"><div class="skill-fill react"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/bootstrap.svg" alt="Bootstrap"></div>
+                    <div class="skill-name">Bootstrap</div>
+                    <div class="skill-bar"><div class="skill-fill bootstrap"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/responsive.svg" alt="Responsivo"></div>
+                    <div class="skill-name">Responsivo</div>
+                    <div class="skill-bar"><div class="skill-fill responsivo"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/git.svg" alt="Git"></div>
+                    <div class="skill-name">Git/GitHub</div>
+                    <div class="skill-bar"><div class="skill-fill git"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/vscode.svg" alt="VS Code"></div>
+                    <div class="skill-name">VS Code</div>
+                    <div class="skill-bar"><div class="skill-fill vscode"></div></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/img/icons/xampp.svg" alt="XAMPP"></div>
+                    <div class="skill-name">XAMPP/WAMP</div>
+                    <div class="skill-bar"><div class="skill-fill xampp"></div></div>
+                </div>
+            </div>
+
+            <h3 class="soft-title">💫 Soft Skills</h3>
+            <div class="soft-grid">
+                <div class="soft-pill">📚 Aprendizagem rápida</div>
+                <div class="soft-pill">🧹 Código organizado</div>
+                <div class="soft-pill">🎯 Foco em resultados</div>
+                <div class="soft-pill">🔄 Adaptabilidade</div>
+                <div class="soft-pill">💡 Inovação</div>
+                <div class="soft-pill">📊 Lógica de Programação</div>
+                <div class="soft-pill">🏗️ Estruturação de Projetos</div>
+                <div class="soft-pill">🎨 Design UI/UX</div>
+                <div class="soft-pill">🗣️ Comunicação eficaz</div>
+                <div class="soft-pill">🤝 Trabalho em equipe</div>
+                <div class="soft-pill">⏰ Gestão de tempo</div>
+                <div class="soft-pill">🔍 Resolução de problemas</div>
+                <div class="soft-pill">🎓 Vontade de aprender</div>
+                <div class="soft-pill">📈 Proatividade</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJETOS ===== -->
+    <section id="projetos">
+        <div class="container">
+            <h2 class="section-title"><span>🚀</span> Projetos Académicos Desenvolvidos</h2>
+            <div class="projects-grid">
+                <div class="proj-card">
+                    <div class="proj-image">
+                        <img src="assets/img/projects/project-1.png" alt="Sistema Comercialização Agrícola">
+                    </div>
+                    <div class="proj-header">
+                        <div class="proj-title">🌾 Sistema Comercialização Agrícola</div>
+                        <span class="proj-status status-ongoing">Em Desenvolvimento</span>
+                    </div>
+                    <p class="proj-desc">
+                        Plataforma web para conectar agricultores a compradores. Catálogo de produtos, carrinho de compras e gestão de pedidos.
+                    </p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">HTML5</span>
+                        <span class="proj-tag">CSS3</span>
+                        <span class="proj-tag">Bootstrap</span>
+                        <span class="proj-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- ===== CourtIQ ===== -->
+                <div class="proj-card">
+                    <div class="proj-image">
+                        <img src="assets/img/projects/project-court.png" alt="CourtIQ - Gestão de Clubes de Basquetebol">
+                    </div>
+                    <div class="proj-header">
+                        <div class="proj-title">🏀 CourtIQ - Gestão de Clubes</div>
+                        <span class="proj-status status-ongoing">Em Desenvolvimento</span>
+                    </div>
+                    <p class="proj-desc">
+                        Sistema web completo para gestão de clubes de basquetebol com PHP puro, MySQL e JavaScript. Permite administrar equipas, jogadores, jogos, treinos, estatísticas e finanças. Diferentes níveis de acesso: Visitante, Jogador, Admin e SuperAdmin.
+                    </p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">PHP 8.1+</span>
+                        <span class="proj-tag">MySQL</span>
+                        <span class="proj-tag">PDO</span>
+                        <span class="proj-tag">HTML5</span>
+                        <span class="proj-tag">CSS3</span>
+                        <span class="proj-tag">JavaScript</span>
+                        <span class="proj-tag">Chart.js</span>
+                        <span class="proj-tag">Font Awesome</span>
+                    </div>
+                </div>
+
+                <!-- ===== RhSistema ===== -->
+                <div class="proj-card">
+                    <div class="proj-image">
+                        <img src="assets/img/projects/project-rh.jfif" alt="RhSistema - Gestão de Recursos Humanos">
+                    </div>
+                    <div class="proj-header">
+                        <div class="proj-title">🏢 RhSistema - Gestão de RH</div>
+                        <span class="proj-status status-ongoing">Em Desenvolvimento</span>
+                    </div>
+                    <p class="proj-desc">
+                        Aplicação web full-stack para otimização de processos de Recursos Humanos: controle de colaboradores, departamentos, cargos, folha de pagamento, triagem de candidatos, controle de férias e assiduidade. Arquitetura robusta com Spring Boot e React.
+                    </p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Java 21</span>
+                        <span class="proj-tag">Spring Boot</span>
+                        <span class="proj-tag">React</span>
+                        <span class="proj-tag">TypeScript</span>
+                        <span class="proj-tag">JWT</span>
+                        <span class="proj-tag">JPA/Hibernate</span>
+                        <span class="proj-tag">Tailwind CSS</span>
+                        <span class="proj-tag">Maven</span>
+                        <span class="proj-tag">Vite</span>
+                    </div>
+                </div>
+
+                <!-- ===== SmartCare ===== -->
+                <div class="proj-card">
+                    <div class="proj-image">
+                        <img src="assets/img/projects/project-smartcare.png" alt="SmartCare - Camada de Persistência">
+                    </div>
+                    <div class="proj-header">
+                        <div class="proj-title">🏥 SmartCare - Persistência</div>
+                        <span class="proj-status status-completed">Concluído</span>
+                    </div>
+                    <p class="proj-desc">
+                        Módulo de persistência e acesso a dados para plataforma de Gestão Hospitalar e Triagem Médica. Implementa padrão DAO, mapeamento ORM, auditoria e rastreabilidade de dados. Componentes UI customizados em Swing integrados com rotinas de banco de dados.
+                    </p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Java 21+</span>
+                        <span class="proj-tag">Maven</span>
+                        <span class="proj-tag">DAO</span>
+                        <span class="proj-tag">ORM</span>
+                        <span class="proj-tag">Swing</span>
+                        <span class="proj-tag">Auditoria</span>
+                        <span class="proj-tag">MySQL</span>
+                        <span class="proj-tag">JDBC</span>
+                        <span class="proj-tag">MVC</span>
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-image">
+                        <img src="assets/img/projects/project-4.png" alt="Portfólio Profissional">
+                    </div>
+                    <div class="proj-header">
+                        <div class="proj-title">📬 Portfólio Profissional</div>
+                        <span class="proj-status status-completed">Concluído</span>
+                    </div>
+                    <p class="proj-desc">
+                        Portfólio completo com design moderno, Dark Mode e formulário de contacto integrado com Formspree.
+                    </p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">HTML5</span>
+                        <span class="proj-tag">CSS3</span>
+                        <span class="proj-tag">JavaScript</span>
+                        <span class="proj-tag">Formspree</span>
+                    </div>
+                </div>
+
+                <div class="proj-card">
+                    <div class="proj-image">
+                        <img src="assets/img/projects/project-6.jfif" alt="Sistema Marcação Online">
+                    </div>
+                    <div class="proj-header">
+                        <div class="proj-title">✂️ Sistema Marcação Online</div>
+                        <span class="proj-status status-ongoing">Em Desenvolvimento</span>
+                    </div>
+                    <p class="proj-desc">
+                        Plataforma de agendamento para barbearias e salões. Dashboard com estatísticas, gestão de clientes e calendário interativo.
+                    </p>
+                    <div class="proj-tags">
+                        <span class="proj-tag">HTML5</span>
+                        <span class="proj-tag">CSS3</span>
+                        <span class="proj-tag">JavaScript</span>
+                        <span class="proj-tag">LocalStorage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICAÇÕES ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title"><span>🏅</span> Certificações e Cursos</h2>
+            <div class="cert-list">
+                <div class="cert-item">
+                    <div class="cert-icon"><img src="assets/img/icons/java.svg" alt="Java"></div>
+                    <div>
+                        <div class="cert-name">Java Básico</div>
+                        <div class="cert-source">Programação Orientada a Objetos</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><img src="assets/img/icons/java-basic.svg" alt="Lógica"></div>
+                    <div>
+                        <div class="cert-name">Lógica de Programação</div>
+                        <div class="cert-source">Algoritmos e Estruturas de Dados</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><img src="assets/img/icons/php.svg" alt="PHP"></div>
+                    <div>
+                        <div class="cert-name">PHP Fundamentals</div>
+                        <div class="cert-source">Desenvolvimento Backend com PHP</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><img src="assets/img/icons/js.svg" alt="JavaScript"></div>
+                    <div>
+                        <div class="cert-name">JavaScript Moderno (ES6+)</div>
+                        <div class="cert-source">Manipulação de DOM e APIs</div>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <div class="cert-icon"><img src="assets/img/icons/mysql.svg" alt="MySQL"></div>
+                    <div>
+                        <div class="cert-name">MySQL - Banco de Dados</div>
+                        <div class="cert-source">Modelagem e Consultas SQL</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REDES SOCIAIS ===== -->
+    <section>
+        <div class="container">
+            <h2 class="section-title"><span>🔗</span> Conecte-se Comigo</h2>
+            <div class="social-section">
+                <div class="social-grid">
+                    <a href="https://www.linkedin.com/in/jorge-sumbane-174478320/" class="social-card linkedin" target="_blank" rel="noopener noreferrer">
+                        <div class="social-icon"><img src="assets/img/social/linkedin.svg" alt="LinkedIn"></div>
+                        <div class="social-info">
+                            <h4>LinkedIn</h4>
+                            <p>/in/jorge-sumbane</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/jorge-sumbane" class="social-card github" target="_blank" rel="noopener noreferrer">
+                        <div class="social-icon"><img src="assets/img/social/github.svg" alt="GitHub"></div>
+                        <div class="social-info">
+                            <h4>GitHub</h4>
+                            <p>@jorge-sumbane</p>
+                        </div>
+                    </a>
+                    <a href="https://wa.me/258845872347" class="social-card whatsapp" target="_blank" rel="noopener noreferrer">
+                        <div class="social-icon"><img src="assets/img/social/whatsapp.svg" alt="WhatsApp"></div>
+                        <div class="social-info">
+                            <h4>WhatsApp</h4>
+                            <p>+258 84 587 2347</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCAÇÃO ===== -->
+    <section id="educacao">
+        <div class="container">
+            <h2 class="section-title"><span>🎓</span> Formação Académica</h2>
+
+            <div class="edu-list">
+                <div class="edu-card">
+                    <div class="edu-icon">🏫</div>
+                    <div class="edu-degree">Licenciatura em Informática de Sistemas</div>
+                    <div class="edu-inst">Instituto Superior de Comunicação e Imagens (ISCIM)</div>
+                    <div class="edu-detail">Maputo, Moçambique • 2022 - Presente (Cursando)</div>
+                    <p class="edu-desc">
+                        <strong>Áreas de estudo:</strong> Sistemas de Informação, Desenvolvimento Web, Gestão de Projetos, 
+                        Base de Dados, Engenharia de Software, Análise de Sistemas, Redes de Computadores.
+                    </p>
+                    <p class="edu-date">📍 Previsão de conclusão: 2026</p>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-icon">🎓</div>
+                    <div class="edu-degree">Ensino Secundário</div>
+                    <div class="edu-inst">Escola Secundária da Polana</div>
+                    <div class="edu-detail">Maputo, Moçambique • Concluído</div>
+                    <p class="edu-desc">
+                        <strong>Área:</strong> Ciências e Tecnologias
+                    </p>
+                </div>
+            </div>
+
+            <h3 class="soft-title">📚 Competências Académicas</h3>
+            <p class="edu-text">
+                Participação em diversos projetos académicos voltados para análise, desenvolvimento e implementação 
+                de soluções tecnológicas. Destaque para projetos interdisciplinares envolvendo programação web, 
+                desenvolvimento de sistemas empresariais e arquitetura de software.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTATO ===== -->
+    <section id="contato">
+        <div class="container">
+            <div class="contact-section">
+                <h3>📢 Vamos Trabalhar Juntos?</h3>
+                <p>
+                    Estou <strong>aberto a estágios, oportunidades de trabalho e projetos freelance</strong>.<br>
+                    Preencha o formulário e receberei sua mensagem diretamente no meu email!
+                </p>
+
+                <div id="formAlert" class="alert"></div>
+
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <input type="hidden" name="_subject" value="📬 Nova mensagem do portfólio">
+                    <input type="hidden" name="_captcha" value="false">
+                    <div class="form-group">
+                        <label>👤 Nome completo *</label>
+                        <input type="text" name="name" id="name" required placeholder="Ex: Jorge Lourenço Sumbane">
+                    </div>
+                    <div class="form-group">
+                        <label>📧 E-mail *</label>
+                        <input type="email" name="email" id="email" required placeholder="jsumbane22@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>📌 Assunto *</label>
+                        <input type="text" name="subject" id="subject" required placeholder="Ex: Oportunidade de Estágio">
+                    </div>
+                    <div class="form-group">
+                        <label>💬 Mensagem *</label>
+                        <textarea name="message" id="message" required placeholder="Digite sua mensagem aqui... Estou aberto a propostas de estágio e trabalho!"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submitBtn">📨 Enviar Mensagem</button>
+                </form>
+
+                <div class="contact-links">
+                    <a href="tel:+258845872347" class="contact-link">
+                        <span>📞</span> +258 845 872 347
+                    </a>
+                    <a href="mailto:jsumbane22@gmail.com" class="contact-link">
+                        <span>📧</span> jsumbane22@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/jorge-sumbane-174478320/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <span>💼</span> LinkedIn
+                    </a>
+                    <a href="https://github.com/jorge-sumbane" class="contact-link" target="_blank" rel="noopener noreferrer">
+                        <span>🐙</span> GitHub
+                    </a>
+                    <a href="https://wa.me/258845872347" class="contact-link whatsapp" target="_blank" rel="noopener noreferrer">
+                        <span>💬</span> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p><strong>"Em busca da primeira oportunidade para transformar conhecimento em soluções digitais."</strong></p>
+        <p>📍 Maputo, Moçambique • Estudante de Informática de Sistemas no ISCIM (2022 - Presente)</p>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/jorge-sumbane-174478320/" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+            <a href="https://github.com/jorge-sumbane" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+            <a href="https://wa.me/258845872347" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+            <a href="mailto:jsumbane22@gmail.com">📧 Email</a>
+        </div>
+        <p>
+            © 2025 Jorge Lourenço Sumbane. Todos os direitos reservados.
+        </p>
+        <p>
+            🎯 Disponível para Estágios e Oportunidades de Trabalho
+        </p>
+    </footer>
+
+    <script>
+        // ============================================
+        // CONTADOR DE VISITAS (LocalStorage)
+        // ============================================
+        (function() {
+            let count = parseInt(localStorage.getItem('visitorCount') || '0');
+            count++;
+            localStorage.setItem('visitorCount', count.toString());
+            document.getElementById('visitorCount').textContent = count;
+        })();
+
+        // ============================================
+        // DARK MODE
+        // ============================================
+        (function() {
+            const toggleBtn = document.getElementById('themeToggle');
+            const navBtn = document.getElementById('themeNavBtn');
+            const html = document.documentElement;
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                html.setAttribute('data-theme', savedTheme);
+                updateButtons(savedTheme);
+            }
+
+            function updateButtons(theme) {
+                const isDark = theme === 'dark';
+                const moonIcon = toggleBtn?.querySelector('.icon-moon');
+                const sunIcon = toggleBtn?.querySelector('.icon-sun');
+                if (moonIcon) moonIcon.style.display = isDark ? 'none' : 'block';
+                if (sunIcon) sunIcon.style.display = isDark ? 'block' : 'none';
+                if (navBtn) navBtn.textContent = isDark ? '☀️' : '🌙';
+            }
+
+            function toggleTheme() {
+                const current = html.getAttribute('data-theme');
+                const newTheme = current === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                updateButtons(newTheme);
+            }
+
+            if (toggleBtn) toggleBtn.addEventListener('click', toggleTheme);
+            if (navBtn) navBtn.addEventListener('click', toggleTheme);
+        })();
+
+        // ============================================
+        // SMOOTH SCROLL
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ============================================
+        // SKILL BARS ANIMATION
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillFills = document.querySelectorAll('.skill-fill');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const fill = entry.target;
+                        const width = fill.style.width || getComputedStyle(fill).width;
+                        fill.style.width = '0%';
+                        setTimeout(() => {
+                            fill.style.width = width;
+                            fill.style.transition = 'width 1s ease-in-out';
+                        }, 150);
+                        observer.unobserve(fill);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            skillFills.forEach(fill => observer.observe(fill));
+        });
+
+        // ============================================
+        // FORMULÁRIO COM FORMSPREE
+        // ============================================
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const alertDiv = document.getElementById('formAlert');
+            const submitBtn = document.getElementById('submitBtn');
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !subject || !message) {
+                e.preventDefault();
+                alertDiv.className = 'alert alert-error';
+                alertDiv.textContent = '⚠️ Por favor, preencha todos os campos.';
+                return;
+            }
+
+            if (!email.includes('@') || !email.includes('.')) {
+                e.preventDefault();
+                alertDiv.className = 'alert alert-error';
+                alertDiv.textContent = '⚠️ Por favor, insira um e-mail válido.';
+                return;
+            }
+
+            submitBtn.textContent = '⏳ Enviando...';
+            submitBtn.disabled = true;
+        });
+
+        // ============================================
+        // MOSTRAR MENSAGEM DE SUCESSO
+        // ============================================
+        if (window.location.search.includes('success')) {
+            const alertDiv = document.getElementById('formAlert');
+            alertDiv.className = 'alert alert-success';
+            alertDiv.textContent = '✅ Mensagem enviada com sucesso! Entrarei em contato em breve. Estou aberto a oportunidades de estágio e trabalho!';
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    </script>
+
+</body>
+</html>
