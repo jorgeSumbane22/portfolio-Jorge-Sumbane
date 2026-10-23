@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== SEO ===== -->
+    <title>Jorge Sumbane | Desenvolvedor de Software · Portfólio</title>
+    <meta name="description" content="Portfólio de Jorge Lourenço Sumbane, estudante de Informática de Sistemas no ISCIM (Maputo) e desenvolvedor de software. À procura de novas oportunidades profissionais.">
+    <meta name="author" content="Jorge Lourenço Sumbane">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1e3a8a">
+    <link rel="canonical" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/">
+    <link rel="alternate" hreflang="pt" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/">
+    <link rel="alternate" hreflang="en" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/">
+
+    <!-- ===== OPEN GRAPH / REDES SOCIAIS ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_MZ">
+    <meta property="og:locale:alternate" content="en_GB">
+    <meta property="og:url" content="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/">
+    <meta property="og:title" content="Jorge Sumbane | Desenvolvedor de Software">
+    <meta property="og:description" content="Desenvolvedor de software e estudante de Informática de Sistemas no ISCIM. À procura de novas oportunidades em Moçambique.">
+    <meta property="og:image" content="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/assets/img/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- ===== FAVICON ===== -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- ===== TEMA (aplicado antes de pintar a página, evita "flash") ===== -->
+    <script>
+        (function () {
+            var d = document.documentElement, t = null, seen = true;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            d.setAttribute('data-theme', t);
+            d.classList.add('js');
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                d.classList.add('motion');
+                // ecrã de abertura só na primeira visita da sessão
+                try { seen = sessionStorage.getItem('intro-seen') === '1'; } catch (e) {}
+                // ...e só em computadores com ligação normal (no telemóvel o conteúdo aparece logo)
+                var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+                var save = navigator.connection && navigator.connection.saveData;
+                if (!seen && fine && !save) d.classList.add('first-visit');
+            }
+            // Segurança: se o JavaScript principal não carregar, o conteúdo
+            // não pode ficar escondido à espera das animações.
+            window.addEventListener('load', function () {
+                setTimeout(function () {
+                    if (!window.__portfolioReady) d.classList.remove('js', 'motion', 'first-visit');
+                }, 1500);
+            });
+        })();
+    </script>
+
+    <!-- ===== FONTES (no próprio site, carregadas cedo) ===== -->
+    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="preload" as="image" href="assets/img/profile.webp" type="image/webp" imagesrcset="assets/img/profile-400.webp 400w, assets/img/profile.webp 640w" imagesizes="(max-width: 860px) 300px, 380px">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- ===== DADOS ESTRUTURADOS (Google) ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jorge Lourenço Sumbane",
+        "jobTitle": "Desenvolvedor de Software",
+        "url": "https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/",
+        "image": "https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/assets/img/og-image.jpg",
+        "email": "mailto:jsumbane22@gmail.com",
+        "telephone": "+258845872347",
+        "address": { "@type": "PostalAddress", "addressLocality": "Maputo", "addressCountry": "MZ" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Instituto Superior de Comunicação e Imagem de Moçambique (ISCIM)" },
+        "knowsAbout": ["Java", "Spring Boot", "Hibernate", "React", "TypeScript", "JavaScript", "PHP", "Laravel", "MySQL", "Firebase", "HTML", "CSS"],
+        "sameAs": [
+            "https://www.linkedin.com/in/jorge-sumbane-sumbane-174478320/",
+            "https://github.com/jorgeSumbane22",
+            "https://www.facebook.com/jorgelourencosumbane.sumbane",
+            "https://www.instagram.com/jorge_sumbane/"
+        ]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- ===== ÍCONES SVG (reutilizados com <use>) ===== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+        <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+        <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
+        <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+        <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+        <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+        <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+        <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+        <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></symbol>
+        <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></symbol>
+        <symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+        <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+        <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+        <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+        <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+        <symbol id="i-repo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></symbol>
+        <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+        <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+        <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></symbol>
+        <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r=".6" fill="currentColor"/></symbol>
+        <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></symbol>
+    </svg>
+
+    <!-- ===== ECRÃ DE ABERTURA (só com animações ativas, 1.ª visita) ===== -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="pl-inner">
+            <span class="pl-logo">JS</span>
+            <span class="pl-name">Jorge Sumbane</span>
+            <span class="pl-bar"><span></span></span>
+            <span class="pl-count" id="plCount">0</span>
+        </div>
+    </div>
+
+    <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#inicio" class="brand" aria-label="Início">
+                <span class="brand-mark">JS</span>
+                <span class="brand-name">Jorge Sumbane</span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Navegação principal">
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#competencias" class="nav-link">Competências</a>
+                <a href="#projetos" class="nav-link">Projetos</a>
+                <a href="#formacao" class="nav-link">Formação</a>
+                <a href="#contacto" class="nav-link nav-cta">Contactar</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-btn" id="langToggle" type="button" aria-label="Mudar para inglês" title="English / Português">
+                    <svg class="icon"><use href="#i-globe"/></svg>
+                    <span id="langLabel">EN</span>
+                </button>
+                <button class="icon-btn" id="themeToggle" type="button" aria-label="Alternar tema claro/escuro">
+                    <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+                    <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+                </button>
+                <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+                    <svg class="icon icon-open"><use href="#i-menu"/></svg>
+                    <svg class="icon icon-close"><use href="#i-close"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo">
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="inicio">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <p class="status-pill">
+                        <span class="status-dot"></span>
+                        Aberto a novas oportunidades
+                    </p>
+
+                    <h1 class="hero-title">
+                        <span class="w"><span style="--i:0">Olá,</span></span>
+                        <span class="w"><span style="--i:1">sou</span></span>
+                        <span class="w"><span style="--i:2">o</span></span>
+                        <span class="w"><span class="gradient-text" style="--i:3">Jorge</span></span>
+                        <span class="w"><span class="gradient-text" style="--i:4">Sumbane</span></span>
+                    </h1>
+
+                    <p class="hero-role" aria-live="polite">
+                        <span class="role-text" id="roleText">Desenvolvedor de Software</span><span class="caret" aria-hidden="true"></span>
+                    </p>
+
+                    <p class="hero-lead">
+                        Desenvolvedor de software e estudante finalista de Informática de Sistemas no ISCIM, em Maputo.
+                        Crio aplicações web e sistemas em Java, do front-end à base de dados,
+                        com atenção à organização do código e à experiência do utilizador.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projetos" class="btn btn-primary">
+                            Ver projetos
+                            <svg class="icon"><use href="#i-arrow"/></svg>
+                        </a>
+                        <a href="#contacto" class="btn btn-ghost">Contactar</a>
+                        <a href="cv.html" class="btn btn-ghost" id="cvLink" title="Abre o CV numa página pronta para imprimir ou guardar como PDF">
+                            <svg class="icon"><use href="#i-file"/></svg>
+                            <span id="cvLabel">CV para imprimir / PDF</span>
+                        </a>
+                    </div>
+
+                    <ul class="hero-social" aria-label="Redes sociais">
+                        <li><a href="https://www.linkedin.com/in/jorge-sumbane-sumbane-174478320/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="icon"><use href="#i-linkedin"/></svg></a></li>
+                        <li><a href="https://github.com/jorgeSumbane22" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="icon"><use href="#i-github"/></svg></a></li>
+                        <li><a href="https://wa.me/258845872347" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg class="icon"><use href="#i-whatsapp"/></svg></a></li>
+                        <li><a href="https://www.facebook.com/jorgelourencosumbane.sumbane" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a></li>
+                        <li><a href="https://www.instagram.com/jorge_sumbane/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a></li>
+                        <li><a href="mailto:jsumbane22@gmail.com" aria-label="Email"><svg class="icon"><use href="#i-mail"/></svg></a></li>
+                    </ul>
+                </div>
+
+                <div class="hero-photo">
+                    <div class="photo-frame">
+                        <picture>
+                            <source srcset="assets/img/profile-400.webp 400w, assets/img/profile.webp 640w" sizes="(max-width: 860px) 300px, 380px" type="image/webp">
+                            <img src="assets/img/profile.png" alt="Fotografia de Jorge Lourenço Sumbane" width="640" height="960" fetchpriority="high">
+                        </picture>
+                    </div>
+                    <div class="floating-card fc-top">
+                        <svg class="icon"><use href="#i-cap"/></svg>
+                        <div><strong>ISCIM</strong><span>Informática de Sistemas</span></div>
+                    </div>
+                    <div class="floating-card fc-bottom">
+                        <svg class="icon"><use href="#i-pin"/></svg>
+                        <div><strong>Maputo</strong><span>Moçambique</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NÚMEROS ===== -->
+        <section class="stats" aria-label="Resumo">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat reveal">
+                        <span class="stat-number" data-count="5">5</span>
+                        <span class="stat-label">Projetos desenvolvidos</span>
+                    </div>
+                    <div class="stat reveal">
+                        <span class="stat-number" data-count="18">18</span>
+                        <span class="stat-label">Tecnologias e ferramentas</span>
+                    </div>
+                    <div class="stat reveal">
+                        <span class="stat-number" data-count="5">5</span>
+                        <span class="stat-label">Cursos complementares</span>
+                    </div>
+                    <div class="stat reveal">
+                        <span class="stat-number">4.º</span>
+                        <span class="stat-label">Ano de licenciatura</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAIXA DE TECNOLOGIAS EM MOVIMENTO ===== -->
+        <div class="marquee" aria-label="Tecnologias que uso">
+            <div class="marquee-track" id="marqueeTrack">
+                <ul class="marquee-group">
+                    <li><img src="assets/img/icons/java.svg" alt="" width="28" height="28">Java</li>
+                    <li><img src="assets/img/icons/spring.svg" alt="" width="28" height="28">Spring Boot</li>
+                    <li><img src="assets/img/icons/react.svg" alt="" width="28" height="28">React</li>
+                    <li><img src="assets/img/icons/js.svg" alt="" width="28" height="28">JavaScript</li>
+                    <li><img src="assets/img/icons/php.svg" alt="" width="28" height="28">PHP</li>
+                    <li><img src="assets/img/icons/laravel.svg" alt="" width="28" height="28">Laravel</li>
+                    <li><img src="assets/img/icons/mysql.svg" alt="" width="28" height="28">MySQL</li>
+                    <li><img src="assets/img/icons/firebase.svg" alt="" width="28" height="28">Firebase</li>
+                    <li><img src="assets/img/icons/html.svg" alt="" width="28" height="28">HTML5</li>
+                    <li><img src="assets/img/icons/css.svg" alt="" width="28" height="28">CSS3</li>
+                    <li><img src="assets/img/icons/bootstrap.svg" alt="" width="28" height="28">Bootstrap</li>
+                    <li><img src="assets/img/icons/python.svg" alt="" width="28" height="28">Python</li>
+                    <li><img src="assets/img/icons/git.svg" alt="" width="28" height="28">Git</li>
+                    <li><img src="assets/img/icons/gitlab.svg" alt="" width="28" height="28">GitLab</li>
+                    <li><img src="assets/img/icons/gitkraken.svg" alt="" width="28" height="28">GitKraken</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ===== SOBRE ===== -->
+        <section class="section" id="sobre">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow">Sobre mim</span>
+                    <h2 class="section-title">Da sala de aula para soluções reais</h2>
+                </header>
+
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p>
+                            Sou o <strong>Jorge Lourenço Sumbane</strong>, estudante de Informática de Sistemas no
+                            Instituto Superior de Comunicação e Imagem de Moçambique (ISCIM), em Maputo, desde 2022.
+                            Gosto de tecnologia e de criar soluções digitais que resolvem problemas concretos.
+                        </p>
+                        <p>
+                            Ao longo do curso desenvolvi projetos nas áreas de <strong>agricultura, comércio, gestão desportiva,
+                            saúde e recursos humanos</strong>. Procuro sempre construir sistemas funcionais, responsivos e
+                            bem organizados, com boa experiência para quem os usa.
+                        </p>
+                        <p>
+                            Neste momento estou a aprofundar <strong>Java com Spring Boot</strong>, <strong>React com TypeScript</strong>
+                            e arquitetura de microsserviços, construindo aplicações completas e escaláveis.
+                        </p>
+                    </div>
+
+                    <aside class="about-cards">
+                        <div class="info-card reveal">
+                            <span class="info-icon"><svg class="icon"><use href="#i-spark"/></svg></span>
+                            <div>
+                                <h3>Objetivo</h3>
+                                <p>Integrar uma equipa de desenvolvimento de software onde possa crescer, criar soluções úteis e contribuir com dedicação e vontade de aprender.</p>
+                            </div>
+                        </div>
+                        <div class="info-card reveal">
+                            <span class="info-icon"><svg class="icon"><use href="#i-check"/></svg></span>
+                            <div>
+                                <h3>Disponibilidade</h3>
+                                <p>Imediata para oportunidades em desenvolvimento de software, web ou suporte técnico.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <h3 class="sub-title reveal">Competências pessoais</h3>
+                <ul class="soft-list reveal">
+                    <li>Aprendizagem rápida</li>
+                    <li>Resolução de problemas</li>
+                    <li>Lógica de programação</li>
+                    <li>Código organizado</li>
+                    <li>Trabalho em equipa</li>
+                    <li>Comunicação eficaz</li>
+                    <li>Gestão de tempo</li>
+                    <li>Proatividade</li>
+                    <li>Adaptabilidade</li>
+                    <li>Atenção ao design UI/UX</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== COMPETÊNCIAS ===== -->
+        <section class="section section-alt" id="competencias">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow">Competências técnicas</span>
+                    <h2 class="section-title">Tecnologias com que trabalho</h2>
+                    <p class="section-lead">Organizadas por área. O nível indica a minha experiência atual e, por baixo, os projetos onde usei cada tecnologia.</p>
+                </header>
+
+                <div class="skills-grid">
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><svg class="icon"><use href="#i-code"/></svg> Front-end</h3>
+                        <ul class="skill-list">
+                            <li><img src="assets/img/icons/html.svg" alt="" width="28" height="28"><span>HTML5<small class="skill-used">Sumbane Pay · CourtIQ MZ</small></span><em class="lvl lvl-3">Avançado</em></li>
+                            <li><img src="assets/img/icons/css.svg" alt="" width="28" height="28"><span>CSS3<small class="skill-used">Sumbane Pay · CourtIQ MZ</small></span><em class="lvl lvl-3">Avançado</em></li>
+                            <li><img src="assets/img/icons/js.svg" alt="" width="28" height="28"><span>JavaScript<small class="skill-used">Sumbane Pay · CourtIQ MZ</small></span><em class="lvl lvl-3">Avançado</em></li>
+                            <li><img src="assets/img/icons/react.svg" alt="" width="28" height="28"><span>React<small class="skill-used">Sistema de RH</small></span><em class="lvl lvl-2">Intermédio</em></li>
+                            <li><img src="assets/img/icons/bootstrap.svg" alt="" width="28" height="28"><span>Bootstrap<small class="skill-used">Sumbane Pay</small></span><em class="lvl lvl-3">Avançado</em></li>
+                            <li><img src="assets/img/icons/responsive.svg" alt="" width="28" height="28"><span>Design responsivo<small class="skill-used">Sumbane Pay</small></span><em class="lvl lvl-3">Avançado</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><svg class="icon"><use href="#i-server"/></svg> Back-end</h3>
+                        <ul class="skill-list">
+                            <li><img src="assets/img/icons/java.svg" alt="" width="28" height="28"><span>Java<small class="skill-used">Sistema de RH · SmartCare</small></span><em class="lvl lvl-2">Intermédio</em></li>
+                            <li><img src="assets/img/icons/spring.svg" alt="" width="28" height="28"><span>Spring Boot<small class="skill-used">Sistema de RH</small></span><em class="lvl lvl-2">Intermédio</em></li>
+                            <li><img src="assets/img/icons/php.svg" alt="" width="28" height="28"><span>PHP<small class="skill-used">CourtIQ MZ</small></span><em class="lvl lvl-3">Avançado</em></li>
+                            <li><img src="assets/img/icons/laravel.svg" alt="" width="28" height="28"><span>Laravel</span><em class="lvl lvl-2">Intermédio</em></li>
+                            <li><img src="assets/img/icons/python.svg" alt="" width="28" height="28"><span>Python</span><em class="lvl lvl-1">Em evolução</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><svg class="icon"><use href="#i-db"/></svg> Base de dados</h3>
+                        <ul class="skill-list">
+                            <li><img src="assets/img/icons/mysql.svg" alt="" width="28" height="28"><span>MySQL / SQL<small class="skill-used">CourtIQ MZ · SmartCare</small></span><em class="lvl lvl-2">Intermédio</em></li>
+                            <li><img src="assets/img/icons/firebase.svg" alt="" width="28" height="28"><span>Firebase<small class="skill-used">Sumbane Pay</small></span><em class="lvl lvl-2">Intermédio</em></li>
+                        </ul>
+                        <h3 class="skill-group-title mt"><svg class="icon"><use href="#i-tool"/></svg> Ferramentas</h3>
+                        <ul class="skill-list">
+                            <li><img src="assets/img/icons/git.svg" alt="" width="28" height="28"><span>Git / GitHub</span><em class="lvl lvl-2">Intermédio</em></li>
+                            <li><img src="assets/img/icons/gitlab.svg" alt="" width="28" height="28"><span>GitLab</span><em class="lvl lvl-2">Intermédio</em></li>
+                            <li><img src="assets/img/icons/gitkraken.svg" alt="" width="28" height="28"><span>GitKraken</span><em class="lvl lvl-2">Intermédio</em></li>
+                            <li><img src="assets/img/icons/vscode.svg" alt="" width="28" height="28"><span>VS Code</span><em class="lvl lvl-3">Avançado</em></li>
+                            <li><img src="assets/img/icons/xampp.svg" alt="" width="28" height="28"><span>XAMPP / WAMP</span><em class="lvl lvl-2">Intermédio</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title"><svg class="icon"><use href="#i-layers"/></svg> Arquitetura e organização</h3>
+                        <ul class="skill-list skill-list-plain">
+                            <li><span class="skill-dot" aria-hidden="true"></span><span>API REST<small class="skill-used">Sistema de RH</small></span></li>
+                            <li><span class="skill-dot" aria-hidden="true"></span><span>Autenticação com JWT<small class="skill-used">Sistema de RH</small></span></li>
+                            <li><span class="skill-dot" aria-hidden="true"></span><span>ORM com JPA/Hibernate<small class="skill-used">Sistema de RH · SmartCare</small></span></li>
+                            <li><span class="skill-dot" aria-hidden="true"></span><span>Padrões DAO e MVC<small class="skill-used">SmartCare</small></span></li>
+                            <li><span class="skill-dot" aria-hidden="true"></span><span>Regras de segurança no Firestore<small class="skill-used">Sumbane Pay</small></span></li>
+                            <li><span class="skill-dot" aria-hidden="true"></span><span>Controlo de acesso por perfil<small class="skill-used">CourtIQ MZ</small></span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="learning reveal">
+                    <span class="learning-label">A aprender agora</span>
+                    <ul class="chips">
+                        <li>TypeScript</li>
+                        <li>Microsserviços</li>
+                        <li>Spring Security / JWT</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJETOS ===== -->
+        <section class="section" id="projetos">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow">Projetos</span>
+                    <h2 class="section-title">O que tenho construído</h2>
+                    <p class="section-lead">Projetos académicos e pessoais, alguns já online.</p>
+                </header>
+
+                <div class="project-tools reveal">
+                    <div class="search">
+                        <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
+                        <label class="sr-only" for="projectSearch">Pesquisar projetos</label>
+                        <input type="search" id="projectSearch" placeholder="Pesquisar por nome, tecnologia ou descrição" autocomplete="off">
+                    </div>
+                    <div class="filters" role="group" aria-label="Filtrar projetos">
+                        <button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+                        <button class="filter" type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
+                        <button class="filter" type="button" data-filter="php" aria-pressed="false">PHP</button>
+                        <button class="filter" type="button" data-filter="java" aria-pressed="false">Java</button>
+                        <button class="filter" type="button" data-filter="web" aria-pressed="false">Aplicações web</button>
+                        <button class="filter" type="button" data-filter="gestao" aria-pressed="false">Sistemas de gestão</button>
+                    </div>
+                    <p class="results" id="projectResults" aria-live="polite"></p>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+
+                    <!-- Sumbane Pay -->
+                    <article class="project reveal" data-key="sumbanepay" data-tags="javascript web" id="projeto-sumbanepay">
+                        <a class="project-media" href="https://sumbanepay.freehosting.dev/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                            <img src="assets/img/sumbanepay.webp" alt="" loading="lazy" width="1000" height="448">
+                        </a>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="badge badge-done">Online</span>
+                                <span class="project-kind">Web · SaaS</span>
+                            </div>
+                            <h3 class="project-title">Sumbane Pay</h3>
+                            <p class="project-sub">Faturação e vendas pelo WhatsApp</p>
+                            <p class="project-desc">
+                                Plataforma para pequenos negócios registarem cada venda, emitirem a fatura no mesmo passo
+                                e enviarem-na pelo WhatsApp. Mostra em tempo real o que já foi recebido e o que falta
+                                receber, com registo de pagamentos por M-Pesa e e-Mola. Mais de 30 páginas, contas
+                                sincronizadas entre dispositivos, painel de superadmin, tema escuro e versão móvel.
+                            </p>
+                            <ul class="chips chips-sm">
+                                <li>JavaScript</li><li>Firebase Auth</li><li>Cloud Firestore</li><li>Bootstrap</li><li>Chart.js</li><li>HTML5</li><li>CSS3</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="btn btn-primary btn-sm" href="https://sumbanepay.freehosting.dev/" target="_blank" rel="noopener noreferrer">
+                                    Ver online
+                                    <svg class="icon"><use href="#i-arrow"/></svg>
+                                </a>
+                                <button type="button" class="btn btn-ghost btn-sm" data-detail="sumbanepay">
+                                    <svg class="icon"><use href="#i-info"/></svg>
+                                    Ver detalhes
+                                </button>
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbanePay" target="_blank" rel="noopener noreferrer">
+                                    <svg class="icon"><use href="#i-github"/></svg>
+                                    Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Sistema de RH -->
+                    <article class="project reveal" data-key="rh" data-tags="java javascript web gestao" id="projeto-rh">
+                        <div class="project-media">
+                            <img src="assets/img/rh.webp" alt="Ecrã de entrada do Sistema de RH" loading="lazy" width="1000" height="448">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="badge badge-done">Concluído</span>
+                                <span class="project-kind">Full-stack</span>
+                            </div>
+                            <h3 class="project-title">Sistema de RH</h3>
+                            <p class="project-sub">Gestão de Recursos Humanos</p>
+                            <p class="project-desc">
+                                Aplicação web para otimizar processos de RH: colaboradores, departamentos, cargos,
+                                folha de pagamento, vagas e triagem de candidatos, férias e assiduidade. API REST com
+                                autenticação JWT e interface em React.
+                            </p>
+                            <ul class="chips chips-sm">
+                                <li>Java 21</li><li>Spring Boot</li><li>React</li><li>TypeScript</li><li>JWT</li><li>JPA/Hibernate</li><li>Tailwind</li>
+                            </ul>
+                            <div class="project-links">
+                                <button type="button" class="btn btn-ghost btn-sm" data-detail="rh">
+                                    <svg class="icon"><use href="#i-info"/></svg>
+                                    Ver detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- AgroMercado -->
+                    <article class="project reveal" data-key="agromercado" data-tags="web" id="projeto-agromercado">
+                        <div class="project-media">
+                            <img src="assets/img/agromercado.webp" alt="Página inicial do AgroMercado" loading="lazy" width="1000" height="448">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="badge badge-done">Concluído</span>
+                                <span class="project-kind">Web · Marketplace</span>
+                            </div>
+                            <h3 class="project-title">AgroMercado</h3>
+                            <p class="project-sub">Direto do campo moçambicano</p>
+                            <p class="project-desc">
+                                Marketplace que liga agricultores de todo o país a compradores: produtos frescos por
+                                categoria, preço justo para quem produz, carrinho de compras, gestão de pedidos e
+                                entrega acompanhada. Contas separadas para quem compra e para quem vende.
+                            </p>
+                            <ul class="chips chips-sm">
+                                <li>Marketplace</li><li>Carrinho</li><li>Gestão de pedidos</li><li>Contas de vendedor</li><li>Responsivo</li>
+                            </ul>
+                            <div class="project-links">
+                                <button type="button" class="btn btn-ghost btn-sm" data-detail="agromercado">
+                                    <svg class="icon"><use href="#i-info"/></svg>
+                                    Ver detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- CourtIQ MZ -->
+                    <article class="project reveal" data-key="courtiq" data-tags="php javascript web gestao" id="projeto-courtiq">
+                        <div class="project-media">
+                            <img src="assets/img/courtiqmz.webp" alt="Página de clubes do CourtIQ MZ" loading="lazy" width="1000" height="448">
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="badge badge-ongoing">Em desenvolvimento</span>
+                                <span class="project-kind">Web</span>
+                            </div>
+                            <h3 class="project-title">CourtIQ MZ</h3>
+                            <p class="project-sub">Gestão da liga e de clubes de basquetebol</p>
+                            <p class="project-desc">
+                                Sistema para acompanhar clubes de todo o país (Maputo, Beira, Nampula, Quelimane):
+                                atletas, jogos, estatísticas e notícias. Inclui gestão de treinos e finanças, quatro
+                                níveis de acesso (Visitante, Jogador, Admin e SuperAdmin) e versão em português e inglês.
+                            </p>
+                            <ul class="chips chips-sm">
+                                <li>PHP 8</li><li>MySQL</li><li>PDO</li><li>JavaScript</li><li>Chart.js</li><li>PT / EN</li>
+                            </ul>
+                            <div class="project-links">
+                                <button type="button" class="btn btn-ghost btn-sm" data-detail="courtiq">
+                                    <svg class="icon"><use href="#i-info"/></svg>
+                                    Ver detalhes
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SmartCare -->
+                    <article class="project reveal" data-key="smartcare" data-tags="java gestao" id="projeto-smartcare">
+                        <div class="project-media">
+                            <picture>
+                                <source srcset="assets/img/projects/project-smartcare.webp" type="image/webp">
+                                <img src="assets/img/projects/project-smartcare.png" alt="Ecrã do módulo SmartCare" loading="lazy" width="900" height="560">
+                            </picture>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-meta">
+                                <span class="badge badge-done">Concluído</span>
+                                <span class="project-kind">Desktop</span>
+                            </div>
+                            <h3 class="project-title">SmartCare</h3>
+                            <p class="project-sub">Triagem hospitalar</p>
+                            <p class="project-desc">
+                                Sistema de triagem para centros de saúde que classifica automaticamente a prioridade
+                                de cada paciente com base no Protocolo de Manchester. Camada de persistência com ORM e
+                                padrão DAO, auditoria de dados, gráficos e interface desktop moderna.
+                            </p>
+                            <ul class="chips chips-sm">
+                                <li>Java</li><li>Hibernate / JPA</li><li>MySQL</li><li>Swing + FlatLaf</li><li>JFreeChart</li><li>JUnit</li><li>Maven</li>
+                            </ul>
+                            <div class="project-links">
+                                <button type="button" class="btn btn-ghost btn-sm" data-detail="smartcare">
+                                    <svg class="icon"><use href="#i-info"/></svg>
+                                    Ver detalhes
+                                </button>
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SmartCare-Triagem" target="_blank" rel="noopener noreferrer">
+                                    <svg class="icon"><use href="#i-github"/></svg>
+                                    Código
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="empty" id="projectsEmpty" hidden>
+                    <p><strong>Nenhum projeto encontrado.</strong></p>
+                    <p>Experimente outra palavra ou outro filtro.</p>
+                    <button type="button" class="btn btn-ghost btn-sm" id="clearFilters">Limpar filtros</button>
+                </div>
+
+                <div class="gh reveal" id="github">
+                    <div class="gh-head">
+                        <div>
+                            <h3 class="sub-title gh-title"><svg class="icon"><use href="#i-github"/></svg> Atividade no GitHub</h3>
+                            <p class="gh-lead">Repositórios públicos, atualizados automaticamente.</p>
+                        </div>
+                        <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22" target="_blank" rel="noopener noreferrer">
+                            <svg class="icon"><use href="#i-github"/></svg>
+                            Ver perfil
+                        </a>
+                    </div>
+                    <div class="gh-grid" id="ghGrid" aria-live="polite">
+                        <div class="gh-card gh-skeleton"></div>
+                        <div class="gh-card gh-skeleton"></div>
+                        <div class="gh-card gh-skeleton"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FORMAÇÃO ===== -->
+        <section class="section section-alt" id="formacao">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow">Formação</span>
+                    <h2 class="section-title">Percurso académico</h2>
+                </header>
+
+                <div class="edu-grid">
+                    <ol class="timeline">
+                        <li class="timeline-item reveal">
+                            <span class="timeline-dot"><svg class="icon"><use href="#i-cap"/></svg></span>
+                            <div class="timeline-card">
+                                <span class="timeline-date">2022 — presente · conclusão prevista em 2026</span>
+                                <h3>Licenciatura em Informática de Sistemas</h3>
+                                <p class="timeline-inst">Instituto Superior de Comunicação e Imagem de Moçambique (ISCIM) · Maputo</p>
+                                <p>
+                                    Sistemas de informação, desenvolvimento web, engenharia de software, análise de sistemas,
+                                    bases de dados, redes de computadores e gestão de projetos. Participação em projetos
+                                    interdisciplinares de programação web, sistemas empresariais e arquitetura de software.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="timeline-item reveal">
+                            <span class="timeline-dot"><svg class="icon"><use href="#i-cap"/></svg></span>
+                            <div class="timeline-card">
+                                <span class="timeline-date">Concluído</span>
+                                <h3>Ensino Secundário — Ciências com Biologia</h3>
+                                <p class="timeline-inst">Escola Secundária da Polana · Maputo</p>
+                            </div>
+                        </li>
+                    </ol>
+
+                    <div class="certs reveal">
+                        <h3 class="sub-title"><svg class="icon"><use href="#i-award"/></svg> Cursos complementares</h3>
+                        <ul class="cert-list">
+                            <li><img src="assets/img/icons/java.svg" alt="" width="32" height="32"><div><strong>Java Básico</strong><span>Programação orientada a objetos</span></div></li>
+                            <li><img src="assets/img/icons/java-basic.svg" alt="" width="32" height="32"><div><strong>Lógica de Programação</strong><span>Algoritmos e estruturas de dados</span></div></li>
+                            <li><img src="assets/img/icons/php.svg" alt="" width="32" height="32"><div><strong>PHP Fundamentals</strong><span>Desenvolvimento back-end com PHP</span></div></li>
+                            <li><img src="assets/img/icons/js.svg" alt="" width="32" height="32"><div><strong>JavaScript Moderno (ES6+)</strong><span>Manipulação do DOM e APIs</span></div></li>
+                            <li><img src="assets/img/icons/mysql.svg" alt="" width="32" height="32"><div><strong>MySQL — Bases de Dados</strong><span>Modelação e consultas SQL</span></div></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIÊNCIA PROFISSIONAL (preparada — ainda sem dados) =====
+             Para ativar: retire os marcadores de comentário, preencha com dados reais
+             e acrescente <a href="#experiencia" class="nav-link">Experiência</a> ao menu.
+        <section class="section" id="experiencia">
+            <div class="container">
+                <header class="section-head reveal">
+                    <span class="eyebrow">Experiência</span>
+                    <h2 class="section-title">Experiência profissional</h2>
+                </header>
+                <ol class="timeline">
+                    <li class="timeline-item reveal">
+                        <span class="timeline-dot"><svg class="icon"><use href="#i-code"/></svg></span>
+                        <div class="timeline-card">
+                            <span class="timeline-date">MÊS ANO — MÊS ANO</span>
+                            <h3>FUNÇÃO</h3>
+                            <p class="timeline-inst">ORGANIZAÇÃO · CIDADE</p>
+                            <p>Responsabilidades, tecnologias e contributos concretos.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        TESTEMUNHOS (preparado — use apenas recomendações reais, com autorização da pessoa):
+        <div class="info-card reveal">
+            <div>
+                <p>“Texto da recomendação.”</p>
+                <h3>Nome da pessoa</h3>
+                <p>Função · Organização</p>
+            </div>
+        </div>
+        -->
+
+        <!-- ===== CONTACTO ===== -->
+        <section class="section" id="contacto">
+            <div class="container">
+                <div class="contact-wrap reveal">
+                    <div class="contact-info">
+                        <span class="eyebrow eyebrow-light">Contacto</span>
+                        <h2 class="contact-title">Vamos trabalhar juntos?</h2>
+                        <p>
+                            Estou à procura de <strong>oportunidades de trabalho e projetos freelance</strong>.
+                            Envie-me uma mensagem e respondo o mais rápido possível.
+                        </p>
+
+                        <ul class="contact-list">
+                            <li>
+                                <a href="mailto:jsumbane22@gmail.com">
+                                    <span class="contact-icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+                                    <span><small>Email</small>jsumbane22@gmail.com</span>
+                                </a>
+                                <button type="button" class="copy-btn" data-copy="jsumbane22@gmail.com" aria-label="Copiar email" title="Copiar email">
+                                    <svg class="icon"><use href="#i-copy"/></svg>
+                                </button>
+                            </li>
+                            <li>
+                                <a href="tel:+258845872347">
+                                    <span class="contact-icon"><svg class="icon"><use href="#i-phone"/></svg></span>
+                                    <span><small>Telefone</small>+258 84 587 2347</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/258845872347" target="_blank" rel="noopener noreferrer">
+                                    <span class="contact-icon"><svg class="icon"><use href="#i-whatsapp"/></svg></span>
+                                    <span><small>WhatsApp</small>+258 84 587 2347</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/jorge-sumbane-sumbane-174478320/" target="_blank" rel="noopener noreferrer">
+                                    <span class="contact-icon"><svg class="icon"><use href="#i-linkedin"/></svg></span>
+                                    <span><small>LinkedIn</small>Jorge Sumbane</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/jorgeSumbane22" target="_blank" rel="noopener noreferrer">
+                                    <span class="contact-icon"><svg class="icon"><use href="#i-github"/></svg></span>
+                                    <span><small>GitHub</small>@jorgeSumbane22</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/jorgelourencosumbane.sumbane" target="_blank" rel="noopener noreferrer">
+                                    <span class="contact-icon"><svg class="icon"><use href="#i-facebook"/></svg></span>
+                                    <span><small>Facebook</small>Jorge Sumbane</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/jorge_sumbane/" target="_blank" rel="noopener noreferrer">
+                                    <span class="contact-icon"><svg class="icon"><use href="#i-instagram"/></svg></span>
+                                    <span><small>Instagram</small>@jorge_sumbane</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" name="name" autocomplete="name" required placeholder="O seu nome">
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" required placeholder="nome@empresa.com">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Ex.: Proposta de trabalho">
+                        </div>
+                        <div class="field">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Escreva a sua mensagem..."></textarea>
+                        </div>
+                        <!-- Campo invisível contra spam (bots preenchem, pessoas não) -->
+                        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            <svg class="icon"><use href="#i-send"/></svg>
+                            <span>Enviar mensagem</span>
+                        </button>
+                        <p class="form-note" id="formNote"></p>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== DETALHE DOS PROJETOS (preenchido a partir dos <template>) ===== -->
+    <dialog class="detail" id="projectDialog" aria-labelledby="detailTitle">
+        <button class="icon-btn detail-close" type="button" data-close aria-label="Fechar">
+            <svg class="icon"><use href="#i-close"/></svg>
+        </button>
+        <div class="detail-content" id="detailContent"></div>
+    </dialog>
+
+    <template id="detail-sumbanepay">
+        <div class="detail-media"><img src="assets/img/sumbanepay.webp" alt="Página inicial do Sumbane Pay" width="1000" height="448"></div>
+        <div class="detail-body">
+            <div class="project-meta"><span class="badge badge-done">Online</span><span class="project-kind">Web · SaaS</span></div>
+            <h2 class="detail-title" id="detailTitle">Sumbane Pay</h2>
+            <p class="project-sub">Faturação e vendas pelo WhatsApp</p>
+            <h3>Sobre o projeto</h3>
+            <p>O Sumbane Pay ajuda pequenos negócios moçambicanos que vendem pelo WhatsApp a deixar o caderno de lado. Cada venda é registada em poucos campos, a fatura é emitida no mesmo passo e enviada ao cliente pelo WhatsApp.</p>
+            <h3>O que faz</h3>
+            <ul class="detail-list">
+                    <li>Registo de vendas, clientes e produtos</li>
+                    <li>Faturas geradas e enviadas pelo WhatsApp</li>
+                    <li>Controlo do que já foi pago e do que falta receber</li>
+                    <li>Registo de pagamentos por M-Pesa e e-Mola</li>
+                    <li>Gráficos de vendas no painel</li>
+                    <li>Painel de superadmin para gerir utilizadores</li>
+                    <li>Tema escuro e versão para telemóvel em todas as páginas</li>
+            </ul>
+            <h3>Destaques técnicos</h3>
+            <ul class="detail-list">
+                    <li>Contas com Firebase Authentication e dados no Cloud Firestore, para a mesma conta funcionar em qualquer dispositivo</li>
+                    <li>Regras de segurança do Firestore escritas e publicadas para proteger os dados de cada utilizador</li>
+                    <li>Migração gradual do armazenamento local do navegador para a nuvem</li>
+                    <li>Camada responsiva partilhada por mais de 30 páginas</li>
+            </ul>
+            <ul class="chips chips-sm"><li>JavaScript</li><li>Firebase Auth</li><li>Cloud Firestore</li><li>Bootstrap</li><li>Chart.js</li><li>HTML5</li><li>CSS3</li></ul>
+            <div class="project-links">
+                <a class="btn btn-primary btn-sm" href="https://sumbanepay.freehosting.dev/" target="_blank" rel="noopener noreferrer">Ver online <svg class="icon"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbanePay" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> Código</a>
+            </div>
+        </div>
+    </template>
+
+    <template id="detail-rh">
+        <div class="detail-media"><img src="assets/img/rh.webp" alt="Ecrã de entrada do Sistema de RH" width="1000" height="448"></div>
+        <div class="detail-body">
+            <div class="project-meta"><span class="badge badge-done">Concluído</span><span class="project-kind">Full-stack</span></div>
+            <h2 class="detail-title" id="detailTitle">Sistema de RH</h2>
+            <p class="project-sub">Gestão de Recursos Humanos</p>
+            <h3>Sobre o projeto</h3>
+            <p>Aplicação full-stack que reúne num só lugar os processos de Recursos Humanos de uma empresa, do recrutamento à folha de pagamento.</p>
+            <h3>O que faz</h3>
+            <ul class="detail-list">
+                    <li>Gestão de colaboradores, departamentos e cargos</li>
+                    <li>Folha de pagamento</li>
+                    <li>Publicação de vagas e triagem de candidatos</li>
+                    <li>Pedidos e controlo de férias</li>
+                    <li>Registo de assiduidade</li>
+                    <li>Acesso protegido por login</li>
+            </ul>
+            <h3>Destaques técnicos</h3>
+            <ul class="detail-list">
+                    <li>API REST em Java 21 com Spring Boot</li>
+                    <li>Autenticação e autorização com JWT</li>
+                    <li>Persistência com JPA/Hibernate</li>
+                    <li>Interface em React com TypeScript e Tailwind CSS</li>
+                    <li>Back-end e front-end separados e independentes</li>
+            </ul>
+            <ul class="chips chips-sm"><li>Java 21</li><li>Spring Boot</li><li>React</li><li>TypeScript</li><li>JWT</li><li>JPA/Hibernate</li><li>Tailwind</li></ul>
+        </div>
+    </template>
+
+    <template id="detail-agromercado">
+        <div class="detail-media"><img src="assets/img/agromercado.webp" alt="Página inicial do AgroMercado" width="1000" height="448"></div>
+        <div class="detail-body">
+            <div class="project-meta"><span class="badge badge-done">Concluído</span><span class="project-kind">Web · Marketplace</span></div>
+            <h2 class="detail-title" id="detailTitle">AgroMercado</h2>
+            <p class="project-sub">Direto do campo moçambicano</p>
+            <h3>Sobre o projeto</h3>
+            <p>Marketplace que aproxima quem planta de quem compra. Os agricultores publicam os seus produtos e os compradores encomendam diretamente, com preço justo para quem produz.</p>
+            <h3>O que faz</h3>
+            <ul class="detail-list">
+                    <li>Catálogo de produtos frescos organizado por categorias</li>
+                    <li>Carrinho de compras e encomendas</li>
+                    <li>Gestão de pedidos e acompanhamento da entrega</li>
+                    <li>Contas separadas para compradores e vendedores</li>
+                    <li>Perfis de agricultores com a sua localização</li>
+                    <li>Tema claro e escuro, adaptado a telemóvel</li>
+            </ul>
+            <ul class="chips chips-sm"><li>Marketplace</li><li>Carrinho</li><li>Gestão de pedidos</li><li>Contas de vendedor</li><li>Responsivo</li></ul>
+        </div>
+    </template>
+
+    <template id="detail-courtiq">
+        <div class="detail-media"><img src="assets/img/courtiqmz.webp" alt="Página de clubes do CourtIQ MZ" width="1000" height="448"></div>
+        <div class="detail-body">
+            <div class="project-meta"><span class="badge badge-ongoing">Em desenvolvimento</span><span class="project-kind">Web</span></div>
+            <h2 class="detail-title" id="detailTitle">CourtIQ MZ</h2>
+            <p class="project-sub">Gestão da liga e de clubes de basquetebol</p>
+            <h3>Sobre o projeto</h3>
+            <p>Plataforma para gerir clubes de basquetebol e acompanhar a liga moçambicana, com clubes de Maputo, Beira, Nampula e Quelimane.</p>
+            <h3>O que faz</h3>
+            <ul class="detail-list">
+                    <li>Páginas de clubes, atletas e jogos</li>
+                    <li>Estatísticas de jogadores e equipas com gráficos</li>
+                    <li>Notícias da liga</li>
+                    <li>Gestão de treinos e finanças do clube</li>
+                    <li>Quatro níveis de acesso: Visitante, Jogador, Admin e SuperAdmin</li>
+                    <li>Disponível em português e inglês</li>
+            </ul>
+            <h3>Destaques técnicos</h3>
+            <ul class="detail-list">
+                    <li>PHP 8 com PDO para o acesso à base de dados</li>
+                    <li>Base de dados MySQL</li>
+                    <li>Gráficos com Chart.js</li>
+                    <li>Permissões controladas por perfil de utilizador</li>
+            </ul>
+            <ul class="chips chips-sm"><li>PHP 8</li><li>MySQL</li><li>PDO</li><li>JavaScript</li><li>Chart.js</li><li>PT / EN</li></ul>
+        </div>
+    </template>
+
+    <template id="detail-smartcare">
+        <div class="detail-media"><img src="assets/img/projects/project-smartcare.webp" alt="Ecrã do módulo SmartCare" width="1000" height="448"></div>
+        <div class="detail-body">
+            <div class="project-meta"><span class="badge badge-done">Concluído</span><span class="project-kind">Desktop</span></div>
+            <h2 class="detail-title" id="detailTitle">SmartCare</h2>
+            <p class="project-sub">Triagem hospitalar</p>
+            <h3>Sobre o projeto</h3>
+            <p>Sistema de triagem para centros de saúde que ajuda a decidir quem deve ser atendido primeiro, classificando a prioridade de cada paciente com base no Protocolo de Manchester.</p>
+            <h3>O que faz</h3>
+            <ul class="detail-list">
+                    <li>Registo e gestão de pacientes</li>
+                    <li>Classificação automática da prioridade pelo Protocolo de Manchester</li>
+                    <li>Fila de atendimento ordenada por urgência</li>
+                    <li>Gráficos e relatórios</li>
+                    <li>Auditoria e rastreabilidade das alterações</li>
+            </ul>
+            <h3>Destaques técnicos</h3>
+            <ul class="detail-list">
+                    <li>Java com Maven</li>
+                    <li>Hibernate/JPA e padrão DAO na camada de persistência</li>
+                    <li>Base de dados MySQL</li>
+                    <li>Interface desktop com Swing e o tema moderno FlatLaf</li>
+                    <li>Gráficos com JFreeChart</li>
+                    <li>Testes automáticos com JUnit</li>
+            </ul>
+            <ul class="chips chips-sm"><li>Java</li><li>Hibernate / JPA</li><li>MySQL</li><li>Swing + FlatLaf</li><li>JFreeChart</li><li>JUnit</li><li>Maven</li></ul>
+            <div class="project-links">
+                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SmartCare-Triagem" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-github"/></svg> Código</a>
+            </div>
+        </div>
+    </template>
+
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-quote">“Transformar conhecimento em soluções digitais que fazem a diferença.”</p>
+            <p class="footer-copy">© <span id="year">2026</span> Jorge Lourenço Sumbane · Maputo, Moçambique</p>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <a href="#inicio" class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <svg class="icon"><use href="#i-up"/></svg>
+    </a>
+
+    <script src="assets/js/i18n.js" defer></script>
+    <script src="assets/js/motion.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/sitemap.xml
