@@ -7,4 +7,44 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/?lang=en"/>
         <priority>1.0</priority>
     </url>
+    <url>
+        <loc>https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/sumbanepay.html</loc>
+        <lastmod>2026-10-23</lastmod>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/sumbanepay.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/sumbanepay.html?lang=en"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/rh.html</loc>
+        <lastmod>2026-10-23</lastmod>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/rh.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/rh.html?lang=en"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/agromercado.html</loc>
+        <lastmod>2026-10-23</lastmod>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/agromercado.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/agromercado.html?lang=en"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/courtiq.html</loc>
+        <lastmod>2026-10-23</lastmod>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/courtiq.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/courtiq.html?lang=en"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/smartcare.html</loc>
+        <lastmod>2026-10-23</lastmod>
+        <xhtml:link rel="alternate" hreflang="pt" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/smartcare.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/smartcare.html?lang=en"/>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/cv.html</loc>
+        <lastmod>2026-10-23</lastmod>
+        <priority>0.6</priority>
+    </url>
 </urlset>

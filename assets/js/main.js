@@ -406,6 +406,13 @@ const CV_PDF = '';
             links.className = 'project-links';
             $('.detail-body', detailContent).append(links);
         }
+        const full = document.createElement('a');
+        full.className = 'btn btn-ghost btn-sm';
+        full.href = 'pages/' + key + '.html' + (window.I18N && window.I18N.lang === 'en' ? '?lang=en' : '');
+        full.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#i-file"/></svg> <span></span>';
+        $('span', full).textContent = tr('fullPage', 'Página completa do projeto');
+        links.append(full);
+
         const share = document.createElement('button');
         share.type = 'button';
         share.className = 'btn btn-ghost btn-sm';
@@ -443,7 +450,11 @@ const CV_PDF = '';
     if (dialog) {
         document.addEventListener('click', (e) => {
             const btn = e.target.closest('[data-detail]');
-            if (btn) openDetail(btn.dataset.detail, btn);
+            if (!btn) return;
+            // Ctrl/Cmd+clique ou clique do meio: abre a página completa normalmente
+            if (e.ctrlKey || e.metaKey || e.shiftKey || e.button === 1) return;
+            e.preventDefault();
+            openDetail(btn.dataset.detail, btn);
         });
         // a imagem de um projeto sem site também abre o detalhe (atalho para rato; o botão é o acesso principal)
         projects.forEach((p) => {

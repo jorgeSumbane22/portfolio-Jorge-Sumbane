@@ -237,7 +237,77 @@
         'Ecrã de entrada do Sistema de RH': 'HR System login screen',
         'Página inicial do AgroMercado': 'AgroMercado home page',
         'Página de clubes do CourtIQ MZ': 'CourtIQ MZ clubs page',
-        'Ecrã do módulo SmartCare': 'SmartCare module screen'
+        'Ecrã do módulo SmartCare': 'SmartCare module screen',
+
+        /* --- Pesquisa e filtros de projetos --- */
+        'Pesquisar projetos': 'Search projects',
+        'Pesquisar por nome, tecnologia ou descrição': 'Search by name, technology or description',
+        'Aplicações web': 'Web apps',
+        'Sistemas de gestão': 'Management systems',
+        'Nenhum projeto encontrado.': 'No projects found.',
+        'Experimente outra palavra ou outro filtro.': 'Try another word or filter.',
+        'Limpar filtros': 'Clear filters',
+        'Copiar email': 'Copy email',
+        'Abre o CV numa página pronta para imprimir ou guardar como PDF': 'Opens the CV on a page ready to print or save as PDF',
+
+        /* --- Competências (novas categorias e projetos) --- */
+        'Organizadas por área. O nível indica a minha experiência atual e, por baixo, os projetos onde usei cada tecnologia.':
+            'Grouped by area. The level reflects my current experience; underneath are the projects where I used each technology.',
+        'Frameworks e bibliotecas': 'Frameworks & libraries',
+        'Bases de dados': 'Databases',
+        'Arquitetura de software': 'Software architecture',
+        'API REST': 'REST API',
+        'Autenticação com JWT': 'JWT authentication',
+        'ORM com JPA/Hibernate': 'ORM with JPA/Hibernate',
+        'Padrões DAO e MVC': 'DAO and MVC patterns',
+        'Regras de segurança no Firestore': 'Firestore security rules',
+        'Controlo de acesso por perfil': 'Role-based access control',
+        'Sistema de RH · SmartCare': 'HR System · SmartCare',
+
+        /* --- Páginas dos projetos --- */
+        'Voltar aos projetos': 'Back to projects',
+        'Caminho': 'Breadcrumb',
+        'Visão geral': 'Overview',
+        'Para quem': 'Who it is for',
+        'Funcionalidades': 'Features',
+        'Desafios e soluções': 'Challenges and solutions',
+        'Estado': 'Status',
+        'Tecnologias': 'Technologies',
+        'Links': 'Links',
+        'Projeto anterior': 'Previous project',
+        'Projeto seguinte': 'Next project',
+        'Outros projetos': 'Other projects',
+        'Demonstração e código ainda não estão disponíveis publicamente.': 'Demo and source code are not publicly available yet.',
+        'O Sumbane Pay ajuda pequenos negócios moçambicanos que vendem pelo WhatsApp a registar vendas, emitir faturas e acompanhar pagamentos num só lugar, a partir de qualquer dispositivo.':
+            'Sumbane Pay helps small Mozambican businesses that sell through WhatsApp record sales, issue invoices and track payments in one place, from any device.',
+        'Pequenos negócios em Moçambique que vendem pelo WhatsApp.': 'Small businesses in Mozambique that sell through WhatsApp.',
+        'Equipas de Recursos Humanos de empresas.': 'Human Resources teams in companies.',
+        'Agricultores moçambicanos que querem vender os seus produtos e compradores à procura de produtos frescos.':
+            'Mozambican farmers who want to sell their produce, and buyers looking for fresh food.',
+        'Clubes de basquetebol moçambicanos, os seus atletas e quem acompanha a liga.':
+            'Mozambican basketball clubs, their athletes and people who follow the league.',
+        'Centros de saúde.': 'Health centres.',
+        'Contas que funcionam em qualquer dispositivo': 'Accounts that work on any device',
+        'O registo e o login guardavam os dados apenas no navegador. A autenticação e a lista de utilizadores passaram para o Firebase Authentication e o Cloud Firestore, para que uma conta criada num dispositivo funcione em qualquer outro.':
+            'Sign-up and login used to store data only in the browser. Authentication and the user list moved to Firebase Authentication and Cloud Firestore, so an account created on one device works on any other.',
+        'Segurança dos dados': 'Data security',
+        'Durante a migração foram encontradas e corrigidas falhas de segurança. As regras do Firestore foram escritas e publicadas para que cada utilizador só aceda aos seus próprios dados.':
+            'Security flaws were found and fixed during the migration. Firestore rules were written and deployed so each user can only access their own data.',
+        'Mais de 30 páginas em ecrãs pequenos': 'More than 30 pages on small screens',
+        'Uma camada responsiva partilhada adapta todas as páginas ao telemóvel (menu lateral recolhível, tabelas com deslocamento horizontal e formulários empilhados) sem alterar o comportamento em computador.':
+            'A shared responsive layer adapts every page to phones (collapsible side menu, horizontally scrolling tables and stacked forms) without changing the desktop behaviour.',
+
+        /* --- CV --- */
+        'Voltar ao portfólio': 'Back to portfolio',
+        'Para obter um PDF, clique em «Imprimir» e escolha «Guardar como PDF».': 'To get a PDF, click “Print” and choose “Save as PDF”.',
+        'Imprimir / guardar PDF': 'Print / save PDF',
+        'Perfil': 'Profile',
+        'Maputo, Moçambique': 'Maputo, Mozambique',
+        '— Faturação e vendas pelo WhatsApp': '— Invoicing and sales through WhatsApp',
+        '— Gestão de Recursos Humanos': '— Human Resources Management',
+        '— Direto do campo moçambicano': '— Straight from Mozambican farms',
+        '— Gestão da liga e de clubes de basquetebol': '— Basketball league and club management',
+        '— Triagem hospitalar': '— Hospital triage',
     };
 
     /* Textos usados pelo JavaScript (mensagens, texto rotativo, etc.) */
@@ -257,7 +327,16 @@
             failed: 'Não foi possível enviar agora. Tente pelo WhatsApp ou escreva para ',
             cursorOpen: 'Abrir ↗', cursorHello: 'Olá! 👋', cursorDetails: 'Ver mais',
             ghUpdated: 'Atualizado', ghNoDesc: 'Sem descrição.', ghError: 'Não foi possível carregar os repositórios agora.',
-            ghTotal: 'repositórios públicos', locale: 'pt-PT'
+            ghTotal: 'repositórios públicos', locale: 'pt-PT',
+            ghRetry: 'Tentar novamente', ghOpen: 'Abrir no GitHub', ghEmpty: 'Ainda não há repositórios públicos.',
+            ghOffline: 'Sem ligação à Internet. Os repositórios aparecem quando a ligação voltar.',
+            ghRateLimit: 'O GitHub limitou temporariamente os pedidos. Tente daqui a alguns minutos.',
+            resultsAll: '{n} projetos', resultsSome: '{n} de {total} projetos',
+            emailCopied: 'Email copiado!', linkCopied: 'Link copiado!', copyFailed: 'Não foi possível copiar.', copyLink: 'Copiar link',
+            fullPage: 'Página completa do projeto',
+            cvPrint: 'CV para imprimir / PDF', cvDownload: 'Descarregar CV (PDF)',
+            noteMailto: 'Ao enviar, abre-se o seu programa de email com a mensagem já escrita. Também pode usar o WhatsApp.',
+            noteFormspree: 'A mensagem é enviada diretamente para o meu email.'
         },
         en: {
             title: 'Jorge Sumbane | Software Developer · Portfolio',
@@ -274,11 +353,21 @@
             failed: "Couldn't send right now. Try WhatsApp or write to ",
             cursorOpen: 'Open ↗', cursorHello: 'Hi! 👋', cursorDetails: 'See more',
             ghUpdated: 'Updated', ghNoDesc: 'No description.', ghError: 'Could not load repositories right now.',
-            ghTotal: 'public repositories', locale: 'en-GB'
+            ghTotal: 'public repositories', locale: 'en-GB',
+            ghRetry: 'Try again', ghOpen: 'Open on GitHub', ghEmpty: 'No public repositories yet.',
+            ghOffline: 'No internet connection. Repositories will appear when you are back online.',
+            ghRateLimit: 'GitHub is temporarily limiting requests. Please try again in a few minutes.',
+            resultsAll: '{n} projects', resultsSome: '{n} of {total} projects',
+            emailCopied: 'Email copied!', linkCopied: 'Link copied!', copyFailed: "Couldn't copy.", copyLink: 'Copy link',
+            fullPage: 'Full project page',
+            cvPrint: 'CV to print / PDF', cvDownload: 'Download CV (PDF)',
+            noteMailto: 'Sending opens your email app with the message ready. You can also use WhatsApp.',
+            noteFormspree: 'Your message is sent straight to my email.'
         }
     };
 
     const ATTRS = ['placeholder', 'aria-label', 'title', 'alt'];
+    const PAGE = { title: '', desc: '' }; // título e descrição originais (PT) da página atual
     const norm = (s) => s.replace(/\s+/g, ' ').trim();
     // inglês -> português, para textos criados já em inglês (ex.: janela de detalhe)
     const PT_OF = {};
@@ -347,8 +436,17 @@
         lang = next === 'en' ? 'en' : 'pt';
         const s = STRINGS[lang];
         document.documentElement.lang = lang === 'en' ? 'en' : 'pt';
-        document.title = s.title;
-        document.querySelector('meta[name="description"]')?.setAttribute('content', s.description);
+        // cada página guarda o seu título PT; o inglês vem de data-title-en (ou do título geral)
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (!PAGE.title) { PAGE.title = document.title; PAGE.desc = metaDesc ? metaDesc.content : ''; }
+        const titleEn = document.documentElement.getAttribute('data-title-en');
+        if (lang === 'pt') {
+            document.title = PAGE.title;
+            if (metaDesc) metaDesc.content = PAGE.desc;
+        } else {
+            document.title = titleEn || s.title;
+            if (metaDesc && !titleEn) metaDesc.content = s.description;
+        }
 
         eachRoot((root) => { translateTextNodes(root); translateAttributes(root); });
 
