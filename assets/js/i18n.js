@@ -371,7 +371,6 @@
 
         /* --- Sumbane Pay (versão PHP oficial) --- */
         'Sumbane Pay · Sistema de RH · CourtIQ MZ · SmartCare': 'Sumbane Pay · HR System · CourtIQ MZ · SmartCare',
-        'Sumbane Pay (versão anterior)': 'Sumbane Pay (previous version)',
         'Arquitetura em camadas (controladores, modelos, middleware)': 'Layered architecture (controllers, models, middleware)',
         'Plataforma multi-cliente (dados separados)': 'Multi-tenant platform (separate data)',
         'Segurança web: CSRF, consultas preparadas, limite de logins': 'Web security: CSRF, prepared statements, login rate limiting',
@@ -379,7 +378,6 @@
         '— Faturação e vendas para pequenos negócios': '— Invoicing and sales for small businesses',
         'Plataforma de faturação para pequenos negócios em Moçambique: regista vendas, emite faturas em PDF, envia o resumo pelo WhatsApp e controla recebimentos por M-Pesa, e-Mola, dinheiro ou transferência. Várias empresas no mesmo sistema, com planos, painel de superadmin e tema escuro.':
             'An invoicing platform for small businesses in Mozambique: records sales, issues PDF invoices, sends the summary via WhatsApp and tracks payments by M-Pesa, e-Mola, cash or bank transfer. Several companies share the same system, with plans, a super-admin panel and dark mode.',
-        'Código (versão anterior)': 'Code (previous version)',
         'Sistema de faturação e gestão de vendas para pequenos negócios em Moçambique. Cada empresa regista as vendas em campos simples, emite a fatura no mesmo passo e acompanha o que já recebeu e o que falta receber, a partir de qualquer dispositivo.':
             'An invoicing and sales management system for small businesses in Mozambique. Each company records sales in a few simple fields, issues the invoice in the same step and tracks what has been paid and what is still owed, from any device.',
         'Pequenos negócios em Moçambique, muitos dos quais vendem pelo WhatsApp e recebem por M-Pesa ou e-Mola.':
@@ -405,8 +403,7 @@
         'Perfis e permissões configuráveis para cada tipo de utilizador': 'Configurable roles and permissions for each type of user',
         'Faturas em PDF geradas com jsPDF e gráficos com Chart.js': 'PDF invoices generated with jsPDF and charts with Chart.js',
         'Publicado num alojamento partilhado (InfinityFree) com Apache e .htaccess': 'Deployed on shared hosting (InfinityFree) with Apache and .htaccess',
-        'Online, alojado no InfinityFree. O código no GitHub corresponde à versão anterior (front-end com Firebase).':
-            'Live, hosted on InfinityFree. The code on GitHub is the previous version (front-end with Firebase).',
+        'Online, alojado no InfinityFree.': 'Live, hosted on InfinityFree.',
         'Da versão estática a um sistema completo': 'From a static site to a complete system',
         'A primeira versão era só front-end, com os dados guardados no navegador e no Firebase. O sistema foi convertido para PHP e MySQL, mantendo a identidade visual (cores, tema escuro, layout e páginas) do projeto original.':
             'The first version was front-end only, with data stored in the browser and in Firebase. The system was rebuilt in PHP and MySQL, keeping the original visual identity (colours, dark mode, layout and pages).',
