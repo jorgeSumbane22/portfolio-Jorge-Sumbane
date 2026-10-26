@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de RH — Projeto | Jorge Sumbane</title>
-    <meta name="description" content="Gestão de Recursos Humanos. Aplicação full-stack que reúne num só lugar os processos de Recursos Humanos de uma empresa, do recrutamento à folha de pagamento.">
+    <meta name="description" content="Gestão de Recursos Humanos. Aplicação web que centraliza, organiza e simplifica os principais processos de gestão de Recursos Humanos de uma organização, com uma arquitetura modular.">
     <meta name="author" content="Jorge Lourenço Sumbane">
     <meta name="theme-color" content="#1e3a8a">
     <link rel="canonical" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/rh.html">
@@ -16,7 +16,7 @@
     <meta property="og:locale:alternate" content="en_GB">
     <meta property="og:url" content="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/rh.html">
     <meta property="og:title" content="Sistema de RH — Jorge Sumbane">
-    <meta property="og:description" content="Gestão de Recursos Humanos. Aplicação full-stack que reúne num só lugar os processos de Recursos Humanos de uma empresa, do recrutamento à folha de pagamento.">
+    <meta property="og:description" content="Gestão de Recursos Humanos. Aplicação web que centraliza, organiza e simplifica os principais processos de gestão de Recursos Humanos de uma organização, com uma arquitetura modular.">
     <meta property="og:image" content="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/assets/img/rh.webp">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -42,7 +42,7 @@
         "@context": "https://schema.org",
         "@type": "CreativeWork",
         "name": "Sistema de RH",
-        "description": "Aplicação full-stack que reúne num só lugar os processos de Recursos Humanos de uma empresa, do recrutamento à folha de pagamento.",
+        "description": "Aplicação web que centraliza, organiza e simplifica os principais processos de gestão de Recursos Humanos de uma organização, com uma arquitetura modular.",
         "url": "https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/rh.html",
         "image": "https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/assets/img/rh.webp",
         "inLanguage": "pt",
@@ -50,7 +50,8 @@
             "@type": "Person",
             "name": "Jorge Lourenço Sumbane",
             "url": "https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/"
-        }
+        },
+        "codeRepository": "https://github.com/jorgeSumbane22/Projeto-RH-Sistema"
     }
     </script>
 </head>
@@ -128,9 +129,12 @@
             </nav>
 
             <header class="case-hero">
-                <div class="project-meta"><span class="badge badge-done">Concluído</span><span class="project-kind">Full-stack</span></div>
+                <div class="project-meta"><span class="badge badge-ongoing">Em desenvolvimento</span><span class="project-kind">Web</span></div>
                 <h1 class="case-title">Sistema de RH</h1>
                 <p class="case-sub">Gestão de Recursos Humanos</p>
+                <div class="project-links">
+                    <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/Projeto-RH-Sistema" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                </div>
             </header>
 
             <figure class="case-figure">
@@ -141,34 +145,45 @@
                 <article class="case-main">
                     <section class="case-section">
                         <h2>Visão geral</h2>
-                        <p>Aplicação full-stack que reúne num só lugar os processos de Recursos Humanos de uma empresa, do recrutamento à folha de pagamento.</p>
+                        <p>Aplicação web que centraliza, organiza e simplifica os principais processos de gestão de Recursos Humanos de uma organização, com uma arquitetura modular.</p>
                     </section>
 
                     <section class="case-section">
                         <h2>Para quem</h2>
-                        <p>Equipas de Recursos Humanos de empresas.</p>
+                        <p>Organizações que querem reduzir processos manuais e organizar melhor a informação dos seus Recursos Humanos.</p>
                     </section>
 
                     <section class="case-section">
                         <h2>Funcionalidades</h2>
                         <ul class="detail-list">
-                            <li>Gestão de colaboradores, departamentos e cargos</li>
-                            <li>Folha de pagamento</li>
-                            <li>Publicação de vagas e triagem de candidatos</li>
-                            <li>Pedidos e controlo de férias</li>
-                            <li>Registo de assiduidade</li>
-                            <li>Acesso protegido por login</li>
+                            <li>Gestão de funcionários: registo, atualização e acompanhamento</li>
+                            <li>Departamentos e cargos</li>
+                            <li>Férias: pedido, aprovação, rejeição e acompanhamento</li>
+                            <li>Controlo de presenças e assiduidade</li>
+                            <li>Folha de pagamento: salários, pagamentos e recibos</li>
+                            <li>Avaliação de desempenho dos colaboradores</li>
+                            <li>Recrutamento: vagas, candidatos e entrevistas</li>
+                            <li>Gestão e partilha de documentos</li>
+                            <li>Notificações sobre atividades relevantes</li>
+                            <li>Relatórios com consulta e exportação</li>
+                            <li>Auditoria das atividades realizadas no sistema</li>
+                            <li>Cópias de segurança (a restauração ainda está em desenvolvimento)</li>
                         </ul>
+                    </section>
+
+                    <section class="case-section">
+                        <h2>Perfis de utilizador</h2>
+                        <ul class="chips"><li>Super Administrador</li><li>Administrador de Recursos Humanos</li><li>Recursos Humanos</li><li>Gestor</li><li>Funcionário</li><li>Auditor</li></ul>
                     </section>
 
                     <section class="case-section">
                         <h2>Destaques técnicos</h2>
                         <ul class="detail-list">
-                            <li>API REST em Java 21 com Spring Boot</li>
-                            <li>Autenticação e autorização com JWT</li>
-                            <li>Persistência com JPA/Hibernate</li>
-                            <li>Interface em React com TypeScript e Tailwind CSS</li>
-                            <li>Back-end e front-end separados e independentes</li>
+                            <li>PHP com Programação Orientada a Objetos, numa arquitetura modular</li>
+                            <li>Base de dados MySQL/MariaDB</li>
+                            <li>Controlo de acesso baseado em perfis, com permissões específicas para cada um</li>
+                            <li>Geração de documentos PDF com Dompdf</li>
+                            <li>Dependências geridas com Composer</li>
                         </ul>
                     </section>
 
@@ -186,15 +201,18 @@
                 <aside class="case-aside">
                     <div class="case-card">
                         <h2>Estado</h2>
-                        <span class="badge badge-done">Concluído</span>
+                        <span class="badge badge-ongoing">Em desenvolvimento</span>
+                        <p class="case-muted case-note">Em desenvolvimento e melhoria contínua, com foco nas funcionalidades, na segurança, no desempenho e na experiência do utilizador.</p>
                     </div>
                     <div class="case-card">
                         <h2>Tecnologias</h2>
-                        <ul class="chips chips-sm"><li>Java 21</li><li>Spring Boot</li><li>React</li><li>TypeScript</li><li>JWT</li><li>JPA/Hibernate</li><li>Tailwind</li></ul>
+                        <ul class="chips chips-sm"><li>PHP</li><li>MySQL</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Composer</li><li>Dompdf</li></ul>
                     </div>
                     <div class="case-card">
                         <h2>Links</h2>
-                        <p class="case-muted">Demonstração e código ainda não estão disponíveis publicamente.</p>
+                        <div class="project-links">
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/Projeto-RH-Sistema" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                        </div>
                     </div>
                 </aside>
             </div>

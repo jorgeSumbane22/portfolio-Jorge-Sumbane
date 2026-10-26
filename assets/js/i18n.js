@@ -297,6 +297,78 @@
         'Uma camada responsiva partilhada adapta todas as páginas ao telemóvel (menu lateral recolhível, tabelas com deslocamento horizontal e formulários empilhados) sem alterar o comportamento em computador.':
             'A shared responsive layer adapts every page to phones (collapsible side menu, horizontally scrolling tables and stacked forms) without changing the desktop behaviour.',
 
+        /* --- Sistema de RH e CourtIQ MZ (READMEs) --- */
+        'Sumbane Pay · Sistema de RH · CourtIQ MZ': 'Sumbane Pay · HR System · CourtIQ MZ',
+        'Sistema de RH · CourtIQ MZ': 'HR System · CourtIQ MZ',
+        'Sistema de RH · CourtIQ MZ · SmartCare': 'HR System · CourtIQ MZ · SmartCare',
+        'Arquitetura modular': 'Modular architecture',
+        'Plataforma multi-cliente (vários clubes)': 'Multi-tenant platform (several clubs)',
+        'ORM com Hibernate e padrões DAO/MVC': 'ORM with Hibernate and DAO/MVC patterns',
+        'Auditoria de atividades': 'Activity auditing',
+        'Perfis de utilizador': 'User roles',
+        'Web · Multi-clube': 'Web · Multi-club',
+        'Aplicação web que centraliza a gestão de Recursos Humanos: funcionários, departamentos e cargos, férias, presenças, folha de pagamento, recrutamento e avaliação de desempenho, com seis perfis de acesso e registo de auditoria.':
+            'A web application that centralises Human Resources management: employees, departments and roles, leave, attendance, payroll, recruitment and performance reviews, with six access roles and an audit log.',
+        'Aplicação web que centraliza, organiza e simplifica os principais processos de gestão de Recursos Humanos de uma organização, com uma arquitetura modular.':
+            "A web application that centralises, organises and simplifies an organisation's main Human Resources processes, built on a modular architecture.",
+        'Organizações que querem reduzir processos manuais e organizar melhor a informação dos seus Recursos Humanos.':
+            'Organisations that want to reduce manual work and better organise their Human Resources information.',
+        'Gestão de funcionários: registo, atualização e acompanhamento': 'Employee management: registration, updates and follow-up',
+        'Departamentos e cargos': 'Departments and job roles',
+        'Férias: pedido, aprovação, rejeição e acompanhamento': 'Leave: requests, approval, rejection and tracking',
+        'Controlo de presenças e assiduidade': 'Attendance tracking',
+        'Folha de pagamento: salários, pagamentos e recibos': 'Payroll: salaries, payments and payslips',
+        'Avaliação de desempenho dos colaboradores': 'Employee performance reviews',
+        'Recrutamento: vagas, candidatos e entrevistas': 'Recruitment: openings, candidates and interviews',
+        'Gestão e partilha de documentos': 'Document management and sharing',
+        'Notificações sobre atividades relevantes': 'Notifications about relevant activity',
+        'Relatórios com consulta e exportação': 'Reports with viewing and export',
+        'Auditoria das atividades realizadas no sistema': 'Auditing of the activity carried out in the system',
+        'Cópias de segurança (a restauração ainda está em desenvolvimento)': 'Backups (restore is still in development)',
+        'Super Administrador': 'Super Administrator',
+        'Administrador de Recursos Humanos': 'HR Administrator',
+        'Recursos Humanos': 'Human Resources',
+        'Gestor': 'Manager',
+        'Funcionário': 'Employee',
+        'Auditor': 'Auditor',
+        'PHP com Programação Orientada a Objetos, numa arquitetura modular': 'PHP with object-oriented programming, in a modular architecture',
+        'Base de dados MySQL/MariaDB': 'MySQL/MariaDB database',
+        'Controlo de acesso baseado em perfis, com permissões específicas para cada um': 'Role-based access control, with specific permissions for each role',
+        'Geração de documentos PDF com Dompdf': 'PDF document generation with Dompdf',
+        'Dependências geridas com Composer': 'Dependencies managed with Composer',
+        'Em desenvolvimento e melhoria contínua, com foco nas funcionalidades, na segurança, no desempenho e na experiência do utilizador.':
+            'In development and continuous improvement, focusing on features, security, performance and user experience.',
+        'Gestão e análise de basquetebol': 'Basketball management & analytics',
+        '— Gestão e análise de basquetebol': '— Basketball management & analytics',
+        'Plataforma de gestão de basquetebol em que vários clubes usam o mesmo sistema de forma independente: equipas, jogadores, treinadores, jogos, treinos, estatísticas e administração, com portal público e cinco perfis de acesso.':
+            'A basketball management platform where several clubs use the same system independently: teams, players, coaches, games, training, statistics and administration, with a public portal and five access roles.',
+        'Plataforma web que centraliza a gestão administrativa, técnica e desportiva de clubes de basquetebol. Vários clubes usam a mesma plataforma, cada um com a gestão independente das suas equipas, jogadores, treinadores, jogos, treinos e estatísticas.':
+            "A web platform that centralises the administrative, technical and sporting management of basketball clubs. Several clubs share the platform, each managing its own teams, players, coaches, games, training and statistics independently.",
+        'Dirigentes, treinadores e jogadores de clubes de basquetebol, e adeptos que acompanham os jogos.':
+            'Basketball club directors, coaches and players, and fans who follow the games.',
+        'Gestão de clubes, equipas e escalões, com administração independente por clube': 'Club, team and age-group management, with independent administration per club',
+        'Jogos e resultados, planeamento de treinos e controlo de presenças': 'Games and results, training planning and attendance',
+        'Escalações, estratégias e táticas': 'Line-ups, strategies and tactics',
+        'Estatísticas individuais, recordes pessoais e análise de desempenho': 'Individual statistics, personal records and performance analysis',
+        'Perfis de jogadores com histórico de jogos e calendário': 'Player profiles with game history and calendar',
+        'Área do treinador: plantel, treinos, avaliações e comunicados internos': "Coach's area: squad, training, assessments and internal announcements",
+        'Gestão administrativa: finanças, patrocinadores, venda de bilhetes e relatórios': 'Administration: finances, sponsors, ticket sales and reports',
+        'Portal público com clubes, jogadores, notícias, resultados, classificações e estatísticas': 'Public portal with clubs, players, news, results, standings and statistics',
+        'Interface em português e inglês': 'Interface in Portuguese and English',
+        'Administrador do Clube': 'Club Administrator',
+        'Treinador': 'Coach',
+        'Jogador': 'Player',
+        'Adepto / Visitante': 'Fan / Visitor',
+        'Arquitetura modular em PHP, com separação entre autenticação, acesso aos dados, componentes de interface e áreas de utilizador':
+            'Modular PHP architecture, separating authentication, data access, UI components and user areas',
+        'Vários clubes numa só instalação, com os dados separados por clube': 'Several clubs in a single installation, with data kept separate per club',
+        'PDO para comunicação segura com a base de dados MySQL': 'PDO for secure communication with the MySQL database',
+        'Controlo de acesso baseado em funções, gestão de sessões e registo de atividades': 'Role-based access control, session management and activity logging',
+        'Componentes reutilizáveis e configuração centralizada': 'Reusable components and centralised configuration',
+        'Pagamentos online e comunicação em tempo real ainda estão em desenvolvimento. O sistema precisa de validação adicional antes de ser usado em produção.':
+            'Online payments and real-time communication are still in development. The system needs further validation before being used in production.',
+        'CV para imprimir / PDF': 'CV to print / PDF',
+
         /* --- CV --- */
         'Voltar ao portfólio': 'Back to portfolio',
         'Para obter um PDF, clique em «Imprimir» e escolha «Guardar como PDF».': 'To get a PDF, click “Print” and choose “Save as PDF”.',
