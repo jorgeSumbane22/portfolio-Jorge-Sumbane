@@ -683,6 +683,14 @@ const CV_PDF = '';
         return !firstInvalid;
     }
 
+    // ao mudar de língua, as mensagens de erro já visíveis também são traduzidas
+    document.addEventListener('langchange', () => {
+        ['name', 'email', 'subject', 'message'].forEach((id) => {
+            const input = form.elements[id];
+            if (input && input.closest('.field')?.classList.contains('has-error')) setFieldError(input, messages[id]());
+        });
+    });
+
     $$('input, textarea', form).forEach((input) => {
         input.addEventListener('input', () => {
             if (input.closest('.field')?.classList.contains('has-error')) setFieldError(input, '');

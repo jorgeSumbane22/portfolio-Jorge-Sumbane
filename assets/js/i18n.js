@@ -369,6 +369,57 @@
             'Online payments and real-time communication are still in development. The system needs further validation before being used in production.',
         'CV para imprimir / PDF': 'CV to print / PDF',
 
+        /* --- Sumbane Pay (versão PHP oficial) --- */
+        'Sumbane Pay · Sistema de RH · CourtIQ MZ · SmartCare': 'Sumbane Pay · HR System · CourtIQ MZ · SmartCare',
+        'Sumbane Pay (versão anterior)': 'Sumbane Pay (previous version)',
+        'Arquitetura em camadas (controladores, modelos, middleware)': 'Layered architecture (controllers, models, middleware)',
+        'Plataforma multi-cliente (dados separados)': 'Multi-tenant platform (separate data)',
+        'Segurança web: CSRF, consultas preparadas, limite de logins': 'Web security: CSRF, prepared statements, login rate limiting',
+        'Faturação e vendas para pequenos negócios': 'Invoicing and sales for small businesses',
+        '— Faturação e vendas para pequenos negócios': '— Invoicing and sales for small businesses',
+        'Plataforma de faturação para pequenos negócios em Moçambique: regista vendas, emite faturas em PDF, envia o resumo pelo WhatsApp e controla recebimentos por M-Pesa, e-Mola, dinheiro ou transferência. Várias empresas no mesmo sistema, com planos, painel de superadmin e tema escuro.':
+            'An invoicing platform for small businesses in Mozambique: records sales, issues PDF invoices, sends the summary via WhatsApp and tracks payments by M-Pesa, e-Mola, cash or bank transfer. Several companies share the same system, with plans, a super-admin panel and dark mode.',
+        'Código (versão anterior)': 'Code (previous version)',
+        'Sistema de faturação e gestão de vendas para pequenos negócios em Moçambique. Cada empresa regista as vendas em campos simples, emite a fatura no mesmo passo e acompanha o que já recebeu e o que falta receber, a partir de qualquer dispositivo.':
+            'An invoicing and sales management system for small businesses in Mozambique. Each company records sales in a few simple fields, issues the invoice in the same step and tracks what has been paid and what is still owed, from any device.',
+        'Pequenos negócios em Moçambique, muitos dos quais vendem pelo WhatsApp e recebem por M-Pesa ou e-Mola.':
+            'Small businesses in Mozambique, many of which sell through WhatsApp and get paid via M-Pesa or e-Mola.',
+        'Registo de vendas, clientes e produtos (com imagens)': 'Sales, customers and products (with images)',
+        'Faturas em PDF, com página pública para o cliente consultar a fatura': 'PDF invoices, with a public page where the customer can view the invoice',
+        'Envio do resumo da venda pelo WhatsApp': 'Sale summary sent via WhatsApp',
+        'Pagamentos por M-Pesa, e-Mola, dinheiro ou transferência': 'Payments by M-Pesa, e-Mola, cash or bank transfer',
+        'Painel com gráficos de vendas e relatórios': 'Dashboard with sales charts and reports',
+        'Notificações e pedidos de suporte': 'Notifications and support tickets',
+        'Perfil da empresa com logotipo e configurações': 'Company profile with logo and settings',
+        'Recuperação da palavra-passe por email': 'Password recovery by email',
+        'Cópias de segurança': 'Backups',
+        'Painel de superadmin: empresas, utilizadores, perfis, planos e faturação, pagamentos, comunicados, relatórios, atividade e segurança':
+            'Super-admin panel: companies, users, roles, plans and billing, payments, announcements, reports, activity and security',
+        'Tema escuro e versão para telemóvel': 'Dark mode and mobile layout',
+        'Back-end em PHP 8 organizado em controladores, modelos, middleware e serviços, com uma API JSON para as páginas':
+            'PHP 8 back-end organised into controllers, models, middleware and services, with a JSON API for the pages',
+        'Base de dados MySQL/MariaDB acedida com PDO e consultas preparadas': 'MySQL/MariaDB database accessed with PDO and prepared statements',
+        'Várias empresas no mesmo sistema: um middleware garante que cada empresa só acede aos seus próprios dados':
+            'Several companies in the same system: a middleware ensures each company can only access its own data',
+        'Planos com limites de utilizadores, faturas e produtos, e controlo de assinaturas': 'Plans with user, invoice and product limits, and subscription management',
+        'Perfis e permissões configuráveis para cada tipo de utilizador': 'Configurable roles and permissions for each type of user',
+        'Faturas em PDF geradas com jsPDF e gráficos com Chart.js': 'PDF invoices generated with jsPDF and charts with Chart.js',
+        'Publicado num alojamento partilhado (InfinityFree) com Apache e .htaccess': 'Deployed on shared hosting (InfinityFree) with Apache and .htaccess',
+        'Online, alojado no InfinityFree. O código no GitHub corresponde à versão anterior (front-end com Firebase).':
+            'Live, hosted on InfinityFree. The code on GitHub is the previous version (front-end with Firebase).',
+        'Da versão estática a um sistema completo': 'From a static site to a complete system',
+        'A primeira versão era só front-end, com os dados guardados no navegador e no Firebase. O sistema foi convertido para PHP e MySQL, mantendo a identidade visual (cores, tema escuro, layout e páginas) do projeto original.':
+            'The first version was front-end only, with data stored in the browser and in Firebase. The system was rebuilt in PHP and MySQL, keeping the original visual identity (colours, dark mode, layout and pages).',
+        'Vários negócios, dados separados': 'Many businesses, separate data',
+        'Cada empresa tem os seus utilizadores, clientes, vendas e faturas. Um middleware próprio verifica em cada pedido a que empresa pertence o utilizador, para impedir o acesso aos dados de outras empresas.':
+            'Each company has its own users, customers, sales and invoices. A dedicated middleware checks on every request which company the user belongs to, preventing access to other companies’ data.',
+        'Segurança de uma aplicação real': 'Security for a real application',
+        'Proteção contra CSRF nos formulários, consultas preparadas na base de dados, palavras-passe com hash, limite de tentativas de login, registo de auditoria e bloqueio de ficheiros sensíveis (configuração e base de dados) no servidor.':
+            'CSRF protection on forms, prepared database statements, hashed passwords, login attempt limits, audit logging and blocked access to sensitive files (configuration and database) on the server.',
+        'Publicação num alojamento gratuito': 'Deploying to free hosting',
+        'O sistema foi preparado para alojamento partilhado: configuração do servidor num ficheiro próprio, erros registados num log em produção em vez de aparecerem no ecrã, e um guia de publicação passo a passo.':
+            'The system was prepared for shared hosting: server settings in a separate file, errors written to a log in production instead of being shown on screen, and a step-by-step deployment guide.',
+
         /* --- CV --- */
         'Voltar ao portfólio': 'Back to portfolio',
         'Para obter um PDF, clique em «Imprimir» e escolha «Guardar como PDF».': 'To get a PDF, click “Print” and choose “Save as PDF”.',
