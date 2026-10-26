@@ -444,6 +444,59 @@
         'Agricultor': 'Farmer',
         'Comprador': 'Buyer',
 
+        /* --- SumbaneCredit (README) --- */
+        'Sumbane Pay · SumbaneCredit · Sistema de RH · AgroMercado · CourtIQ MZ': 'Sumbane Pay · SumbaneCredit · HR System · AgroMercado · CourtIQ MZ',
+        'Sumbane Pay · SumbaneCredit · Sistema de RH · AgroMercado · CourtIQ MZ · SmartCare': 'Sumbane Pay · SumbaneCredit · HR System · AgroMercado · CourtIQ MZ · SmartCare',
+        'Transações, idempotência e razão imutável': 'Transactions, idempotency and an immutable ledger',
+        'Testes automáticos com PHPUnit': 'Automated tests with PHPUnit',
+        'Gestão de microcrédito': 'Microcredit management',
+        '— Gestão de microcrédito': '— Microcredit management',
+        'Sistema de gestão de microcrédito para Moçambique: website institucional, portal do cliente e painel administrativo, com motor financeiro em decimal, razão imutável, auditoria, permissões por perfil, documentos PDF/Excel e tarefas agendadas.':
+            'A microcredit management system for Mozambique: institutional website, client portal and admin panel, with a decimal financial engine, immutable ledger, auditing, role-based permissions, PDF/Excel documents and scheduled jobs.',
+        'Aplicação web em Laravel para uma instituição de microcrédito em Moçambique. Junta numa só aplicação o website institucional, o portal do cliente e o painel administrativo, da simulação do crédito à cobrança.':
+            'A Laravel web application for a microcredit institution in Mozambique. It brings the institutional website, client portal and admin panel into a single application, from loan simulation to collections.',
+        'Instituições de microcrédito em Moçambique, os seus funcionários (gestão de crédito, agentes, caixa e contabilidade) e os seus clientes.':
+            'Microcredit institutions in Mozambique, their staff (credit management, agents, cashiers and accounting) and their clients.',
+        'Simulação de crédito e pedidos online, com uma máquina de estados para cada pedido': 'Loan simulation and online applications, with a state machine for each application',
+        'Avaliação de crédito com regras configuráveis (a decisão final é sempre humana)': 'Credit assessment with configurable rules (the final decision is always human)',
+        'Produtos de crédito versionados, com taxas, encargos e penalizações definidos por produto': 'Versioned loan products, with rates, fees and penalties defined per product',
+        'Desembolsos e plano de prestações: prestações constantes, amortização constante ou juros simples': 'Disbursements and repayment schedules: equal instalments, equal principal or simple interest',
+        'Pagamentos com imputação automática, liquidação antecipada, estornos e reestruturação': 'Payments with automatic allocation, early settlement, reversals and restructuring',
+        'Cobranças com registo de contactos e promessas de pagamento': 'Collections with contact logs and payment promises',
+        '14 relatórios no ecrã, em PDF e em Excel': '14 reports on screen, in PDF and in Excel',
+        'Documentos em PDF: contrato, plano de pagamentos, recibo, desembolso e extrato': 'PDF documents: contract, repayment schedule, receipt, disbursement and statement',
+        'Portal do cliente, notificações por email (e SMS opcional) e autenticação de dois fatores': 'Client portal, email notifications (optional SMS) and two-factor authentication',
+        'Tarefas agendadas diárias: atrasos, penalizações, lembretes e reconciliação de saldos': 'Daily scheduled jobs: arrears, penalties, reminders and balance reconciliation',
+        'Administrador': 'Administrator',
+        'Gestor de Crédito': 'Credit Manager',
+        'Agente de Crédito': 'Credit Agent',
+        'Caixa': 'Cashier',
+        'Contabilista': 'Accountant',
+        'Cliente': 'Client',
+        'Laravel 12 organizado em serviços de domínio: financeiro, crédito, empréstimos, pagamentos, cobranças, relatórios e documentos':
+            'Laravel 12 organised into domain services: finance, credit, loans, payments, collections, reports and documents',
+        'Motor financeiro puro com aritmética decimal (DECIMAL(15,2) e bcmath), sem números de vírgula flutuante': 'Pure financial engine with decimal arithmetic (DECIMAL(15,2) and bcmath), no floating-point numbers',
+        'Razão e auditoria imutáveis, transações MySQL com bloqueio de linhas, índices únicos e chaves de idempotência': 'Immutable ledger and audit trail, MySQL transactions with row locking, unique indexes and idempotency keys',
+        'Permissões por perfil (spatie/laravel-permission) e políticas que garantem que cada cliente só vê os seus registos': 'Role-based permissions (spatie/laravel-permission) and policies ensuring each client only sees their own records',
+        'Eventos de domínio e notificações em fila (base de dados, email e SMS)': 'Domain events and queued notifications (database, email and SMS)',
+        'PDF com laravel-dompdf e Excel com maatwebsite/excel': 'PDF with laravel-dompdf and Excel with maatwebsite/excel',
+        'Testes automáticos com PHPUnit, incluindo o motor financeiro e a autenticação': 'Automated tests with PHPUnit, including the financial engine and authentication',
+        'Funcional em ambiente local, com dados de demonstração. Antes de produção faltam as integrações reais (email, SMS, M-Pesa e e-Mola) e a validação legal e regulatória pela instituição.':
+            'Working locally with demo data. Before production it still needs the real integrations (email, SMS, M-Pesa and e-Mola) and legal and regulatory validation by the institution.',
+        'Capa do projeto SumbaneCredit': 'SumbaneCredit project cover',
+        'Dinheiro sem erros de arredondamento': 'Money without rounding errors',
+        'Todos os valores usam DECIMAL(15,2) na base de dados e bcmath em PHP, com arredondamento a 2 casas. A última prestação absorve as diferenças, para que a soma do capital seja exatamente o capital financiado.':
+            'All amounts use DECIMAL(15,2) in the database and bcmath in PHP, rounded to 2 decimal places. The last instalment absorbs any difference, so the principal adds up exactly to the amount financed.',
+        'Nenhum pagamento em duplicado': 'No duplicate payments',
+        'Transações com bloqueio de linhas, índices únicos em desembolsos, pagamentos e referências, e chaves de idempotência por formulário impedem registos repetidos. Uma tarefa diária reconcilia saldos, prestações, razão e pagamentos.':
+            'Row-locking transactions, unique indexes on disbursements, payments and references, and per-form idempotency keys prevent duplicate records. A daily job reconciles balances, instalments, ledger and payments.',
+        'Separação de funções': 'Segregation of duties',
+        'O Super Administrador gere a configuração, os utilizadores e as permissões, mas não aprova crédito, não executa desembolsos nem confirma pagamentos: essas decisões ficam com os perfis responsáveis.':
+            'The Super Administrator manages settings, users and permissions but does not approve loans, execute disbursements or confirm payments: those decisions belong to the responsible roles.',
+        'Integrações sem simulação': 'No simulated integrations',
+        'Sem credenciais, os pagamentos M-Pesa e e-Mola, o SMS e o email não são simulados: o sistema indica que o registo deve ser manual e a arquitetura de gateways fica pronta para os fornecedores oficiais.':
+            'Without credentials, M-Pesa and e-Mola payments, SMS and email are not simulated: the system indicates that records must be entered manually, and the gateway architecture is ready for the official providers.',
+
         /* --- CV --- */
         'Voltar ao portfólio': 'Back to portfolio',
         'Para obter um PDF, clique em «Imprimir» e escolha «Guardar como PDF».': 'To get a PDF, click “Print” and choose “Save as PDF”.',
