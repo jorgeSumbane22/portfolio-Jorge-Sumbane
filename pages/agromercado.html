@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgroMercado — Projeto | Jorge Sumbane</title>
-    <meta name="description" content="Direto do campo moçambicano. Marketplace que aproxima quem planta de quem compra. Os agricultores publicam os seus produtos e os compradores encomendam diretamente, com preço justo para quem produz.">
+    <meta name="description" content="Direto do campo moçambicano. Marketplace agrícola que aproxima agricultores e compradores em Moçambique. Os agricultores publicam e gerem os seus produtos; os compradores pesquisam, encomendam e acompanham os pedidos; um SuperAdmin gere a plataforma.">
     <meta name="author" content="Jorge Lourenço Sumbane">
     <meta name="theme-color" content="#1e3a8a">
     <link rel="canonical" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/agromercado.html">
@@ -16,7 +16,7 @@
     <meta property="og:locale:alternate" content="en_GB">
     <meta property="og:url" content="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/agromercado.html">
     <meta property="og:title" content="AgroMercado — Jorge Sumbane">
-    <meta property="og:description" content="Direto do campo moçambicano. Marketplace que aproxima quem planta de quem compra. Os agricultores publicam os seus produtos e os compradores encomendam diretamente, com preço justo para quem produz.">
+    <meta property="og:description" content="Direto do campo moçambicano. Marketplace agrícola que aproxima agricultores e compradores em Moçambique. Os agricultores publicam e gerem os seus produtos; os compradores pesquisam, encomendam e acompanham os pedidos; um SuperAdmin gere a plataforma.">
     <meta property="og:image" content="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/assets/img/agromercado.webp">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -42,7 +42,7 @@
         "@context": "https://schema.org",
         "@type": "CreativeWork",
         "name": "AgroMercado",
-        "description": "Marketplace que aproxima quem planta de quem compra. Os agricultores publicam os seus produtos e os compradores encomendam diretamente, com preço justo para quem produz.",
+        "description": "Marketplace agrícola que aproxima agricultores e compradores em Moçambique. Os agricultores publicam e gerem os seus produtos; os compradores pesquisam, encomendam e acompanham os pedidos; um SuperAdmin gere a plataforma.",
         "url": "https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/pages/agromercado.html",
         "image": "https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/assets/img/agromercado.webp",
         "inLanguage": "pt",
@@ -50,7 +50,8 @@
             "@type": "Person",
             "name": "Jorge Lourenço Sumbane",
             "url": "https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/"
-        }
+        },
+        "codeRepository": "https://github.com/jorgeSumbane22/AgroMercado"
     }
     </script>
 </head>
@@ -131,6 +132,9 @@
                 <div class="project-meta"><span class="badge badge-done">Concluído</span><span class="project-kind">Web · Marketplace</span></div>
                 <h1 class="case-title">AgroMercado</h1>
                 <p class="case-sub">Direto do campo moçambicano</p>
+                <div class="project-links">
+                    <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/AgroMercado" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                </div>
             </header>
 
             <figure class="case-figure">
@@ -141,7 +145,7 @@
                 <article class="case-main">
                     <section class="case-section">
                         <h2>Visão geral</h2>
-                        <p>Marketplace que aproxima quem planta de quem compra. Os agricultores publicam os seus produtos e os compradores encomendam diretamente, com preço justo para quem produz.</p>
+                        <p>Marketplace agrícola que aproxima agricultores e compradores em Moçambique. Os agricultores publicam e gerem os seus produtos; os compradores pesquisam, encomendam e acompanham os pedidos; um SuperAdmin gere a plataforma.</p>
                     </section>
 
                     <section class="case-section">
@@ -152,12 +156,31 @@
                     <section class="case-section">
                         <h2>Funcionalidades</h2>
                         <ul class="detail-list">
-                            <li>Catálogo de produtos frescos organizado por categorias</li>
-                            <li>Carrinho de compras e encomendas</li>
-                            <li>Gestão de pedidos e acompanhamento da entrega</li>
-                            <li>Contas separadas para compradores e vendedores</li>
-                            <li>Perfis de agricultores com a sua localização</li>
-                            <li>Tema claro e escuro, adaptado a telemóvel</li>
+                            <li>Pesquisa por produto, categoria, agricultor e localização, com filtros de preço, stock e verificação</li>
+                            <li>Favoritos, carrinho e checkout com dados de entrega</li>
+                            <li>Acompanhamento do estado e histórico dos pedidos</li>
+                            <li>Agricultores verificados, com perfil público e publicação de produtos com imagens</li>
+                            <li>Gestão de stock, pedidos, clientes, vendas e relatórios para o agricultor</li>
+                            <li>Painel de SuperAdmin: agricultores, compradores, produtos, categorias, pedidos, pagamentos, avaliações, verificações, relatórios e auditoria</li>
+                            <li>Método e referência de pagamento (M-Pesa, e-Mola) guardados para futura ligação às APIs oficiais</li>
+                            <li>Notificações e dashboards com gráficos</li>
+                        </ul>
+                    </section>
+
+                    <section class="case-section">
+                        <h2>Perfis de utilizador</h2>
+                        <ul class="chips"><li>SuperAdmin</li><li>Agricultor</li><li>Comprador</li></ul>
+                    </section>
+
+                    <section class="case-section">
+                        <h2>Destaques técnicos</h2>
+                        <ul class="detail-list">
+                            <li>PHP 8 renderizado no servidor, com PDO e sessões, sem frameworks</li>
+                            <li>Endpoints JSON usados com a Fetch API (carrinho e operações assíncronas)</li>
+                            <li>Checkout numa transação que valida e reduz o stock no momento do pedido</li>
+                            <li>Segurança: consultas preparadas, token CSRF, palavras-passe com hash, cookies HttpOnly/SameSite e controlo de permissões por papel</li>
+                            <li>Upload seguro de imagens (validação de tipo e tamanho, nomes aleatórios)</li>
+                            <li>Dashboards com Chart.js e interface em Bootstrap 5</li>
                         </ul>
                     </section>
 
@@ -176,14 +199,17 @@
                     <div class="case-card">
                         <h2>Estado</h2>
                         <span class="badge badge-done">Concluído</span>
+                        <p class="case-muted case-note">Concluído. Os pagamentos M-Pesa e e-Mola estão preparados para ligação futura às APIs oficiais.</p>
                     </div>
                     <div class="case-card">
                         <h2>Tecnologias</h2>
-                        <ul class="chips chips-sm"><li>Marketplace</li><li>Carrinho</li><li>Gestão de pedidos</li><li>Contas de vendedor</li><li>Responsivo</li></ul>
+                        <ul class="chips chips-sm"><li>PHP 8</li><li>MySQL</li><li>PDO</li><li>JavaScript</li><li>Bootstrap 5</li><li>Chart.js</li></ul>
                     </div>
                     <div class="case-card">
                         <h2>Links</h2>
-                        <p class="case-muted">Demonstração e código ainda não estão disponíveis publicamente.</p>
+                        <div class="project-links">
+                            <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/AgroMercado" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                        </div>
                     </div>
                 </aside>
             </div>

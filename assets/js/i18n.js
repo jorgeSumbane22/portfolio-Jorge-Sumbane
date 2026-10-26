@@ -417,6 +417,33 @@
         'O sistema foi preparado para alojamento partilhado: configuração do servidor num ficheiro próprio, erros registados num log em produção em vez de aparecerem no ecrã, e um guia de publicação passo a passo.':
             'The system was prepared for shared hosting: server settings in a separate file, errors written to a log in production instead of being shown on screen, and a step-by-step deployment guide.',
 
+        /* --- AgroMercado (README e código) --- */
+        'Sumbane Pay · Sistema de RH · AgroMercado · CourtIQ MZ': 'Sumbane Pay · HR System · AgroMercado · CourtIQ MZ',
+        'Sumbane Pay · Sistema de RH · AgroMercado · CourtIQ MZ · SmartCare': 'Sumbane Pay · HR System · AgroMercado · CourtIQ MZ · SmartCare',
+        'Marketplace agrícola que aproxima agricultores e compradores em Moçambique: pesquisa com filtros, favoritos, carrinho, checkout com controlo de stock, acompanhamento de pedidos e áreas próprias para agricultor, comprador e SuperAdmin.':
+            'An agricultural marketplace connecting farmers and buyers in Mozambique: search with filters, favourites, cart, stock-aware checkout, order tracking and dedicated areas for farmers, buyers and the SuperAdmin.',
+        'Marketplace agrícola que aproxima agricultores e compradores em Moçambique. Os agricultores publicam e gerem os seus produtos; os compradores pesquisam, encomendam e acompanham os pedidos; um SuperAdmin gere a plataforma.':
+            'An agricultural marketplace connecting farmers and buyers in Mozambique. Farmers publish and manage their products; buyers search, order and track their orders; a SuperAdmin runs the platform.',
+        'Pesquisa por produto, categoria, agricultor e localização, com filtros de preço, stock e verificação': 'Search by product, category, farmer and location, with price, stock and verification filters',
+        'Favoritos, carrinho e checkout com dados de entrega': 'Favourites, cart and checkout with delivery details',
+        'Acompanhamento do estado e histórico dos pedidos': 'Order status tracking and history',
+        'Agricultores verificados, com perfil público e publicação de produtos com imagens': 'Verified farmers with public profiles and product listings with images',
+        'Gestão de stock, pedidos, clientes, vendas e relatórios para o agricultor': 'Stock, orders, customers, sales and reports for farmers',
+        'Painel de SuperAdmin: agricultores, compradores, produtos, categorias, pedidos, pagamentos, avaliações, verificações, relatórios e auditoria':
+            'SuperAdmin panel: farmers, buyers, products, categories, orders, payments, reviews, verifications, reports and auditing',
+        'Método e referência de pagamento (M-Pesa, e-Mola) guardados para futura ligação às APIs oficiais': 'Payment method and reference (M-Pesa, e-Mola) stored for future integration with the official APIs',
+        'Notificações e dashboards com gráficos': 'Notifications and dashboards with charts',
+        'PHP 8 renderizado no servidor, com PDO e sessões, sem frameworks': 'Server-rendered PHP 8 with PDO and sessions, no frameworks',
+        'Endpoints JSON usados com a Fetch API (carrinho e operações assíncronas)': 'JSON endpoints used with the Fetch API (cart and asynchronous operations)',
+        'Checkout numa transação que valida e reduz o stock no momento do pedido': 'Checkout in a database transaction that validates and reduces stock when the order is placed',
+        'Segurança: consultas preparadas, token CSRF, palavras-passe com hash, cookies HttpOnly/SameSite e controlo de permissões por papel':
+            'Security: prepared statements, CSRF tokens, hashed passwords, HttpOnly/SameSite cookies and role-based permissions',
+        'Upload seguro de imagens (validação de tipo e tamanho, nomes aleatórios)': 'Secure image uploads (type and size validation, random file names)',
+        'Dashboards com Chart.js e interface em Bootstrap 5': 'Dashboards with Chart.js and a Bootstrap 5 interface',
+        'Concluído. Os pagamentos M-Pesa e e-Mola estão preparados para ligação futura às APIs oficiais.': 'Completed. M-Pesa and e-Mola payments are ready to be connected to the official APIs in the future.',
+        'Agricultor': 'Farmer',
+        'Comprador': 'Buyer',
+
         /* --- CV --- */
         'Voltar ao portfólio': 'Back to portfolio',
         'Para obter um PDF, clique em «Imprimir» e escolha «Guardar como PDF».': 'To get a PDF, click “Print” and choose “Save as PDF”.',
