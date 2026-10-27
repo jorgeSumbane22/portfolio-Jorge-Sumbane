@@ -207,8 +207,9 @@
         'Ver certificado': 'View certificate',
         'Experiência': 'Experience',
         'Experiência profissional': 'Professional experience',
-        'Atualmente': 'Present',
-        'Estagiário': 'Intern',
+        'Outubro de 2026 — presente': 'October 2026 — present',
+        'Estagiário em Desenvolvimento Web': 'Web Development Intern',
+        'Manutenção de sistemas web.': 'Maintenance of web systems.',
 
         /* --- Contacto e rodapé --- */
         'Contacto': 'Contact',

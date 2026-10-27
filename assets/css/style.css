@@ -1987,3 +1987,5 @@ a.gh-card:hover {
 /* Cursos: entidade, data e link para o certificado */
 .cert-list .cert-meta { display: block; margin-top: 2px; font-size: .78rem; color: var(--text-3); }
 .cert-list .cert-link { display: inline-block; margin-top: 4px; font-size: .82rem; font-weight: 600; color: var(--primary-text); text-decoration: underline; text-underline-offset: 3px; }
+.timeline-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.timeline-tags li { padding: 3px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary-text); font-size: .78rem; font-weight: 600; }

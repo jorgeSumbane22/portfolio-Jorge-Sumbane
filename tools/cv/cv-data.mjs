@@ -44,8 +44,8 @@ export const summary = {
 
 /*
  * EXPERIÊNCIA PROFISSIONAL
- * Confirmado: estágio atual na ACSUN. Por confirmar: data de início, área do estágio,
- * responsabilidades e tecnologias — acrescente-as em "period", "points" e "tech" quando as tiver.
+ * Estágio na ACSUN desde outubro de 2026 (desenvolvimento web, manutenção de sistemas).
+ * Atualize "points" e "tech" quando as responsabilidades mudarem.
  * Campos opcionais: place, points, tech. Modelo completo:
  *
  *  {
@@ -62,16 +62,21 @@ export const summary = {
  */
 export const experience = [
     {
-        role: { pt: 'Estagiário', en: 'Intern' },
+        role: { pt: 'Estagiário em Desenvolvimento Web', en: 'Web Development Intern' },
         company: 'ACSUN',
-        period: { pt: 'Atualmente', en: 'Present' }
+        period: { pt: 'out. 2026 – presente', en: 'Oct 2026 – present' },
+        points: {
+            pt: ['Manutenção de sistemas web.'],
+            en: ['Maintenance of web systems.']
+        },
+        tech: 'React · Node.js · PHP · JavaScript · HTML · CSS · Python · Bootstrap · MySQL'
     }
 ];
 
 /* Competências técnicas: só tecnologias usadas nos projetos ou declaradas no portfólio. */
 export const skills = [
     { group: { pt: 'Front-end', en: 'Front-end' }, items: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'React'] },
-    { group: { pt: 'Back-end', en: 'Back-end' }, items: ['PHP 8', 'Laravel', 'Java', 'Spring Boot'] },
+    { group: { pt: 'Back-end', en: 'Back-end' }, items: ['PHP 8', 'Laravel', 'Node.js', 'Java', 'Spring Boot', 'Python'] },
     { group: { pt: 'Bases de dados', en: 'Databases' }, items: ['MySQL / MariaDB', 'SQL', 'Firebase'] },
     { group: { pt: 'Ferramentas', en: 'Tools' }, items: ['Git', 'GitHub', 'GitLab', 'VS Code', 'Composer', 'Maven', 'XAMPP'] },
     {
