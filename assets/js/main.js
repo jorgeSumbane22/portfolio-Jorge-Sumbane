@@ -13,12 +13,13 @@ const FORMSPREE_ID = '';
 const CONTACT_EMAIL = 'jsumbane22@gmail.com';
 
 /*
- * CV EM PDF
- * Para oferecer um ficheiro PDF real, coloque-o em assets/cv/ e escreva o caminho abaixo,
- * por exemplo: const CV_PDF = 'assets/cv/Jorge-Sumbane-CV.pdf';
- * Enquanto estiver vazio, o botão abre o CV em HTML (cv.html), pronto a imprimir ou guardar como PDF.
+ * CV EM PDF (gerados por tools/cv/build-cv.mjs a partir de tools/cv/cv-data.mjs)
+ * O botão "Descarregar CV" escolhe o ficheiro da língua ativa.
  */
-const CV_PDF = '';
+const CV_PDF = {
+    pt: 'assets/cv/Jorge_Lourenco_Sumbane_CV_PT.pdf',
+    en: 'assets/cv/Jorge_Lourenco_Sumbane_CV_EN.pdf'
+};
 
 (function () {
     'use strict';
@@ -317,21 +318,22 @@ const CV_PDF = '';
         reveals.forEach((el) => el.classList.add('is-visible'));
     });
 
-    /* ---------- Botão do CV ---------- */
+    /* ---------- Botões do CV: ver (página) e descarregar (PDF) ---------- */
     const cvLink = $('#cvLink');
     const cvLabel = $('#cvLabel');
+    const cvPdf = $('#cvPdf');
+    const cvPdfLabel = $('#cvPdfLabel');
     function updateCv() {
-        if (!cvLink) return;
         const en = window.I18N && window.I18N.lang === 'en';
-        if (CV_PDF) {
-            // existe um PDF real: o botão descarrega-o
-            cvLink.href = CV_PDF;
-            cvLink.setAttribute('download', '');
-            cvLabel.textContent = tr('cvDownload', 'Descarregar CV (PDF)');
-        } else {
+        if (cvLink) {
             cvLink.href = 'cv.html' + (en ? '?lang=en' : '');
-            cvLink.removeAttribute('download');
-            cvLabel.textContent = tr('cvPrint', 'CV para imprimir / PDF');
+            if (cvLabel) cvLabel.textContent = tr('cvView', 'Ver CV');
+        }
+        if (cvPdf) {
+            const file = en ? CV_PDF.en : CV_PDF.pt;
+            cvPdf.href = file;
+            cvPdf.setAttribute('download', file.split('/').pop());
+            if (cvPdfLabel) cvPdfLabel.textContent = tr('cvDownload', 'Descarregar CV');
         }
     }
     updateCv();

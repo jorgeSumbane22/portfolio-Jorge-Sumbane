@@ -497,6 +497,15 @@
         'Sem credenciais, os pagamentos M-Pesa e e-Mola, o SMS e o email não são simulados: o sistema indica que o registo deve ser manual e a arquitetura de gateways fica pronta para os fornecedores oficiais.':
             'Without credentials, M-Pesa and e-Mola payments, SMS and email are not simulated: the system indicates that records must be entered manually, and the gateway architecture is ready for the official providers.',
 
+        /* --- CV: botões --- */
+        'Ver CV': 'View CV',
+        'Descarregar CV': 'Download CV',
+        'Descarregar PDF': 'Download PDF',
+        'Imprimir': 'Print',
+        'Abre o CV interativo': 'Opens the interactive CV',
+        'Descarrega o CV em PDF': 'Downloads the CV as a PDF',
+        'Imprime esta página (o tema escuro não é impresso)': 'Prints this page (the dark theme is not printed)',
+
         /* --- CV --- */
         'Voltar ao portfólio': 'Back to portfolio',
         'Para obter um PDF, clique em «Imprimir» e escolha «Guardar como PDF».': 'To get a PDF, click “Print” and choose “Save as PDF”.',
@@ -534,7 +543,7 @@
             resultsAll: '{n} projetos', resultsSome: '{n} de {total} projetos',
             emailCopied: 'Email copiado!', linkCopied: 'Link copiado!', copyFailed: 'Não foi possível copiar.', copyLink: 'Copiar link',
             fullPage: 'Página completa do projeto',
-            cvPrint: 'CV para imprimir / PDF', cvDownload: 'Descarregar CV (PDF)',
+            cvPrint: 'CV para imprimir / PDF', cvView: 'Ver CV', cvDownload: 'Descarregar CV',
             noteMailto: 'Ao enviar, abre-se o seu programa de email com a mensagem já escrita. Também pode usar o WhatsApp.',
             noteFormspree: 'A mensagem é enviada diretamente para o meu email.'
         },
@@ -560,7 +569,7 @@
             resultsAll: '{n} projects', resultsSome: '{n} of {total} projects',
             emailCopied: 'Email copied!', linkCopied: 'Link copied!', copyFailed: "Couldn't copy.", copyLink: 'Copy link',
             fullPage: 'Full project page',
-            cvPrint: 'CV to print / PDF', cvDownload: 'Download CV (PDF)',
+            cvPrint: 'CV to print / PDF', cvView: 'View CV', cvDownload: 'Download CV',
             noteMailto: 'Sending opens your email app with the message ready. You can also use WhatsApp.',
             noteFormspree: 'Your message is sent straight to my email.'
         }

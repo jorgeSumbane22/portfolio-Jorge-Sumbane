@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html lang="pt" data-title-en="Jorge Sumbane — CV | Software Developer">
+<!-- Gerado por tools/cv/build-cv.mjs a partir de tools/cv/cv-data.mjs. Não editar à mão. -->
+<html lang="pt" data-title-en="CV — Jorge Lourenço Sumbane | Full-Stack Software Developer">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jorge Sumbane — CV | Desenvolvedor de Software</title>
-    <meta name="description" content="Currículo de Jorge Lourenço Sumbane, desenvolvedor de software em Maputo, Moçambique. Versão pronta para imprimir ou guardar como PDF.">
+    <title>CV — Jorge Lourenço Sumbane | Desenvolvedor de Software Full-Stack</title>
+    <meta name="description" content="Currículo de Jorge Lourenço Sumbane, desenvolvedor de software full-stack em Maputo, Moçambique. Projetos em PHP, Laravel, MySQL e Java. Versão em PDF para português e inglês.">
     <meta name="author" content="Jorge Lourenço Sumbane">
     <meta name="theme-color" content="#1e3a8a">
     <link rel="canonical" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/cv.html">
+    <link rel="alternate" hreflang="pt" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/cv.html">
+    <link rel="alternate" hreflang="en" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/cv.html?lang=en">
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="CV — Jorge Lourenço Sumbane">
+    <meta property="og:description" content="Desenvolvedor de Software Full-Stack · Maputo, Moçambique">
+    <meta property="og:url" content="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/cv.html">
+    <meta property="og:image" content="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/assets/img/og-image.jpg">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
     <script>
         (function () {
@@ -69,7 +78,6 @@
                 <svg class="icon icon-flip" aria-hidden="true"><use href="#i-arrow"/></svg>
                 <span>Voltar ao portfólio</span>
             </a>
-            <p class="cv-hint">Para obter um PDF, clique em «Imprimir» e escolha «Guardar como PDF».</p>
             <div class="cv-toolbar-actions">
                 <button class="lang-btn" id="langToggle" type="button" aria-label="Mudar para inglês" title="English / Português">
                     <svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg>
@@ -79,169 +87,387 @@
                     <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
                     <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
                 </button>
-                <button class="btn btn-primary btn-sm" id="printBtn" type="button">
+                <button class="btn btn-ghost btn-sm" id="printBtn" type="button" title="Imprime esta página (o tema escuro não é impresso)">
                     <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>
-                    <span>Imprimir / guardar PDF</span>
+                    <span>Imprimir</span>
                 </button>
+                <a class="btn btn-primary btn-sm" id="cvDownload" href="assets/cv/Jorge_Lourenco_Sumbane_CV_PT.pdf" download data-pdf-pt="assets/cv/Jorge_Lourenco_Sumbane_CV_PT.pdf" data-pdf-en="assets/cv/Jorge_Lourenco_Sumbane_CV_EN.pdf">
+                    <svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>
+                    <span>Descarregar PDF</span>
+                </a>
             </div>
         </div>
     </div>
 
-    <main class="cv-sheet" id="conteudo">
-        <header class="cv-head">
-            <img class="cv-photo" src="assets/img/profile-400.webp" alt="Fotografia de Jorge Lourenço Sumbane" width="400" height="600">
-            <div>
-                <h1 class="cv-name">Jorge Lourenço Sumbane</h1>
-                <p class="cv-role">Desenvolvedor de Software</p>
-                <ul class="cv-contacts">
-                    <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Maputo, Moçambique</span></li>
-                    <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:jsumbane22@gmail.com">jsumbane22@gmail.com</a></li>
-                    <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+258845872347">+258 84 587 2347</a></li>
-                    <li><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><a href="https://www.linkedin.com/in/jorge-sumbane-sumbane-174478320/">linkedin.com/in/jorge-sumbane-sumbane-174478320</a></li>
-                    <li><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><a href="https://github.com/jorgeSumbane22">github.com/jorgeSumbane22</a></li>
-                    <li><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><a href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/">jorgesumbane22.github.io/portfolio-Jorge-Sumbane</a></li>
-                </ul>
-            </div>
-        </header>
+    <main class="cv-wrap" id="conteudo">
 
-        <section class="cv-section">
-            <h2>Perfil</h2>
-            <p>Desenvolvedor de software e estudante finalista de Informática de Sistemas no ISCIM, em Maputo. Crio aplicações web e sistemas em Java, do front-end à base de dados, com atenção à organização do código e à experiência do utilizador.</p>
-        </section>
+            <article class="cv-doc" data-cv-lang="pt" lang="pt" data-no-i18n>
+                <header class="cv-hero">
+                    <img class="cv-photo" src="assets/img/profile-400.webp" alt="Fotografia de Jorge Lourenço Sumbane" width="400" height="600">
+                    <div class="cv-id">
+                        <h1 class="cv-name">Jorge Lourenço Sumbane</h1>
+                        <p class="cv-role">Desenvolvedor de Software Full-Stack</p>
+                        <ul class="cv-contacts" aria-label="Contacto">
+                        <li><span class="cv-contact-static"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Maputo, Moçambique</span></span></li>
+                        <li><a href="mailto:jsumbane22@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>jsumbane22@gmail.com</span></a></li>
+                        <li><a href="tel:+258845872347"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>+258 84 587 2347</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/jorge-sumbane-sumbane-174478320/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a></li>
+                        <li><a href="https://github.com/jorgeSumbane22" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
+                        <li><a href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span>Portfólio</span></a></li>
+                        </ul>
+                    </div>
+                </header>
 
-        <section class="cv-section">
-            <h2>Competências técnicas</h2>
-            <dl class="cv-skills">
-                <div>
-                    <dt>Front-end</dt>
-                    <dd><span class="cv-skill">HTML5 <em>Avançado</em></span><span class="cv-skill">CSS3 <em>Avançado</em></span><span class="cv-skill">JavaScript <em>Avançado</em></span><span class="cv-skill">Design responsivo <em>Avançado</em></span></dd>
-                </div>
-                <div>
-                    <dt>Back-end</dt>
-                    <dd><span class="cv-skill">PHP <em>Avançado</em></span><span class="cv-skill">Java <em>Intermédio</em></span><span class="cv-skill">Python <em>Em evolução</em></span></dd>
-                </div>
-                <div>
-                    <dt>Frameworks e bibliotecas</dt>
-                    <dd><span class="cv-skill">React <em>Intermédio</em></span><span class="cv-skill">Spring Boot <em>Intermédio</em></span><span class="cv-skill">Laravel <em>Intermédio</em></span><span class="cv-skill">Bootstrap <em>Avançado</em></span></dd>
-                </div>
-                <div>
-                    <dt>Bases de dados</dt>
-                    <dd><span class="cv-skill">MySQL / SQL <em>Intermédio</em></span><span class="cv-skill">Firebase <em>Intermédio</em></span></dd>
-                </div>
-                <div>
-                    <dt>Ferramentas</dt>
-                    <dd><span class="cv-skill">Git / GitHub <em>Intermédio</em></span><span class="cv-skill">GitLab <em>Intermédio</em></span><span class="cv-skill">GitKraken <em>Intermédio</em></span><span class="cv-skill">VS Code <em>Avançado</em></span><span class="cv-skill">XAMPP / WAMP <em>Intermédio</em></span></dd>
-                </div>
-                <div>
-                    <dt>Arquitetura de software</dt>
-                    <dd><span class="cv-skill">Arquitetura em camadas (controladores, modelos, middleware)</span><span class="cv-skill">Arquitetura modular</span><span class="cv-skill">Programação orientada a objetos</span><span class="cv-skill">Plataforma multi-cliente (dados separados)</span><span class="cv-skill">Controlo de acesso por perfil</span><span class="cv-skill">Segurança web: CSRF, consultas preparadas, limite de logins</span><span class="cv-skill">ORM com Hibernate e padrões DAO/MVC</span><span class="cv-skill">Auditoria de atividades</span><span class="cv-skill">Transações, idempotência e razão imutável</span><span class="cv-skill">Testes automáticos com PHPUnit</span></dd>
-                </div>
-            </dl>
-        </section>
+                <div class="cv-grid">
+                    <div class="cv-main">
+                        <section class="cv-section" aria-labelledby="sum-pt">
+                            <h2 id="sum-pt">Resumo profissional</h2>
+                            <p class="cv-summary">Desenvolvedor de software full-stack em Maputo e finalista da licenciatura em Informática de Sistemas no ISCIM. Desenvolvo aplicações web completas em PHP 8 (puro e Laravel) com MySQL, JavaScript e Bootstrap, e aplicações desktop em Java. Entre os meus projetos estão uma plataforma de faturação SaaS publicada online, um sistema de microcrédito com motor financeiro e um marketplace agrícola, sempre com atenção à segurança, à organização do código e à experiência do utilizador. Procuro integrar uma equipa de desenvolvimento, presencial ou remota.</p>
+                        </section>
 
-        <section class="cv-section">
-            <h2>Projetos</h2>
-            <article class="cv-project">
-                <div class="cv-project-head">
-                    <h3>Sumbane Pay <span class="cv-sub">— Faturação e vendas para pequenos negócios</span></h3>
-                    <span class="cv-status">Online</span>
-                </div>
-                <p>Plataforma de faturação para pequenos negócios em Moçambique: regista vendas, emite faturas em PDF, envia o resumo pelo WhatsApp e controla recebimentos por M-Pesa, e-Mola, dinheiro ou transferência. Várias empresas no mesmo sistema, com planos, painel de superadmin e tema escuro.</p>
-                <p class="cv-tech">PHP 8 · MySQL · JavaScript · Bootstrap 5 · Chart.js · jsPDF</p>
-                <p class="cv-links"><span>Ver online</span>: <a href="https://sumbanepay.freehosting.dev/">sumbanepay.freehosting.dev</a> · <span>Código</span>: <a href="https://github.com/jorgeSumbane22/SumbanePay">github.com/jorgeSumbane22/SumbanePay</a></p>
-            </article>
-            <article class="cv-project">
-                <div class="cv-project-head">
-                    <h3>SumbaneCredit <span class="cv-sub">— Gestão de microcrédito</span></h3>
-                    <span class="cv-status">Em desenvolvimento</span>
-                </div>
-                <p>Sistema de gestão de microcrédito para Moçambique: website institucional, portal do cliente e painel administrativo, com motor financeiro em decimal, razão imutável, auditoria, permissões por perfil, documentos PDF/Excel e tarefas agendadas.</p>
-                <p class="cv-tech">Laravel 12 · PHP 8.2 · MySQL · Bootstrap 5 · Chart.js · PHPUnit</p>
-                <p class="cv-links"><span>Código</span>: <a href="https://github.com/jorgeSumbane22/SumbaneCredit">github.com/jorgeSumbane22/SumbaneCredit</a></p>
-            </article>
-            <article class="cv-project">
-                <div class="cv-project-head">
-                    <h3>Sistema de RH <span class="cv-sub">— Gestão de Recursos Humanos</span></h3>
-                    <span class="cv-status">Em desenvolvimento</span>
-                </div>
-                <p>Aplicação web que centraliza a gestão de Recursos Humanos: funcionários, departamentos e cargos, férias, presenças, folha de pagamento, recrutamento e avaliação de desempenho, com seis perfis de acesso e registo de auditoria.</p>
-                <p class="cv-tech">PHP · MySQL · JavaScript · HTML5 · CSS3 · Composer · Dompdf</p>
-                <p class="cv-links"><span>Código</span>: <a href="https://github.com/jorgeSumbane22/Projeto-RH-Sistema">github.com/jorgeSumbane22/Projeto-RH-Sistema</a></p>
-            </article>
-            <article class="cv-project">
-                <div class="cv-project-head">
-                    <h3>AgroMercado <span class="cv-sub">— Direto do campo moçambicano</span></h3>
-                    <span class="cv-status">Concluído</span>
-                </div>
-                <p>Marketplace agrícola que aproxima agricultores e compradores em Moçambique: pesquisa com filtros, favoritos, carrinho, checkout com controlo de stock, acompanhamento de pedidos e áreas próprias para agricultor, comprador e SuperAdmin.</p>
-                <p class="cv-tech">PHP 8 · MySQL · PDO · JavaScript · Bootstrap 5 · Chart.js</p>
-                <p class="cv-links"><span>Código</span>: <a href="https://github.com/jorgeSumbane22/AgroMercado">github.com/jorgeSumbane22/AgroMercado</a></p>
-            </article>
-            <article class="cv-project">
-                <div class="cv-project-head">
-                    <h3>CourtIQ MZ <span class="cv-sub">— Gestão e análise de basquetebol</span></h3>
-                    <span class="cv-status">Em desenvolvimento</span>
-                </div>
-                <p>Plataforma de gestão de basquetebol em que vários clubes usam o mesmo sistema de forma independente: equipas, jogadores, treinadores, jogos, treinos, estatísticas e administração, com portal público e cinco perfis de acesso.</p>
-                <p class="cv-tech">PHP · MySQL · PDO · JavaScript · HTML5 · CSS3 · Apache</p>
-                <p class="cv-links"><span>Código</span>: <a href="https://github.com/jorgeSumbane22/CourtIQ-MZ">github.com/jorgeSumbane22/CourtIQ-MZ</a></p>
-            </article>
-            <article class="cv-project">
-                <div class="cv-project-head">
-                    <h3>SmartCare <span class="cv-sub">— Triagem hospitalar</span></h3>
-                    <span class="cv-status">Concluído</span>
-                </div>
-                <p>Sistema de triagem para centros de saúde que classifica automaticamente a prioridade de cada paciente com base no Protocolo de Manchester. Camada de persistência com ORM e padrão DAO, auditoria de dados, gráficos e interface desktop moderna.</p>
-                <p class="cv-tech">Java · Hibernate / JPA · MySQL · Swing + FlatLaf · JFreeChart · JUnit · Maven</p>
-                <p class="cv-links"><span>Código</span>: <a href="https://github.com/jorgeSumbane22/SmartCare-Triagem">github.com/jorgeSumbane22/SmartCare-Triagem</a></p>
-            </article>
-        </section>
+                        <section class="cv-section" aria-labelledby="proj-pt">
+                            <h2 id="proj-pt">Projetos</h2>
 
-        <section class="cv-section">
-            <h2>Formação</h2>
-            <article class="cv-item">
-                <div class="cv-project-head">
-                    <h3>Licenciatura em Informática de Sistemas</h3>
-                    <span class="cv-date">2022 — presente · conclusão prevista em 2026</span>
-                </div>
-                <p>Instituto Superior de Comunicação e Imagem de Moçambique (ISCIM) · Maputo</p>
-            </article>
-            <article class="cv-item">
-                <div class="cv-project-head">
-                    <h3>Ensino Secundário — Ciências com Biologia</h3>
-                    <span class="cv-date">Concluído</span>
-                </div>
-                <p>Escola Secundária da Polana · Maputo</p>
-            </article>
-        </section>
+                        <article class="cv-project" aria-labelledby="p-sumbanepay-pt">
+                            <header class="cv-project-head">
+                                <h3 id="p-sumbanepay-pt">Sumbane Pay</h3>
+                                <span class="badge badge-done">Online</span>
+                            </header>
+                            <p class="cv-project-desc">Plataforma SaaS de faturação e gestão de vendas para pequenos negócios em Moçambique, publicada online.</p>
+                            <ul class="cv-points">
+                                <li>Desenvolvi o back-end em PHP 8 (controladores, modelos, middleware e API JSON) a partir de uma primeira versão só de front-end.</li>
+                                <li>Implementei o modelo multi-empresa: um middleware isola os dados de cada empresa, com planos e limites de utilização.</li>
+                                <li>Apliquei proteção CSRF, consultas preparadas (PDO), limite de tentativas de login e auditoria; faturas em PDF com jsPDF.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Tecnologias:</strong> PHP 8 · MySQL · JavaScript · Bootstrap 5 · Chart.js · jsPDF</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-primary btn-sm" href="https://sumbanepay.freehosting.dev/" target="_blank" rel="noopener noreferrer">Demonstração <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbanePay" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                            </div>
+                        </article>
 
-        <div class="cv-two">
-            <section class="cv-section">
-                <h2>Cursos complementares</h2>
-                <ul class="cv-list">
-                    <li><strong>Java Básico</strong><span>Programação orientada a objetos</span></li>
-                    <li><strong>Lógica de Programação</strong><span>Algoritmos e estruturas de dados</span></li>
-                    <li><strong>PHP Fundamentals</strong><span>Desenvolvimento back-end com PHP</span></li>
-                    <li><strong>JavaScript Moderno (ES6+)</strong><span>Manipulação do DOM e APIs</span></li>
-                    <li><strong>MySQL — Bases de Dados</strong><span>Modelação e consultas SQL</span></li>
-                </ul>
-            </section>
-            <section class="cv-section">
-                <h2>Competências pessoais</h2>
-                <ul class="cv-tags">
-                    <li>Aprendizagem rápida</li>
-                    <li>Resolução de problemas</li>
-                    <li>Lógica de programação</li>
-                    <li>Código organizado</li>
-                    <li>Trabalho em equipa</li>
-                    <li>Comunicação eficaz</li>
-                    <li>Gestão de tempo</li>
-                    <li>Proatividade</li>
-                    <li>Adaptabilidade</li>
-                    <li>Atenção ao design UI/UX</li>
-                </ul>
-            </section>
-        </div>
+                        <article class="cv-project" aria-labelledby="p-sumbanecredit-pt">
+                            <header class="cv-project-head">
+                                <h3 id="p-sumbanecredit-pt">SumbaneCredit</h3>
+                                <span class="badge badge-ongoing">Em desenvolvimento</span>
+                            </header>
+                            <p class="cv-project-desc">Sistema de gestão de microcrédito com website institucional, portal do cliente e painel administrativo.</p>
+                            <ul class="cv-points">
+                                <li>Desenvolvi um motor financeiro com aritmética decimal (bcmath e DECIMAL) para prestações, juros, encargos e penalizações.</li>
+                                <li>Garanti a integridade dos pagamentos com transações, bloqueio de linhas, índices únicos, chaves de idempotência e reconciliação diária.</li>
+                                <li>Implementei 7 perfis de acesso com separação de funções, documentos PDF/Excel, notificações em fila e testes com PHPUnit.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Tecnologias:</strong> Laravel 12 · PHP 8.2 · MySQL · Bootstrap 5 · Chart.js · PHPUnit</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbaneCredit" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-agromercado-pt">
+                            <header class="cv-project-head">
+                                <h3 id="p-agromercado-pt">AgroMercado</h3>
+                                <span class="badge badge-done">Concluído</span>
+                            </header>
+                            <p class="cv-project-desc">Marketplace agrícola que liga agricultores e compradores em Moçambique.</p>
+                            <ul class="cv-points">
+                                <li>Implementei pesquisa com filtros, carrinho com Fetch API e checkout transacional que valida e reduz o stock.</li>
+                                <li>Criei áreas separadas para agricultor, comprador e SuperAdmin, com verificação de agricultores e auditoria.</li>
+                                <li>Apliquei consultas preparadas, tokens CSRF, cookies HttpOnly/SameSite e upload seguro de imagens.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Tecnologias:</strong> PHP 8 · MySQL · PDO · JavaScript · Bootstrap 5 · Chart.js</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/AgroMercado" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-courtiq-pt">
+                            <header class="cv-project-head">
+                                <h3 id="p-courtiq-pt">CourtIQ MZ</h3>
+                                <span class="badge badge-ongoing">Em desenvolvimento</span>
+                            </header>
+                            <p class="cv-project-desc">Plataforma de gestão de basquetebol em que vários clubes usam o mesmo sistema de forma independente.</p>
+                            <ul class="cv-points">
+                                <li>Desenvolvi uma arquitetura modular em PHP com os dados separados por clube numa única instalação.</li>
+                                <li>Implementei cinco perfis de acesso (SuperAdmin, administrador do clube, treinador, jogador e adepto), sessões e registo de atividades.</li>
+                                <li>Desenvolvi a gestão de jogos, treinos e estatísticas, e um portal público em português e inglês.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Tecnologias:</strong> PHP · MySQL · PDO · JavaScript · HTML5 · CSS3</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/CourtIQ-MZ" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-rh-pt">
+                            <header class="cv-project-head">
+                                <h3 id="p-rh-pt">RH-Sistema</h3>
+                                <span class="badge badge-ongoing">Em desenvolvimento</span>
+                            </header>
+                            <p class="cv-project-desc">Sistema de gestão de Recursos Humanos com seis perfis de acesso.</p>
+                            <ul class="cv-points">
+                                <li>Funcionários, departamentos, férias, presenças, folha de pagamento, recrutamento e avaliação de desempenho.</li>
+                                <li>Arquitetura modular em PHP orientado a objetos, permissões por perfil, auditoria e documentos PDF com Dompdf.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Tecnologias:</strong> PHP · MySQL · JavaScript · Composer · Dompdf</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/Projeto-RH-Sistema" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-smartcare-pt">
+                            <header class="cv-project-head">
+                                <h3 id="p-smartcare-pt">SmartCare</h3>
+                                <span class="badge badge-done">Concluído</span>
+                            </header>
+                            <p class="cv-project-desc">Sistema desktop de triagem hospitalar baseado no Protocolo de Manchester.</p>
+                            <ul class="cv-points">
+                                <li>Classificação automática da prioridade e fila de atendimento ordenada por urgência.</li>
+                                <li>Persistência com Hibernate/JPA e padrão DAO, interface Swing com FlatLaf, gráficos e testes com JUnit.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Tecnologias:</strong> Java · Hibernate/JPA · MySQL · Swing · Maven · JUnit</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SmartCare-Triagem" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
+                            </div>
+                        </article>
+                        </section>
+
+                        <section class="cv-section" aria-labelledby="edu-pt">
+                            <h2 id="edu-pt">Formação académica</h2>
+
+                        <article class="cv-item">
+                            <h3>Licenciatura em Informática de Sistemas</h3>
+                            <p class="cv-meta">Instituto Superior de Comunicação e Imagem de Moçambique (ISCIM) · Maputo</p>
+                            <p class="cv-meta cv-period">2022 – presente · conclusão prevista em 2026</p>
+                        </article>
+                        <article class="cv-item">
+                            <h3>Ensino Secundário — Ciências com Biologia</h3>
+                            <p class="cv-meta">Escola Secundária da Polana · Maputo</p>
+                            <p class="cv-meta cv-period">Concluído</p>
+                        </article>
+                        </section>
+                    </div>
+
+                    <aside class="cv-side">
+                        <section class="cv-section" aria-labelledby="skills-pt">
+                            <h2 id="skills-pt">Competências técnicas</h2>
+
+                        <div class="cv-skill-group">
+                            <h3>Front-end</h3>
+                            <ul class="cv-chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap 5</li><li>React</li></ul>
+                        </div>
+                        <div class="cv-skill-group">
+                            <h3>Back-end</h3>
+                            <ul class="cv-chips"><li>PHP 8</li><li>Laravel</li><li>Java</li><li>Spring Boot</li></ul>
+                        </div>
+                        <div class="cv-skill-group">
+                            <h3>Bases de dados</h3>
+                            <ul class="cv-chips"><li>MySQL / MariaDB</li><li>SQL</li><li>Firebase</li></ul>
+                        </div>
+                        <div class="cv-skill-group">
+                            <h3>Ferramentas</h3>
+                            <ul class="cv-chips"><li>Git</li><li>GitHub</li><li>GitLab</li><li>VS Code</li><li>Composer</li><li>Maven</li><li>XAMPP</li></ul>
+                        </div>
+                        <div class="cv-skill-group">
+                            <h3>Engenharia de software</h3>
+                            <ul class="cv-chips"><li>Programação orientada a objetos</li><li>MVC e arquitetura em camadas</li><li>APIs JSON</li><li>Controlo de acesso por perfil</li><li>Segurança web (CSRF, consultas preparadas)</li><li>Transações e idempotência</li><li>Testes automatizados (PHPUnit)</li></ul>
+                        </div>
+                        </section>
+
+                        <section class="cv-section" aria-labelledby="courses-pt">
+                            <h2 id="courses-pt">Cursos complementares</h2>
+                            <ul class="cv-list"><li><strong>Java Básico</strong><span>programação orientada a objetos</span></li><li><strong>Lógica de Programação</strong><span>algoritmos e estruturas de dados</span></li><li><strong>PHP Fundamentals</strong><span>desenvolvimento back-end</span></li><li><strong>JavaScript Moderno (ES6+)</strong><span>DOM e APIs</span></li><li><strong>MySQL</strong><span>modelação e consultas SQL</span></li></ul>
+                        </section>
+
+                        <section class="cv-section" aria-labelledby="soft-pt">
+                            <h2 id="soft-pt">Competências pessoais</h2>
+                            <ul class="cv-chips cv-chips-soft"><li>Resolução de problemas</li><li>Trabalho em equipa</li><li>Comunicação</li><li>Organização</li><li>Aprendizagem contínua</li><li>Gestão de tempo</li></ul>
+                        </section>
+                    </aside>
+                </div>
+            </article>
+
+            <article class="cv-doc" data-cv-lang="en" lang="en" data-no-i18n>
+                <header class="cv-hero">
+                    <img class="cv-photo" src="assets/img/profile-400.webp" alt="Photo of Jorge Lourenço Sumbane" width="400" height="600">
+                    <div class="cv-id">
+                        <h1 class="cv-name">Jorge Lourenço Sumbane</h1>
+                        <p class="cv-role">Full-Stack Software Developer</p>
+                        <ul class="cv-contacts" aria-label="Contact">
+                        <li><span class="cv-contact-static"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Maputo, Mozambique</span></span></li>
+                        <li><a href="mailto:jsumbane22@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>jsumbane22@gmail.com</span></a></li>
+                        <li><a href="tel:+258845872347"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>+258 84 587 2347</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/jorge-sumbane-sumbane-174478320/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a></li>
+                        <li><a href="https://github.com/jorgeSumbane22" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
+                        <li><a href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span>Portfolio</span></a></li>
+                        </ul>
+                    </div>
+                </header>
+
+                <div class="cv-grid">
+                    <div class="cv-main">
+                        <section class="cv-section" aria-labelledby="sum-en">
+                            <h2 id="sum-en">Professional summary</h2>
+                            <p class="cv-summary">Full-stack software developer based in Maputo and final-year Information Systems student at ISCIM. I build complete web applications in PHP 8 (plain PHP and Laravel) with MySQL, JavaScript and Bootstrap, as well as desktop applications in Java. My projects include a live SaaS invoicing platform, a microcredit system with a financial engine and an agricultural marketplace, built with a focus on security, clean code and user experience. I am looking to join a development team, on-site or remote.</p>
+                        </section>
+
+                        <section class="cv-section" aria-labelledby="proj-en">
+                            <h2 id="proj-en">Projects</h2>
+
+                        <article class="cv-project" aria-labelledby="p-sumbanepay-en">
+                            <header class="cv-project-head">
+                                <h3 id="p-sumbanepay-en">Sumbane Pay</h3>
+                                <span class="badge badge-done">Live</span>
+                            </header>
+                            <p class="cv-project-desc">SaaS invoicing and sales management platform for small businesses in Mozambique, live online.</p>
+                            <ul class="cv-points">
+                                <li>Built the PHP 8 back-end (controllers, models, middleware and a JSON API), evolving it from a front-end-only first version.</li>
+                                <li>Implemented the multi-tenant model: a middleware isolates the data of each company, with plans and usage limits.</li>
+                                <li>Applied CSRF protection, prepared statements (PDO), login attempt limits and audit logging; PDF invoices with jsPDF.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Technologies:</strong> PHP 8 · MySQL · JavaScript · Bootstrap 5 · Chart.js · jsPDF</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-primary btn-sm" href="https://sumbanepay.freehosting.dev/" target="_blank" rel="noopener noreferrer">Live demo <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbanePay" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-sumbanecredit-en">
+                            <header class="cv-project-head">
+                                <h3 id="p-sumbanecredit-en">SumbaneCredit</h3>
+                                <span class="badge badge-ongoing">In progress</span>
+                            </header>
+                            <p class="cv-project-desc">Microcredit management system with an institutional website, client portal and admin panel.</p>
+                            <ul class="cv-points">
+                                <li>Built a financial engine with decimal arithmetic (bcmath and DECIMAL) for instalments, interest, fees and penalties.</li>
+                                <li>Ensured payment integrity with transactions, row locking, unique indexes, idempotency keys and daily reconciliation.</li>
+                                <li>Implemented 7 access roles with segregation of duties, PDF/Excel documents, queued notifications and PHPUnit tests.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Technologies:</strong> Laravel 12 · PHP 8.2 · MySQL · Bootstrap 5 · Chart.js · PHPUnit</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbaneCredit" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-agromercado-en">
+                            <header class="cv-project-head">
+                                <h3 id="p-agromercado-en">AgroMercado</h3>
+                                <span class="badge badge-done">Completed</span>
+                            </header>
+                            <p class="cv-project-desc">Agricultural marketplace connecting farmers and buyers in Mozambique.</p>
+                            <ul class="cv-points">
+                                <li>Implemented filtered search, a Fetch API cart and a transactional checkout that validates and reduces stock.</li>
+                                <li>Built separate areas for farmers, buyers and the SuperAdmin, with farmer verification and auditing.</li>
+                                <li>Applied prepared statements, CSRF tokens, HttpOnly/SameSite cookies and secure image uploads.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Technologies:</strong> PHP 8 · MySQL · PDO · JavaScript · Bootstrap 5 · Chart.js</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/AgroMercado" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-courtiq-en">
+                            <header class="cv-project-head">
+                                <h3 id="p-courtiq-en">CourtIQ MZ</h3>
+                                <span class="badge badge-ongoing">In progress</span>
+                            </header>
+                            <p class="cv-project-desc">Basketball management platform where several clubs use the same system independently.</p>
+                            <ul class="cv-points">
+                                <li>Built a modular PHP architecture with data kept separate per club in a single installation.</li>
+                                <li>Implemented five access roles (SuperAdmin, club admin, coach, player and fan), session management and activity logging.</li>
+                                <li>Built game, training and statistics management, plus a public portal in Portuguese and English.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Technologies:</strong> PHP · MySQL · PDO · JavaScript · HTML5 · CSS3</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/CourtIQ-MZ" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-rh-en">
+                            <header class="cv-project-head">
+                                <h3 id="p-rh-en">RH-Sistema</h3>
+                                <span class="badge badge-ongoing">In progress</span>
+                            </header>
+                            <p class="cv-project-desc">Human Resources management system with six access roles.</p>
+                            <ul class="cv-points">
+                                <li>Employees, departments, leave, attendance, payroll, recruitment and performance reviews.</li>
+                                <li>Modular object-oriented PHP architecture, role-based permissions, auditing and PDF documents with Dompdf.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Technologies:</strong> PHP · MySQL · JavaScript · Composer · Dompdf</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/Projeto-RH-Sistema" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                            </div>
+                        </article>
+
+                        <article class="cv-project" aria-labelledby="p-smartcare-en">
+                            <header class="cv-project-head">
+                                <h3 id="p-smartcare-en">SmartCare</h3>
+                                <span class="badge badge-done">Completed</span>
+                            </header>
+                            <p class="cv-project-desc">Desktop hospital triage system based on the Manchester Triage System.</p>
+                            <ul class="cv-points">
+                                <li>Automatic priority classification and a waiting queue ordered by urgency.</li>
+                                <li>Persistence with Hibernate/JPA and the DAO pattern, Swing UI with FlatLaf, charts and JUnit tests.</li>
+                            </ul>
+                            <p class="cv-tech"><strong>Technologies:</strong> Java · Hibernate/JPA · MySQL · Swing · Maven · JUnit</p>
+                            <div class="cv-project-links">
+                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SmartCare-Triagem" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
+                            </div>
+                        </article>
+                        </section>
+
+                        <section class="cv-section" aria-labelledby="edu-en">
+                            <h2 id="edu-en">Education</h2>
+
+                        <article class="cv-item">
+                            <h3>Bachelor's degree in Information Systems</h3>
+                            <p class="cv-meta">Instituto Superior de Comunicação e Imagem de Moçambique (ISCIM) · Maputo</p>
+                            <p class="cv-meta cv-period">2022 – present · expected graduation 2026</p>
+                        </article>
+                        <article class="cv-item">
+                            <h3>Secondary education — Sciences with Biology</h3>
+                            <p class="cv-meta">Escola Secundária da Polana · Maputo</p>
+                            <p class="cv-meta cv-period">Completed</p>
+                        </article>
+                        </section>
+                    </div>
+
+                    <aside class="cv-side">
+                        <section class="cv-section" aria-labelledby="skills-en">
+                            <h2 id="skills-en">Technical skills</h2>
+
+                        <div class="cv-skill-group">
+                            <h3>Front-end</h3>
+                            <ul class="cv-chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap 5</li><li>React</li></ul>
+                        </div>
+                        <div class="cv-skill-group">
+                            <h3>Back-end</h3>
+                            <ul class="cv-chips"><li>PHP 8</li><li>Laravel</li><li>Java</li><li>Spring Boot</li></ul>
+                        </div>
+                        <div class="cv-skill-group">
+                            <h3>Databases</h3>
+                            <ul class="cv-chips"><li>MySQL / MariaDB</li><li>SQL</li><li>Firebase</li></ul>
+                        </div>
+                        <div class="cv-skill-group">
+                            <h3>Tools</h3>
+                            <ul class="cv-chips"><li>Git</li><li>GitHub</li><li>GitLab</li><li>VS Code</li><li>Composer</li><li>Maven</li><li>XAMPP</li></ul>
+                        </div>
+                        <div class="cv-skill-group">
+                            <h3>Software engineering</h3>
+                            <ul class="cv-chips"><li>Object-oriented programming</li><li>MVC and layered architecture</li><li>JSON APIs</li><li>Role-based access control</li><li>Web security (CSRF, prepared statements)</li><li>Transactions and idempotency</li><li>Automated testing (PHPUnit)</li></ul>
+                        </div>
+                        </section>
+
+                        <section class="cv-section" aria-labelledby="courses-en">
+                            <h2 id="courses-en">Additional courses</h2>
+                            <ul class="cv-list"><li><strong>Java Fundamentals</strong><span>object-oriented programming</span></li><li><strong>Programming Logic</strong><span>algorithms and data structures</span></li><li><strong>PHP Fundamentals</strong><span>back-end development</span></li><li><strong>Modern JavaScript (ES6+)</strong><span>DOM and APIs</span></li><li><strong>MySQL</strong><span>data modelling and SQL queries</span></li></ul>
+                        </section>
+
+                        <section class="cv-section" aria-labelledby="soft-en">
+                            <h2 id="soft-en">Soft skills</h2>
+                            <ul class="cv-chips cv-chips-soft"><li>Problem solving</li><li>Teamwork</li><li>Communication</li><li>Organisation</li><li>Continuous learning</li><li>Time management</li></ul>
+                        </section>
+                    </aside>
+                </div>
+            </article>
     </main>
 
     <script src="assets/js/i18n.js" defer></script>

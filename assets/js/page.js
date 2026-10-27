@@ -46,6 +46,19 @@
     keepLang();
     document.addEventListener('langchange', keepLang);
 
-    /* ---------- CV: imprimir / guardar como PDF ---------- */
+    /* ---------- CV: imprimir e descarregar o PDF da língua ativa ---------- */
     document.getElementById('printBtn')?.addEventListener('click', () => window.print());
+
+    const cvDownload = document.getElementById('cvDownload');
+    const updateDownload = () => {
+        if (!cvDownload) return;
+        const en = window.I18N && window.I18N.lang === 'en';
+        const href = en ? cvDownload.dataset.pdfEn : cvDownload.dataset.pdfPt;
+        if (href) {
+            cvDownload.href = href;
+            cvDownload.setAttribute('download', href.split('/').pop());
+        }
+    };
+    updateDownload();
+    document.addEventListener('langchange', updateDownload);
 })();
