@@ -1983,3 +1983,7 @@ a.gh-card:hover {
 
     .footer { border-top: 1px solid #cbd5e1; padding: 10px 0 0; }
 }
+
+/* Cursos: entidade, data e link para o certificado */
+.cert-list .cert-meta { display: block; margin-top: 2px; font-size: .78rem; color: var(--text-3); }
+.cert-list .cert-link { display: inline-block; margin-top: 4px; font-size: .82rem; font-weight: 600; color: var(--primary-text); text-decoration: underline; text-underline-offset: 3px; }

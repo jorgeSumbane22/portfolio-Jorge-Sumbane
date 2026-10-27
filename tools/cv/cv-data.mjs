@@ -16,8 +16,8 @@ export const SITE = 'https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/';
 export const person = {
     name: 'Jorge Lourenço Sumbane',
     title: {
-        pt: 'Desenvolvedor de Software Full-Stack',
-        en: 'Full-Stack Software Developer'
+        pt: 'Desenvolvedor de Software',
+        en: 'Software Developer'
     },
     location: { pt: 'Maputo, Moçambique', en: 'Maputo, Mozambique' },
     email: 'jsumbane22@gmail.com',
@@ -30,12 +30,12 @@ export const person = {
 };
 
 export const summary = {
-    pt: 'Desenvolvedor de software full-stack em Maputo e finalista da licenciatura em Informática de Sistemas no ISCIM. '
+    pt: 'Desenvolvedor de software em Maputo, atualmente estagiário na ACSUN e finalista da licenciatura em Informática de Sistemas no ISCIM. '
       + 'Desenvolvo aplicações web completas em PHP 8 (puro e Laravel) com MySQL, JavaScript e Bootstrap, e aplicações desktop em Java. '
       + 'Entre os meus projetos estão uma plataforma de faturação SaaS publicada online, um sistema de microcrédito com motor financeiro '
       + 'e um marketplace agrícola, sempre com atenção à segurança, à organização do código e à experiência do utilizador. '
       + 'Procuro integrar uma equipa de desenvolvimento, presencial ou remota.',
-    en: 'Full-stack software developer based in Maputo and final-year Information Systems student at ISCIM. '
+    en: 'Software developer based in Maputo, currently an intern at ACSUN and a final-year Information Systems student at ISCIM. '
       + 'I build complete web applications in PHP 8 (plain PHP and Laravel) with MySQL, JavaScript and Bootstrap, as well as desktop applications in Java. '
       + 'My projects include a live SaaS invoicing platform, a microcredit system with a financial engine and an agricultural marketplace, '
       + 'built with a focus on security, clean code and user experience. '
@@ -43,8 +43,10 @@ export const summary = {
 };
 
 /*
- * EXPERIÊNCIA PROFISSIONAL — ainda sem dados confirmados.
- * A secção só aparece quando esta lista tiver pelo menos um item. Modelo:
+ * EXPERIÊNCIA PROFISSIONAL
+ * Confirmado: estágio atual na ACSUN. Por confirmar: data de início, área do estágio,
+ * responsabilidades e tecnologias — acrescente-as em "period", "points" e "tech" quando as tiver.
+ * Campos opcionais: place, points, tech. Modelo completo:
  *
  *  {
  *      role: { pt: 'Cargo', en: 'Role' },
@@ -58,7 +60,13 @@ export const summary = {
  *      tech: 'PHP · MySQL'
  *  }
  */
-export const experience = [];
+export const experience = [
+    {
+        role: { pt: 'Estagiário', en: 'Intern' },
+        company: 'ACSUN',
+        period: { pt: 'Atualmente', en: 'Present' }
+    }
+];
 
 /* Competências técnicas: só tecnologias usadas nos projetos ou declaradas no portfólio. */
 export const skills = [
@@ -233,21 +241,34 @@ export const education = [
     }
 ];
 
-/* Cursos: sem instituição nem data, porque não estão confirmadas. */
+/*
+ * Cursos. Os da RL System têm certificado (imagem em assets/img/certificados/);
+ * os restantes foram concluídos em autoformação (YouTube), sem certificado.
+ */
+const RL = 'RL System Treinamentos (online)';
+const SELF = { pt: 'Autoformação (YouTube) · sem certificado', en: 'Self-study (YouTube) · no certificate' };
 export const courses = [
-    { pt: 'Java Básico — programação orientada a objetos', en: 'Java Fundamentals — object-oriented programming' },
-    { pt: 'Lógica de Programação — algoritmos e estruturas de dados', en: 'Programming Logic — algorithms and data structures' },
-    { pt: 'PHP Fundamentals — desenvolvimento back-end', en: 'PHP Fundamentals — back-end development' },
-    { pt: 'JavaScript Moderno (ES6+) — DOM e APIs', en: 'Modern JavaScript (ES6+) — DOM and APIs' },
-    { pt: 'MySQL — modelação e consultas SQL', en: 'MySQL — data modelling and SQL queries' }
+    {
+        name: { pt: 'Java Básico', en: 'Java Fundamentals' },
+        topic: { pt: 'programação orientada a objetos', en: 'object-oriented programming' },
+        issuer: RL, period: { pt: 'fev. 2025 · 20 h', en: 'Feb 2025 · 20 h' },
+        cert: 'assets/img/certificados/java-basico-rlsystem.webp'
+    },
+    {
+        name: { pt: 'Lógica de Programação', en: 'Programming Logic' },
+        topic: { pt: 'algoritmos e estruturas de dados', en: 'algorithms and data structures' },
+        issuer: RL, period: { pt: 'mar. 2025 · 20 h', en: 'Mar 2025 · 20 h' },
+        cert: 'assets/img/certificados/logica-programacao-rlsystem.webp'
+    },
+    { name: { pt: 'PHP Fundamentals', en: 'PHP Fundamentals' }, topic: { pt: 'desenvolvimento back-end', en: 'back-end development' }, issuer: SELF },
+    { name: { pt: 'JavaScript Moderno (ES6+)', en: 'Modern JavaScript (ES6+)' }, topic: { pt: 'DOM e APIs', en: 'DOM and APIs' }, issuer: SELF },
+    { name: { pt: 'MySQL', en: 'MySQL' }, topic: { pt: 'modelação e consultas SQL', en: 'data modelling and SQL queries' }, issuer: SELF }
 ];
 
-/*
- * IDIOMAS — por confirmar. A secção só aparece quando houver níveis confirmados. Exemplo:
- *   { name: { pt: 'Português', en: 'Portuguese' }, level: { pt: 'Nativo', en: 'Native' } },
- *   { name: { pt: 'Inglês', en: 'English' }, level: { pt: 'Intermédio (B1)', en: 'Intermediate (B1)' } }
- */
-export const languages = [];
+export const languages = [
+    { name: { pt: 'Português', en: 'Portuguese' }, level: { pt: 'Excelente', en: 'Excellent' } },
+    { name: { pt: 'Inglês', en: 'English' }, level: { pt: 'Intermédio', en: 'Intermediate' } }
+];
 
 export const softSkills = {
     pt: ['Resolução de problemas', 'Trabalho em equipa', 'Comunicação', 'Organização', 'Aprendizagem contínua', 'Gestão de tempo'],
@@ -260,12 +281,12 @@ export const labels = {
         summary: 'Resumo profissional', experience: 'Experiência profissional', skills: 'Competências técnicas',
         projects: 'Projetos', otherProjects: 'Outros projetos', education: 'Formação académica', courses: 'Cursos complementares',
         languages: 'Idiomas', softSkills: 'Competências pessoais', tech: 'Tecnologias', contributions: 'Contribuições principais',
-        demo: 'Demonstração', code: 'Código', contact: 'Contacto', portfolio: 'Portfólio'
+        demo: 'Demonstração', code: 'Código', contact: 'Contacto', portfolio: 'Portfólio', viewCert: 'Ver certificado'
     },
     en: {
         summary: 'Professional summary', experience: 'Professional experience', skills: 'Technical skills',
         projects: 'Projects', otherProjects: 'Other projects', education: 'Education', courses: 'Additional courses',
         languages: 'Languages', softSkills: 'Soft skills', tech: 'Technologies', contributions: 'Key contributions',
-        demo: 'Live demo', code: 'Code', contact: 'Contact', portfolio: 'Portfolio'
+        demo: 'Live demo', code: 'Code', contact: 'Contact', portfolio: 'Portfolio', viewCert: 'View certificate'
     }
 };

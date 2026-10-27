@@ -78,8 +78,8 @@ ${T(pr.points, lang).map((pt) => `                                <li>${esc(pt)}
                         <h2 id="${id('exp')}">${esc(l.experience)}</h2>
 ${CV.experience.map((e) => `                        <article class="cv-item">
                             <h3>${esc(T(e.role, lang))} — ${esc(e.company)}</h3>
-                            <p class="cv-meta">${esc(T(e.period, lang))} · ${esc(T(e.place, lang))}</p>
-                            <ul class="cv-points">${T(e.points, lang).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+                            <p class="cv-meta">${esc(T(e.period, lang))}${e.place ? ` · ${esc(T(e.place, lang))}` : ''}</p>
+                            ${e.points ? `<ul class="cv-points">${T(e.points, lang).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
                             ${e.tech ? `<p class="cv-tech"><strong>${esc(l.tech)}:</strong> ${esc(e.tech)}</p>` : ''}
                         </article>`).join('\n')}
                     </section>` : '';
@@ -143,8 +143,9 @@ ${skills}
                         <section class="cv-section" aria-labelledby="${id('courses')}">
                             <h2 id="${id('courses')}">${esc(l.courses)}</h2>
                             <ul class="cv-list">${CV.courses.map((c) => {
-                                const [name, detail] = c[lang].split(' — ');
-                                return `<li><strong>${esc(name)}</strong>${detail ? `<span>${esc(detail)}</span>` : ''}</li>`;
+                                const by = [T(c.issuer, lang), c.period ? T(c.period, lang) : ''].filter(Boolean).join(' · ');
+                                const cert = c.cert ? `<a class="cv-cert" href="${esc(c.cert)}" target="_blank" rel="noopener">${esc(l.viewCert)}</a>` : '';
+                                return `<li><strong>${esc(T(c.name, lang))}</strong><span>${esc(T(c.topic, lang))}</span><span>${esc(by)}</span>${cert}</li>`;
                             }).join('')}</ul>
                         </section>
 ${languages}
@@ -259,8 +260,8 @@ function atsHtml(lang) {
         <h2>${esc(l.experience)}</h2>
 ${CV.experience.map((e) => `        <div class="entry">
             <h3>${esc(T(e.role, lang))} — ${esc(e.company)}</h3>
-            <p class="meta">${esc(T(e.period, lang))} | ${esc(T(e.place, lang))}</p>
-            <ul>${T(e.points, lang).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>
+            <p class="meta">${esc(T(e.period, lang))}${e.place ? ` | ${esc(T(e.place, lang))}` : ''}</p>
+            ${e.points ? `<ul>${T(e.points, lang).map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
             ${e.tech ? `<p class="tech"><strong>${esc(l.tech)}:</strong> ${esc(e.tech)}</p>` : ''}
         </div>`).join('\n')}
     </section>` : '';
@@ -347,7 +348,8 @@ ${CV.education.filter((e) => e.pdf).map((e) => `        <div class="entry">
 
     <section>
         <h2>${esc(l.courses)}</h2>
-        <p>${CV.courses.map((c) => esc(c[lang].split(' — ')[0])).join(' | ')}</p>
+        <ul>${CV.courses.filter((c) => c.cert).map((c) => `<li><strong>${esc(T(c.name, lang))}</strong> — ${esc(T(c.issuer, lang))}, ${esc(T(c.period, lang))} — <a href="${esc(CV.SITE + c.cert)}">${esc(l.viewCert)}</a></li>`).join('')}
+            ${(() => { const self = CV.courses.filter((c) => !c.cert); return self.length ? `<li>${esc(T(self[0].issuer, lang))}: ${self.map((c) => esc(T(c.name, lang))).join(', ')}</li>` : ''; })()}</ul>
     </section>
 ${languages}
 </body>

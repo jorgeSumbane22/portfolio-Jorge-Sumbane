@@ -21,8 +21,8 @@
         'sou': "I'm",
         'o': '',
         'Desenvolvedor de Software': 'Software Developer',
-        'Desenvolvedor de software e estudante finalista de Informática de Sistemas no ISCIM, em Maputo. Crio aplicações web e sistemas em Java, do front-end à base de dados, com atenção à organização do código e à experiência do utilizador.':
-            'Software developer and final-year Information Systems student at ISCIM in Maputo. I build web applications and Java systems, from front-end to database, with a focus on clean code and user experience.',
+        'Desenvolvedor de software, estagiário na ACSUN e estudante finalista de Informática de Sistemas no ISCIM, em Maputo. Crio aplicações web e sistemas em Java, do front-end à base de dados, com atenção à organização do código e à experiência do utilizador.':
+            'Software developer, intern at ACSUN and final-year Information Systems student at ISCIM in Maputo. I build web applications and Java systems, from front-end to database, with a focus on clean code and user experience.',
         'Ver projetos': 'View projects',
         'Guardar CV (PDF)': 'Save CV (PDF)',
         'Informática de Sistemas': 'Information Systems',
@@ -201,6 +201,14 @@
         'Manipulação do DOM e APIs': 'DOM manipulation and APIs',
         'MySQL — Bases de Dados': 'MySQL — Databases',
         'Modelação e consultas SQL': 'Data modelling and SQL queries',
+        'RL System Treinamentos · fev. 2025 · 20 h': 'RL System Treinamentos · Feb 2025 · 20 h',
+        'RL System Treinamentos · mar. 2025 · 20 h': 'RL System Treinamentos · Mar 2025 · 20 h',
+        'Autoformação online (YouTube)': 'Self-study online (YouTube)',
+        'Ver certificado': 'View certificate',
+        'Experiência': 'Experience',
+        'Experiência profissional': 'Professional experience',
+        'Atualmente': 'Present',
+        'Estagiário': 'Intern',
 
         /* --- Contacto e rodapé --- */
         'Contacto': 'Contact',

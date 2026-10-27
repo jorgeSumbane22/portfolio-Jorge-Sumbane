@@ -24,8 +24,10 @@ A partir dele são gerados:
 
 Não edite `cv.html` nem os PDFs à mão: são substituídos sempre que o gerador corre.
 
-## Secções por confirmar
+## Notas
 
-- **Experiência profissional** (`experience`) e **Idiomas** (`languages`) estão vazias de propósito:
-  só aparecem no CV quando tiverem dados reais. O ficheiro tem um modelo comentado para cada uma.
+- **Experiência** (`experience`): o estágio na ACSUN ainda não tem data de início, área nem responsabilidades.
+  Os campos `place`, `points` e `tech` são opcionais e só aparecem quando preenchidos.
+- **Cursos** (`courses`): com `cert` aparece o link "Ver certificado" (imagens em `assets/img/certificados/`);
+  os cursos sem certificado aparecem numa linha de autoformação.
 - Na versão PDF aparecem os projetos com `pdf: true`; os restantes ficam numa linha "Outros projetos".

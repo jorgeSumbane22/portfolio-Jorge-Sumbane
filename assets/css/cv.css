@@ -200,3 +200,7 @@ html:not([lang="en"]) .cv-doc[data-cv-lang="en"] { display: none; }
     .cv-project, .cv-item, .cv-skill-group { break-inside: avoid; }
     .cv-section > h2 { break-after: avoid; }
 }
+
+/* Link para o certificado de um curso */
+.cv-list .cv-cert { justify-self: start; margin-top: 2px; font-size: .82rem; font-weight: 600; color: var(--primary-text); text-decoration: underline; text-underline-offset: 3px; }
+@media print { .cv-list .cv-cert { color: #1e3a8a !important; } }
