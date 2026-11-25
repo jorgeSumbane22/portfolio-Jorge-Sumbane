@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV — Jorge Lourenço Sumbane | Desenvolvedor de Software</title>
-    <meta name="description" content="Currículo de Jorge Lourenço Sumbane, desenvolvedor de software em Maputo, Moçambique. Projetos em PHP, Laravel, MySQL e Java. Versão em PDF para português e inglês.">
+    <meta name="description" content="Currículo de Jorge Lourenço Sumbane, desenvolvedor de software em Maputo, Moçambique. Formação em Informática de Sistemas no ISCIM. Competências em PHP, Laravel, MySQL, JavaScript e Java.">
     <meta name="author" content="Jorge Lourenço Sumbane">
     <meta name="theme-color" content="#1e3a8a">
     <link rel="canonical" href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/cv.html">
@@ -19,6 +19,7 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
+
     <script>
         (function () {
             var d = document.documentElement, t = null;
@@ -27,10 +28,303 @@
             d.setAttribute('data-theme', t);
         })();
     </script>
-    <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/plus-jakarta-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/cv.css">
+
+    <!-- Fontes (ficheiros locais) -->
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            src: url('assets/fonts/inter-latin.woff2') format('woff2');
+            font-weight: 100 900;
+            font-display: swap;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Plus Jakarta Sans';
+            src: url('assets/fonts/plus-jakarta-sans-latin.woff2') format('woff2');
+            font-weight: 200 800;
+            font-display: swap;
+            font-style: normal;
+        }
+
+        /* ===== Variáveis / temas ===== */
+        :root {
+            --bg: #f3f4f6;
+            --surface: #ffffff;
+            --text: #111827;
+            --muted: #4b5563;
+            --border: #e5e7eb;
+            --primary: #1e3a8a;
+            --primary-soft: #eff6ff;
+            --chip-bg: #f1f5f9;
+            --chip-border: #e2e8f0;
+        }
+        html[data-theme="dark"] {
+            --bg: #0f172a;
+            --surface: #111827;
+            --text: #e5e7eb;
+            --muted: #9ca3af;
+            --border: #1f2937;
+            --primary: #93c5fd;
+            --primary-soft: #172554;
+            --chip-bg: #1f2937;
+            --chip-border: #374151;
+        }
+
+        /* ===== Base ===== */
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+            color: var(--text);
+            letter-spacing: -0.01em;
+        }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul { list-style: none; margin: 0; padding: 0; }
+        .icon { width: 1em; height: 1em; display: inline-block; vertical-align: -0.125em; }
+        .icon-flip { transform: scaleX(-1); }
+        .skip-link {
+            position: absolute; left: -999px; top: 0;
+            background: var(--primary); color: #fff;
+            padding: .5rem 1rem; border-radius: .5rem; z-index: 9999;
+        }
+        .skip-link:focus { left: 1rem; top: 1rem; }
+
+        /* ===== Toolbar ===== */
+        .cv-toolbar {
+            position: sticky; top: 0; z-index: 50;
+            background: color-mix(in srgb, var(--surface) 92%, transparent);
+            backdrop-filter: saturate(140%) blur(8px);
+            border-bottom: 1px solid var(--border);
+        }
+        .cv-toolbar-inner {
+            max-width: 210mm; margin: 0 auto;
+            padding: .55rem 1rem;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: .75rem;
+        }
+        .cv-toolbar-actions { display: flex; align-items: center; gap: .5rem; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: .4rem;
+            border-radius: .55rem; font: inherit; font-size: .82rem;
+            padding: .5rem .8rem; border: 1px solid transparent;
+            cursor: pointer; text-decoration: none; white-space: nowrap;
+        }
+        .btn:hover { text-decoration: none; }
+        .btn-sm { font-size: .78rem; padding: .42rem .7rem; }
+        .btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .btn-primary:hover { filter: brightness(1.08); }
+        .btn-ghost { background: transparent; color: var(--text); border-color: var(--border); }
+        .btn-ghost:hover { background: var(--chip-bg); }
+
+        .icon-btn, .lang-btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            gap: .35rem; background: transparent; color: var(--text);
+            border: 1px solid var(--border); border-radius: .55rem;
+            padding: .42rem .55rem; cursor: pointer; font: inherit;
+        }
+        .icon-btn { width: 2.15rem; height: 2.15rem; padding: 0; }
+        .lang-btn span { font-size: .78rem; font-weight: 600; }
+        .icon-sun { display: none; }
+        html[data-theme="dark"] .icon-moon { display: none; }
+        html[data-theme="dark"] .icon-sun { display: inline-block; }
+
+        /* ===== Página / A4 ===== */
+        .cv-wrap { padding: 1.25rem 1rem 2.5rem; }
+
+        .cv-doc {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto 1.5rem;
+            padding: 14mm 14mm 12mm;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: .75rem;
+            box-shadow: 0 10px 30px rgba(15,23,42,.06);
+            display: flex;
+            flex-direction: column;
+        }
+        /* Só mostra o idioma ativo */
+        .cv-doc[data-cv-lang] { display: none; }
+        html[data-lang="pt"] .cv-doc[data-cv-lang="pt"],
+        html[data-lang="en"] .cv-doc[data-cv-lang="en"] { display: flex; }
+
+        /* ===== Hero ===== */
+        .cv-hero {
+            display: grid;
+            grid-template-columns: 34mm 1fr;
+            gap: 6mm;
+            align-items: center;
+            padding-bottom: 5mm;
+            margin-bottom: 5mm;
+            border-bottom: 1px solid var(--border);
+        }
+        .cv-photo {
+            width: 34mm; height: 42mm;
+            object-fit: cover;
+            border-radius: .55rem;
+            border: 1px solid var(--border);
+        }
+        .cv-name { font-size: 20pt; line-height: 1.1; margin: 0 0 1.5mm; }
+        .cv-role { font-size: 11pt; color: var(--muted); margin: 0 0 3mm; }
+        .cv-contacts {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.2mm 6mm;
+            font-size: 9.6pt;
+        }
+        .cv-contacts li, .cv-contact-static {
+            display: inline-flex; align-items: center; gap: 1.8mm;
+            color: var(--text); min-width: 0;
+        }
+        .cv-contacts li span:last-child,
+        .cv-contact-static span:last-child {
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        }
+        .cv-contacts a { color: var(--text); }
+        .cv-contacts a:hover { color: var(--primary); }
+
+        /* ===== Grelha principal ===== */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1.55fr 1fr;
+            gap: 8mm;
+            flex: 1;
+        }
+        .cv-main, .cv-side { display: flex; flex-direction: column; gap: 5mm; }
+
+        /* ===== Secções ===== */
+        .cv-section { break-inside: avoid; page-break-inside: avoid; }
+        .cv-section h2 {
+            font-size: 10.5pt;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--primary);
+            margin: 0 0 2.4mm;
+            padding-bottom: 1.2mm;
+            border-bottom: 1px solid var(--border);
+        }
+        .cv-summary { font-size: 10pt; line-height: 1.55; margin: 0; color: var(--text); }
+        .cv-summary + .cv-summary { margin-top: 2mm; }
+
+        .cv-item { margin-bottom: 3mm; }
+        .cv-item:last-child { margin-bottom: 0; }
+        .cv-item h3 { font-size: 10.6pt; margin: 0 0 1mm; }
+        .cv-meta { font-size: 9.4pt; color: var(--muted); margin: 0 0 .8mm; }
+        .cv-period { font-style: italic; }
+
+        .cv-points {
+            font-size: 9.8pt;
+            line-height: 1.5;
+            margin: 1.5mm 0 0;
+            padding-left: 4mm;
+            list-style: disc;
+        }
+        .cv-points li { margin-bottom: .6mm; }
+        .cv-points-standalone { margin: 0; }
+
+        /* Chips de competências */
+        .cv-skill-group { margin-bottom: 3mm; }
+        .cv-skill-group:last-child { margin-bottom: 0; }
+        .cv-skill-group h3 {
+            font-size: 9.6pt;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: var(--muted);
+            margin: 0 0 1.5mm;
+        }
+        .cv-chips {
+            display: flex; flex-wrap: wrap;
+            gap: 1.4mm 1.6mm;
+            font-size: 9.2pt;
+        }
+        .cv-chips li {
+            background: var(--chip-bg);
+            border: 1px solid var(--chip-border);
+            border-radius: .45rem;
+            padding: .25rem .5rem;
+            line-height: 1.2;
+        }
+        .cv-chips-soft li { background: transparent; }
+
+        /* Lista de cursos / idiomas */
+        .cv-list { display: flex; flex-direction: column; gap: 2mm; }
+        .cv-list li {
+            display: grid;
+            grid-template-columns: 1fr;
+            font-size: 9.6pt;
+            line-height: 1.4;
+        }
+        .cv-list strong { font-size: 9.8pt; }
+        .cv-list span { color: var(--muted); font-size: 9pt; }
+        .cv-cert {
+            font-size: 8.8pt;
+            color: var(--primary);
+            width: fit-content;
+        }
+        .cv-list-inline {
+            display: flex; flex-direction: column; gap: 1.5mm;
+        }
+        .cv-list-inline li {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: baseline;
+            gap: 4mm;
+            font-size: 9.6pt;
+        }
+
+        /* ===== Impressão ===== */
+        @page { size: A4; margin: 10mm; }
+
+        @media print {
+            html, body { background: #fff !important; color: #000 !important; }
+            .cv-toolbar, .skip-link { display: none !important; }
+            .cv-wrap { padding: 0 !important; }
+            .cv-doc {
+                max-width: none !important;
+                min-height: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                display: flex !important;
+            }
+            html[data-lang="pt"] .cv-doc[data-cv-lang="en"],
+            html[data-lang="en"] .cv-doc[data-cv-lang="pt"] { display: none !important; }
+            .cv-section { break-inside: avoid; page-break-inside: avoid; }
+            .cv-section h2 { color: #1e3a8a !important; border-bottom-color: #cbd5e1 !important; }
+            .cv-chips li { background: #f1f5f9 !important; border-color: #e2e8f0 !important; }
+            a { color: inherit !important; text-decoration: none !important; }
+        }
+
+        /* ===== Responsivo (telemóvel) ===== */
+        @media (max-width: 720px) {
+            .cv-grid { grid-template-columns: 1fr; }
+            .cv-hero { grid-template-columns: 1fr; text-align: center; }
+            .cv-photo { margin: 0 auto; }
+            .cv-contacts { grid-template-columns: 1fr; text-align: left; }
+        }
+    </style>
+
+    <!-- Estado do idioma (por omissão PT, ou ?lang=en) -->
+    <script>
+        (function () {
+            var params = new URLSearchParams(location.search);
+            var lang = params.get('lang') === 'en' ? 'en' : 'pt';
+            document.documentElement.setAttribute('data-lang', lang);
+            document.documentElement.lang = lang;
+        })();
+    </script>
 </head>
 <body class="cv-page">
 
@@ -39,35 +333,13 @@
         <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
         <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></symbol>
         <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
-        <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
         <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
         <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
-        <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-        <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></symbol>
-        <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
-        <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
-        <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
-        <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
-        <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
-        <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></symbol>
-        <symbol id="i-db" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></symbol>
-        <symbol id="i-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-        <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></symbol>
         <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></symbol>
         <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
-        <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
         <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
-        <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
-        <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-        <symbol id="i-repo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5V21h16"/></symbol>
-        <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
-        <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
         <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
-        <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></symbol>
         <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></symbol>
-        <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07"/></symbol>
-        <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r=".6" fill="currentColor"/></symbol>
-        <symbol id="i-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41z"/></symbol>
     </svg>
 
     <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
@@ -87,7 +359,7 @@
                     <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
                     <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
                 </button>
-                <button class="btn btn-ghost btn-sm" id="printBtn" type="button" title="Imprime esta página (o tema escuro não é impresso)">
+                <button class="btn btn-ghost btn-sm" id="printBtn" type="button" title="Imprime esta página">
                     <svg class="icon" aria-hidden="true"><use href="#i-file"/></svg>
                     <span>Imprimir</span>
                 </button>
@@ -101,163 +373,102 @@
 
     <main class="cv-wrap" id="conteudo">
 
-            <article class="cv-doc" data-cv-lang="pt" lang="pt" data-no-i18n>
-                <header class="cv-hero">
-                    <img class="cv-photo" src="assets/img/profile-400.webp" alt="Fotografia de Jorge Lourenço Sumbane" width="400" height="600">
-                    <div class="cv-id">
-                        <h1 class="cv-name">Jorge Lourenço Sumbane</h1>
-                        <p class="cv-role">Desenvolvedor de Software</p>
-                        <ul class="cv-contacts" aria-label="Contacto">
+        <!-- ================= PT ================= -->
+        <article class="cv-doc" data-cv-lang="pt" lang="pt">
+            <header class="cv-hero">
+                <img class="cv-photo" src="assets/img/profile-400.webp" alt="Fotografia de Jorge Lourenço Sumbane" width="400" height="600">
+                <div class="cv-id">
+                    <h1 class="cv-name">Jorge Lourenço Sumbane</h1>
+                    <p class="cv-role">Desenvolvedor de Software</p>
+                    <ul class="cv-contacts" aria-label="Contacto">
                         <li><span class="cv-contact-static"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Maputo, Moçambique</span></span></li>
                         <li><a href="mailto:jsumbane22@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>jsumbane22@gmail.com</span></a></li>
                         <li><a href="tel:+258845872347"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>+258 84 587 2347</span></a></li>
                         <li><a href="https://www.linkedin.com/in/jorge-sumbane-sumbane-174478320/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a></li>
                         <li><a href="https://github.com/jorgeSumbane22" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
-                        <li><a href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span>Portfólio</span></a></li>
-                        </ul>
-                    </div>
-                </header>
+                        <li><a href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span>Portfólio (projetos)</span></a></li>
+                    </ul>
+                </div>
+            </header>
 
-                <div class="cv-grid">
-                    <div class="cv-main">
-                        <section class="cv-section" aria-labelledby="sum-pt">
-                            <h2 id="sum-pt">Resumo profissional</h2>
-                            <p class="cv-summary">Desenvolvedor de software em Maputo, atualmente estagiário na ACSUN e finalista da licenciatura em Informática de Sistemas no ISCIM. Desenvolvo aplicações web completas em PHP 8 (puro e Laravel) com MySQL, JavaScript e Bootstrap, e aplicações desktop em Java. Entre os meus projetos estão uma plataforma de faturação SaaS publicada online, um sistema de microcrédito com motor financeiro e um marketplace agrícola, sempre com atenção à segurança, à organização do código e à experiência do utilizador. Procuro integrar uma equipa de desenvolvimento, presencial ou remota.</p>
-                        </section>
-
-                    <section class="cv-section" aria-labelledby="exp-pt">
-                        <h2 id="exp-pt">Experiência profissional</h2>
-                        <article class="cv-item">
-                            <h3>Estagiário em Desenvolvimento Web — ACSUN</h3>
-                            <p class="cv-meta">out. 2026 – presente</p>
-                            <ul class="cv-points"><li>Manutenção de sistemas web.</li></ul>
-                            <p class="cv-tech"><strong>Tecnologias:</strong> React · Node.js · PHP · JavaScript · HTML · CSS · Python · Bootstrap · MySQL</p>
-                        </article>
+            <div class="cv-grid">
+                <div class="cv-main">
+                    <section class="cv-section" aria-labelledby="sum-pt">
+                        <h2 id="sum-pt">Perfil profissional</h2>
+                        <p class="cv-summary">
+                            Desenvolvedor de Software e finalista da licenciatura em Informática de Sistemas
+                            no ISCIM, em Maputo. Tenho experiência no desenvolvimento de aplicações web
+                            e sistemas de informação, com PHP 8, Laravel, MySQL, JavaScript, Bootstrap e Java.
+                            Ao longo da formação desenvolvi competências em conceção de interfaces,
+                            implementação de lógica de negócio, modelação de bases de dados e integração de APIs.
+                        </p>
+                        <p class="cv-summary">
+                            Valorizo a arquitetura de software, a segurança, a qualidade do código e a criação
+                            de soluções eficientes, escaláveis e intuitivas. Trabalho com método, gosto de
+                            aprender de forma contínua e procuro integrar uma equipa de desenvolvimento onde
+                            possa crescer, aplicar os meus conhecimentos e contribuir com dedicação.
+                        </p>
                     </section>
-                        <section class="cv-section" aria-labelledby="proj-pt">
-                            <h2 id="proj-pt">Projetos</h2>
 
-                        <article class="cv-project" aria-labelledby="p-sumbanepay-pt">
-                            <header class="cv-project-head">
-                                <h3 id="p-sumbanepay-pt">Sumbane Pay</h3>
-                                <span class="badge badge-done">Online</span>
-                            </header>
-                            <p class="cv-project-desc">Plataforma SaaS de faturação e gestão de vendas para pequenos negócios em Moçambique, publicada online.</p>
-                            <ul class="cv-points">
-                                <li>Desenvolvi o back-end em PHP 8 (controladores, modelos, middleware e API JSON) a partir de uma primeira versão só de front-end.</li>
-                                <li>Implementei o modelo multi-empresa: um middleware isola os dados de cada empresa, com planos e limites de utilização.</li>
-                                <li>Apliquei proteção CSRF, consultas preparadas (PDO), limite de tentativas de login e auditoria; faturas em PDF com jsPDF.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Tecnologias:</strong> PHP 8 · MySQL · JavaScript · Bootstrap 5 · Chart.js · jsPDF</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-primary btn-sm" href="https://sumbanepay.freehosting.dev/" target="_blank" rel="noopener noreferrer">Demonstração <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbanePay" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-sumbanecredit-pt">
-                            <header class="cv-project-head">
-                                <h3 id="p-sumbanecredit-pt">SumbaneCredit</h3>
-                                <span class="badge badge-ongoing">Em desenvolvimento</span>
-                            </header>
-                            <p class="cv-project-desc">Sistema de gestão de microcrédito com website institucional, portal do cliente e painel administrativo.</p>
-                            <ul class="cv-points">
-                                <li>Desenvolvi um motor financeiro com aritmética decimal (bcmath e DECIMAL) para prestações, juros, encargos e penalizações.</li>
-                                <li>Garanti a integridade dos pagamentos com transações, bloqueio de linhas, índices únicos, chaves de idempotência e reconciliação diária.</li>
-                                <li>Implementei 7 perfis de acesso com separação de funções, documentos PDF/Excel, notificações em fila e testes com PHPUnit.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Tecnologias:</strong> Laravel 12 · PHP 8.2 · MySQL · Bootstrap 5 · Chart.js · PHPUnit</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbaneCredit" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-agromercado-pt">
-                            <header class="cv-project-head">
-                                <h3 id="p-agromercado-pt">AgroMercado</h3>
-                                <span class="badge badge-done">Concluído</span>
-                            </header>
-                            <p class="cv-project-desc">Marketplace agrícola que liga agricultores e compradores em Moçambique.</p>
-                            <ul class="cv-points">
-                                <li>Implementei pesquisa com filtros, carrinho com Fetch API e checkout transacional que valida e reduz o stock.</li>
-                                <li>Criei áreas separadas para agricultor, comprador e SuperAdmin, com verificação de agricultores e auditoria.</li>
-                                <li>Apliquei consultas preparadas, tokens CSRF, cookies HttpOnly/SameSite e upload seguro de imagens.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Tecnologias:</strong> PHP 8 · MySQL · PDO · JavaScript · Bootstrap 5 · Chart.js</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/AgroMercado" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-courtiq-pt">
-                            <header class="cv-project-head">
-                                <h3 id="p-courtiq-pt">CourtIQ MZ</h3>
-                                <span class="badge badge-ongoing">Em desenvolvimento</span>
-                            </header>
-                            <p class="cv-project-desc">Plataforma de gestão de basquetebol em que vários clubes usam o mesmo sistema de forma independente.</p>
-                            <ul class="cv-points">
-                                <li>Desenvolvi uma arquitetura modular em PHP com os dados separados por clube numa única instalação.</li>
-                                <li>Implementei cinco perfis de acesso (SuperAdmin, administrador do clube, treinador, jogador e adepto), sessões e registo de atividades.</li>
-                                <li>Desenvolvi a gestão de jogos, treinos e estatísticas, e um portal público em português e inglês.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Tecnologias:</strong> PHP · MySQL · PDO · JavaScript · HTML5 · CSS3</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/CourtIQ-MZ" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-rh-pt">
-                            <header class="cv-project-head">
-                                <h3 id="p-rh-pt">RH-Sistema</h3>
-                                <span class="badge badge-ongoing">Em desenvolvimento</span>
-                            </header>
-                            <p class="cv-project-desc">Sistema de gestão de Recursos Humanos com seis perfis de acesso.</p>
-                            <ul class="cv-points">
-                                <li>Funcionários, departamentos, férias, presenças, folha de pagamento, recrutamento e avaliação de desempenho.</li>
-                                <li>Arquitetura modular em PHP orientado a objetos, permissões por perfil, auditoria e documentos PDF com Dompdf.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Tecnologias:</strong> PHP · MySQL · JavaScript · Composer · Dompdf</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/Projeto-RH-Sistema" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-smartcare-pt">
-                            <header class="cv-project-head">
-                                <h3 id="p-smartcare-pt">SmartCare</h3>
-                                <span class="badge badge-done">Concluído</span>
-                            </header>
-                            <p class="cv-project-desc">Sistema desktop de triagem hospitalar baseado no Protocolo de Manchester.</p>
-                            <ul class="cv-points">
-                                <li>Classificação automática da prioridade e fila de atendimento ordenada por urgência.</li>
-                                <li>Persistência com Hibernate/JPA e padrão DAO, interface Swing com FlatLaf, gráficos e testes com JUnit.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Tecnologias:</strong> Java · Hibernate/JPA · MySQL · Swing · Maven · JUnit</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SmartCare-Triagem" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Código</a>
-                            </div>
-                        </article>
-                        </section>
-
-                        <section class="cv-section" aria-labelledby="edu-pt">
-                            <h2 id="edu-pt">Formação académica</h2>
-
+                    <section class="cv-section" aria-labelledby="edu-pt">
+                        <h2 id="edu-pt">Formação académica</h2>
                         <article class="cv-item">
                             <h3>Licenciatura em Informática de Sistemas</h3>
                             <p class="cv-meta">Instituto Superior de Comunicação e Imagem de Moçambique (ISCIM) · Maputo</p>
                             <p class="cv-meta cv-period">2022 – presente · conclusão prevista em 2026</p>
+                            <ul class="cv-points">
+                                <li>Sistemas de informação, engenharia de software, análise de sistemas e gestão de projetos.</li>
+                                <li>Desenvolvimento web, bases de dados, redes de computadores e arquitetura de software.</li>
+                                <li>Programação orientada a objetos, algoritmos e estruturas de dados.</li>
+                                <li>Projetos interdisciplinares de programação web e sistemas empresariais.</li>
+                            </ul>
                         </article>
                         <article class="cv-item">
                             <h3>Ensino Secundário — Ciências com Biologia</h3>
                             <p class="cv-meta">Escola Secundária da Polana · Maputo</p>
                             <p class="cv-meta cv-period">Concluído</p>
                         </article>
-                        </section>
-                    </div>
+                    </section>
 
-                    <aside class="cv-side">
-                        <section class="cv-section" aria-labelledby="skills-pt">
-                            <h2 id="skills-pt">Competências técnicas</h2>
+                    <section class="cv-section" aria-labelledby="acad-pt">
+                        <h2 id="acad-pt">Atividades académicas</h2>
+                        <ul class="cv-points cv-points-standalone">
+                            <li>Desenvolvimento de aplicações web completas no âmbito das disciplinas de programação e sistemas de informação.</li>
+                            <li>Modelação de bases de dados relacionais e implementação de lógica de negócio com PHP e MySQL.</li>
+                            <li>Aplicação de boas práticas de segurança web, arquitetura em camadas e controlo de acesso por perfil.</li>
+                            <li>Construção de interfaces responsivas com HTML5, CSS3, Bootstrap e JavaScript.</li>
+                            <li>Análise de requisitos, planeamento e apresentação de soluções técnicas em contexto de grupo.</li>
+                            <li>Contacto com metodologias de desenvolvimento, controlo de versões com Git e organização de código.</li>
+                        </ul>
+                    </section>
+
+                    <section class="cv-section" aria-labelledby="obj-pt">
+                        <h2 id="obj-pt">Objetivo e disponibilidade</h2>
+                        <p class="cv-summary">
+                            Procuro uma oportunidade em desenvolvimento de software, desenvolvimento web
+                            ou suporte técnico, em regime presencial, híbrido ou remoto. Tenho disponibilidade
+                            imediata, abertura para aprender novas tecnologias e metodologias de trabalho,
+                            e interesse em integrar equipas onde possa evoluir tecnicamente e contribuir
+                            para projetos com impacto real.
+                        </p>
+                    </section>
+
+                    <section class="cv-section" aria-labelledby="inter-pt">
+                        <h2 id="inter-pt">Interesses técnicos</h2>
+                        <ul class="cv-chips">
+                            <li>Desenvolvimento web</li>
+                            <li>Arquitetura de software</li>
+                            <li>Bases de dados relacionais</li>
+                            <li>Segurança de aplicações</li>
+                            <li>APIs e integração de sistemas</li>
+                            <li>Boas práticas de código</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <aside class="cv-side">
+                    <section class="cv-section" aria-labelledby="skills-pt">
+                        <h2 id="skills-pt">Competências técnicas</h2>
 
                         <div class="cv-skill-group">
                             <h3>Front-end</h3>
@@ -269,192 +480,180 @@
                         </div>
                         <div class="cv-skill-group">
                             <h3>Bases de dados</h3>
-                            <ul class="cv-chips"><li>MySQL / MariaDB</li><li>SQL</li><li>Firebase</li></ul>
+                            <ul class="cv-chips"><li>MySQL / MariaDB</li><li>SQL</li><li>Modelação relacional</li><li>Firebase</li></ul>
                         </div>
                         <div class="cv-skill-group">
                             <h3>Ferramentas</h3>
                             <ul class="cv-chips"><li>Git</li><li>GitHub</li><li>GitLab</li><li>VS Code</li><li>Composer</li><li>Maven</li><li>XAMPP</li></ul>
                         </div>
                         <div class="cv-skill-group">
-                            <h3>Engenharia de software</h3>
-                            <ul class="cv-chips"><li>Programação orientada a objetos</li><li>MVC e arquitetura em camadas</li><li>APIs JSON</li><li>Controlo de acesso por perfil</li><li>Segurança web (CSRF, consultas preparadas)</li><li>Transações e idempotência</li><li>Testes automatizados (PHPUnit)</li></ul>
+                            <h3>Arquitetura e engenharia</h3>
+                            <ul class="cv-chips">
+                                <li>Programação orientada a objetos</li>
+                                <li>MVC e arquitetura em camadas</li>
+                                <li>APIs JSON</li>
+                                <li>Controlo de acesso por perfil</li>
+                                <li>Transações e idempotência</li>
+                            </ul>
                         </div>
-                        </section>
+                        <div class="cv-skill-group">
+                            <h3>Segurança e qualidade</h3>
+                            <ul class="cv-chips">
+                                <li>CSRF</li>
+                                <li>Consultas preparadas</li>
+                                <li>Hash de palavras-passe</li>
+                                <li>Cookies HttpOnly / SameSite</li>
+                                <li>Validação de entradas</li>
+                                <li>Testes automatizados (PHPUnit)</li>
+                            </ul>
+                        </div>
+                    </section>
 
-                        <section class="cv-section" aria-labelledby="courses-pt">
-                            <h2 id="courses-pt">Cursos complementares</h2>
-                            <ul class="cv-list"><li><strong>Java Básico</strong><span>programação orientada a objetos</span><span>RL System Treinamentos (online) · fev. 2025 · 20 h</span><a class="cv-cert" href="assets/img/certificados/java-basico-rlsystem.webp" target="_blank" rel="noopener">Ver certificado</a></li><li><strong>Lógica de Programação</strong><span>algoritmos e estruturas de dados</span><span>RL System Treinamentos (online) · mar. 2025 · 20 h</span><a class="cv-cert" href="assets/img/certificados/logica-programacao-rlsystem.webp" target="_blank" rel="noopener">Ver certificado</a></li><li><strong>PHP Fundamentals</strong><span>desenvolvimento back-end</span><span>Autoformação (YouTube) · sem certificado</span></li><li><strong>JavaScript Moderno (ES6+)</strong><span>DOM e APIs</span><span>Autoformação (YouTube) · sem certificado</span></li><li><strong>MySQL</strong><span>modelação e consultas SQL</span><span>Autoformação (YouTube) · sem certificado</span></li></ul>
-                        </section>
+                    <section class="cv-section" aria-labelledby="courses-pt">
+                        <h2 id="courses-pt">Cursos complementares</h2>
+                        <ul class="cv-list">
+                            <li><strong>Java Básico</strong><span>programação orientada a objetos</span><span>RL System Treinamentos (online) · fev. 2025 · 20 h</span><a class="cv-cert" href="assets/img/certificados/java-basico-rlsystem.webp" target="_blank" rel="noopener noreferrer">Ver certificado</a></li>
+                            <li><strong>Lógica de Programação</strong><span>algoritmos e estruturas de dados</span><span>RL System Treinamentos (online) · mar. 2025 · 20 h</span><a class="cv-cert" href="assets/img/certificados/logica-programacao-rlsystem.webp" target="_blank" rel="noopener noreferrer">Ver certificado</a></li>
+                            <li><strong>PHP Fundamentals</strong><span>desenvolvimento back-end</span><span>Autoformação (YouTube) · sem certificado</span></li>
+                            <li><strong>JavaScript Moderno (ES6+)</strong><span>DOM e APIs</span><span>Autoformação (YouTube) · sem certificado</span></li>
+                            <li><strong>MySQL</strong><span>modelação e consultas SQL</span><span>Autoformação (YouTube) · sem certificado</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="cv-section" aria-labelledby="self-pt">
+                        <h2 id="self-pt">Formação autodidata</h2>
+                        <ul class="cv-list">
+                            <li><strong>Laravel</strong><span>rotas, controladores, migrations, Eloquent e middlewares</span></li>
+                            <li><strong>React</strong><span>componentes, props, estado e consumo de APIs</span></li>
+                            <li><strong>Java + Spring Boot</strong><span>estrutura de aplicações e APIs REST</span></li>
+                            <li><strong>Boas práticas de Git</strong><span>branches, commits e pull requests</span></li>
+                            <li><strong>Segurança web</strong><span>CSRF, XSS, SQL injection e validação</span></li>
+                        </ul>
+                    </section>
 
                     <section class="cv-section" aria-labelledby="lang-pt">
                         <h2 id="lang-pt">Idiomas</h2>
-                        <ul class="cv-list"><li><strong>Português</strong><span>Excelente</span></li><li><strong>Inglês</strong><span>Intermédio</span></li></ul>
+                        <ul class="cv-list-inline">
+                            <li><strong>Português</strong><span>Língua materna</span></li>
+                            <li><strong>Inglês</strong><span>Intermédio (leitura técnica e comunicação)</span></li>
+                            <li><strong>Changana</strong><span>Compreensão e expressão oral</span></li>
+                        </ul>
                     </section>
-                        <section class="cv-section" aria-labelledby="soft-pt">
-                            <h2 id="soft-pt">Competências pessoais</h2>
-                            <ul class="cv-chips cv-chips-soft"><li>Resolução de problemas</li><li>Trabalho em equipa</li><li>Comunicação</li><li>Organização</li><li>Aprendizagem contínua</li><li>Gestão de tempo</li></ul>
-                        </section>
-                    </aside>
-                </div>
-            </article>
 
-            <article class="cv-doc" data-cv-lang="en" lang="en" data-no-i18n>
-                <header class="cv-hero">
-                    <img class="cv-photo" src="assets/img/profile-400.webp" alt="Photo of Jorge Lourenço Sumbane" width="400" height="600">
-                    <div class="cv-id">
-                        <h1 class="cv-name">Jorge Lourenço Sumbane</h1>
-                        <p class="cv-role">Software Developer</p>
-                        <ul class="cv-contacts" aria-label="Contact">
+                    <section class="cv-section" aria-labelledby="soft-pt">
+                        <h2 id="soft-pt">Competências pessoais</h2>
+                        <ul class="cv-chips cv-chips-soft">
+                            <li>Resolução de problemas</li>
+                            <li>Trabalho em equipa</li>
+                            <li>Comunicação</li>
+                            <li>Organização</li>
+                            <li>Aprendizagem contínua</li>
+                            <li>Gestão de tempo</li>
+                            <li>Proatividade</li>
+                            <li>Adaptabilidade</li>
+                            <li>Atenção ao detalhe</li>
+                            <li>Pensamento crítico</li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </article>
+
+        <!-- ================= EN ================= -->
+        <article class="cv-doc" data-cv-lang="en" lang="en">
+            <header class="cv-hero">
+                <img class="cv-photo" src="assets/img/profile-400.webp" alt="Photo of Jorge Lourenço Sumbane" width="400" height="600">
+                <div class="cv-id">
+                    <h1 class="cv-name">Jorge Lourenço Sumbane</h1>
+                    <p class="cv-role">Software Developer</p>
+                    <ul class="cv-contacts" aria-label="Contact">
                         <li><span class="cv-contact-static"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Maputo, Mozambique</span></span></li>
                         <li><a href="mailto:jsumbane22@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><span>jsumbane22@gmail.com</span></a></li>
                         <li><a href="tel:+258845872347"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span>+258 84 587 2347</span></a></li>
                         <li><a href="https://www.linkedin.com/in/jorge-sumbane-sumbane-174478320/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><span>LinkedIn</span></a></li>
                         <li><a href="https://github.com/jorgeSumbane22" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><span>GitHub</span></a></li>
-                        <li><a href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span>Portfolio</span></a></li>
-                        </ul>
-                    </div>
-                </header>
+                        <li><a href="https://jorgesumbane22.github.io/portfolio-Jorge-Sumbane/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg><span>Portfolio (projects)</span></a></li>
+                    </ul>
+                </div>
+            </header>
 
-                <div class="cv-grid">
-                    <div class="cv-main">
-                        <section class="cv-section" aria-labelledby="sum-en">
-                            <h2 id="sum-en">Professional summary</h2>
-                            <p class="cv-summary">Software developer based in Maputo, currently an intern at ACSUN and a final-year Information Systems student at ISCIM. I build complete web applications in PHP 8 (plain PHP and Laravel) with MySQL, JavaScript and Bootstrap, as well as desktop applications in Java. My projects include a live SaaS invoicing platform, a microcredit system with a financial engine and an agricultural marketplace, built with a focus on security, clean code and user experience. I am looking to join a development team, on-site or remote.</p>
-                        </section>
-
-                    <section class="cv-section" aria-labelledby="exp-en">
-                        <h2 id="exp-en">Professional experience</h2>
-                        <article class="cv-item">
-                            <h3>Web Development Intern — ACSUN</h3>
-                            <p class="cv-meta">Oct 2026 – present</p>
-                            <ul class="cv-points"><li>Maintenance of web systems.</li></ul>
-                            <p class="cv-tech"><strong>Technologies:</strong> React · Node.js · PHP · JavaScript · HTML · CSS · Python · Bootstrap · MySQL</p>
-                        </article>
+            <div class="cv-grid">
+                <div class="cv-main">
+                    <section class="cv-section" aria-labelledby="sum-en">
+                        <h2 id="sum-en">Professional profile</h2>
+                        <p class="cv-summary">
+                            Software developer and final-year Information Systems student at ISCIM, Maputo.
+                            Experienced in building web applications and information systems with PHP 8,
+                            Laravel, MySQL, JavaScript, Bootstrap and Java. Throughout my studies I have
+                            developed skills in interface design, business logic implementation, relational
+                            database modelling and API integration.
+                        </p>
+                        <p class="cv-summary">
+                            I value software architecture, security, code quality and the creation of efficient,
+                            scalable and intuitive solutions. I work methodically, enjoy continuous learning
+                            and am looking to join a development team where I can grow, apply my knowledge
+                            and contribute with dedication.
+                        </p>
                     </section>
-                        <section class="cv-section" aria-labelledby="proj-en">
-                            <h2 id="proj-en">Projects</h2>
 
-                        <article class="cv-project" aria-labelledby="p-sumbanepay-en">
-                            <header class="cv-project-head">
-                                <h3 id="p-sumbanepay-en">Sumbane Pay</h3>
-                                <span class="badge badge-done">Live</span>
-                            </header>
-                            <p class="cv-project-desc">SaaS invoicing and sales management platform for small businesses in Mozambique, live online.</p>
-                            <ul class="cv-points">
-                                <li>Built the PHP 8 back-end (controllers, models, middleware and a JSON API), evolving it from a front-end-only first version.</li>
-                                <li>Implemented the multi-tenant model: a middleware isolates the data of each company, with plans and usage limits.</li>
-                                <li>Applied CSRF protection, prepared statements (PDO), login attempt limits and audit logging; PDF invoices with jsPDF.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Technologies:</strong> PHP 8 · MySQL · JavaScript · Bootstrap 5 · Chart.js · jsPDF</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-primary btn-sm" href="https://sumbanepay.freehosting.dev/" target="_blank" rel="noopener noreferrer">Live demo <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbanePay" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-sumbanecredit-en">
-                            <header class="cv-project-head">
-                                <h3 id="p-sumbanecredit-en">SumbaneCredit</h3>
-                                <span class="badge badge-ongoing">In progress</span>
-                            </header>
-                            <p class="cv-project-desc">Microcredit management system with an institutional website, client portal and admin panel.</p>
-                            <ul class="cv-points">
-                                <li>Built a financial engine with decimal arithmetic (bcmath and DECIMAL) for instalments, interest, fees and penalties.</li>
-                                <li>Ensured payment integrity with transactions, row locking, unique indexes, idempotency keys and daily reconciliation.</li>
-                                <li>Implemented 7 access roles with segregation of duties, PDF/Excel documents, queued notifications and PHPUnit tests.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Technologies:</strong> Laravel 12 · PHP 8.2 · MySQL · Bootstrap 5 · Chart.js · PHPUnit</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SumbaneCredit" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-agromercado-en">
-                            <header class="cv-project-head">
-                                <h3 id="p-agromercado-en">AgroMercado</h3>
-                                <span class="badge badge-done">Completed</span>
-                            </header>
-                            <p class="cv-project-desc">Agricultural marketplace connecting farmers and buyers in Mozambique.</p>
-                            <ul class="cv-points">
-                                <li>Implemented filtered search, a Fetch API cart and a transactional checkout that validates and reduces stock.</li>
-                                <li>Built separate areas for farmers, buyers and the SuperAdmin, with farmer verification and auditing.</li>
-                                <li>Applied prepared statements, CSRF tokens, HttpOnly/SameSite cookies and secure image uploads.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Technologies:</strong> PHP 8 · MySQL · PDO · JavaScript · Bootstrap 5 · Chart.js</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/AgroMercado" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-courtiq-en">
-                            <header class="cv-project-head">
-                                <h3 id="p-courtiq-en">CourtIQ MZ</h3>
-                                <span class="badge badge-ongoing">In progress</span>
-                            </header>
-                            <p class="cv-project-desc">Basketball management platform where several clubs use the same system independently.</p>
-                            <ul class="cv-points">
-                                <li>Built a modular PHP architecture with data kept separate per club in a single installation.</li>
-                                <li>Implemented five access roles (SuperAdmin, club admin, coach, player and fan), session management and activity logging.</li>
-                                <li>Built game, training and statistics management, plus a public portal in Portuguese and English.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Technologies:</strong> PHP · MySQL · PDO · JavaScript · HTML5 · CSS3</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/CourtIQ-MZ" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-rh-en">
-                            <header class="cv-project-head">
-                                <h3 id="p-rh-en">RH-Sistema</h3>
-                                <span class="badge badge-ongoing">In progress</span>
-                            </header>
-                            <p class="cv-project-desc">Human Resources management system with six access roles.</p>
-                            <ul class="cv-points">
-                                <li>Employees, departments, leave, attendance, payroll, recruitment and performance reviews.</li>
-                                <li>Modular object-oriented PHP architecture, role-based permissions, auditing and PDF documents with Dompdf.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Technologies:</strong> PHP · MySQL · JavaScript · Composer · Dompdf</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/Projeto-RH-Sistema" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
-                            </div>
-                        </article>
-
-                        <article class="cv-project" aria-labelledby="p-smartcare-en">
-                            <header class="cv-project-head">
-                                <h3 id="p-smartcare-en">SmartCare</h3>
-                                <span class="badge badge-done">Completed</span>
-                            </header>
-                            <p class="cv-project-desc">Desktop hospital triage system based on the Manchester Triage System.</p>
-                            <ul class="cv-points">
-                                <li>Automatic priority classification and a waiting queue ordered by urgency.</li>
-                                <li>Persistence with Hibernate/JPA and the DAO pattern, Swing UI with FlatLaf, charts and JUnit tests.</li>
-                            </ul>
-                            <p class="cv-tech"><strong>Technologies:</strong> Java · Hibernate/JPA · MySQL · Swing · Maven · JUnit</p>
-                            <div class="cv-project-links">
-                                <a class="btn btn-ghost btn-sm" href="https://github.com/jorgeSumbane22/SmartCare-Triagem" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg> Code</a>
-                            </div>
-                        </article>
-                        </section>
-
-                        <section class="cv-section" aria-labelledby="edu-en">
-                            <h2 id="edu-en">Education</h2>
-
+                    <section class="cv-section" aria-labelledby="edu-en">
+                        <h2 id="edu-en">Education</h2>
                         <article class="cv-item">
                             <h3>Bachelor's degree in Information Systems</h3>
                             <p class="cv-meta">Instituto Superior de Comunicação e Imagem de Moçambique (ISCIM) · Maputo</p>
                             <p class="cv-meta cv-period">2022 – present · expected graduation 2026</p>
+                            <ul class="cv-points">
+                                <li>Information systems, software engineering, systems analysis and project management.</li>
+                                <li>Web development, databases, computer networks and software architecture.</li>
+                                <li>Object-oriented programming, algorithms and data structures.</li>
+                                <li>Interdisciplinary projects in web programming and enterprise systems.</li>
+                            </ul>
                         </article>
                         <article class="cv-item">
                             <h3>Secondary education — Sciences with Biology</h3>
                             <p class="cv-meta">Escola Secundária da Polana · Maputo</p>
                             <p class="cv-meta cv-period">Completed</p>
                         </article>
-                        </section>
-                    </div>
+                    </section>
 
-                    <aside class="cv-side">
-                        <section class="cv-section" aria-labelledby="skills-en">
-                            <h2 id="skills-en">Technical skills</h2>
+                    <section class="cv-section" aria-labelledby="acad-en">
+                        <h2 id="acad-en">Academic activities</h2>
+                        <ul class="cv-points cv-points-standalone">
+                            <li>Development of complete web applications in programming and information systems courses.</li>
+                            <li>Relational database modelling and business logic implementation with PHP and MySQL.</li>
+                            <li>Application of web security best practices, layered architecture and role-based access control.</li>
+                            <li>Building responsive interfaces with HTML5, CSS3, Bootstrap and JavaScript.</li>
+                            <li>Requirements analysis, planning and presentation of technical solutions in group settings.</li>
+                            <li>Exposure to development methodologies, Git version control and code organisation.</li>
+                        </ul>
+                    </section>
+
+                    <section class="cv-section" aria-labelledby="obj-en">
+                        <h2 id="obj-en">Objective and availability</h2>
+                        <p class="cv-summary">
+                            Seeking an opportunity in software development, web development or technical support,
+                            on-site, hybrid or remote. Available immediately, open to learning new technologies
+                            and methodologies, and interested in joining teams where I can grow technically
+                            and contribute to projects with real impact.
+                        </p>
+                    </section>
+
+                    <section class="cv-section" aria-labelledby="inter-en">
+                        <h2 id="inter-en">Technical interests</h2>
+                        <ul class="cv-chips">
+                            <li>Web development</li>
+                            <li>Software architecture</li>
+                            <li>Relational databases</li>
+                            <li>Application security</li>
+                            <li>APIs and systems integration</li>
+                            <li>Clean code practices</li>
+                        </ul>
+                    </section>
+                </div>
+
+                <aside class="cv-side">
+                    <section class="cv-section" aria-labelledby="skills-en">
+                        <h2 id="skills-en">Technical skills</h2>
 
                         <div class="cv-skill-group">
                             <h3>Front-end</h3>
@@ -466,37 +665,128 @@
                         </div>
                         <div class="cv-skill-group">
                             <h3>Databases</h3>
-                            <ul class="cv-chips"><li>MySQL / MariaDB</li><li>SQL</li><li>Firebase</li></ul>
+                            <ul class="cv-chips"><li>MySQL / MariaDB</li><li>SQL</li><li>Relational modelling</li><li>Firebase</li></ul>
                         </div>
                         <div class="cv-skill-group">
                             <h3>Tools</h3>
                             <ul class="cv-chips"><li>Git</li><li>GitHub</li><li>GitLab</li><li>VS Code</li><li>Composer</li><li>Maven</li><li>XAMPP</li></ul>
                         </div>
                         <div class="cv-skill-group">
-                            <h3>Software engineering</h3>
-                            <ul class="cv-chips"><li>Object-oriented programming</li><li>MVC and layered architecture</li><li>JSON APIs</li><li>Role-based access control</li><li>Web security (CSRF, prepared statements)</li><li>Transactions and idempotency</li><li>Automated testing (PHPUnit)</li></ul>
+                            <h3>Architecture and engineering</h3>
+                            <ul class="cv-chips">
+                                <li>Object-oriented programming</li>
+                                <li>MVC and layered architecture</li>
+                                <li>JSON APIs</li>
+                                <li>Role-based access control</li>
+                                <li>Transactions and idempotency</li>
+                            </ul>
                         </div>
-                        </section>
+                        <div class="cv-skill-group">
+                            <h3>Security and quality</h3>
+                            <ul class="cv-chips">
+                                <li>CSRF</li>
+                                <li>Prepared statements</li>
+                                <li>Password hashing</li>
+                                <li>HttpOnly / SameSite cookies</li>
+                                <li>Input validation</li>
+                                <li>Automated testing (PHPUnit)</li>
+                            </ul>
+                        </div>
+                    </section>
 
-                        <section class="cv-section" aria-labelledby="courses-en">
-                            <h2 id="courses-en">Additional courses</h2>
-                            <ul class="cv-list"><li><strong>Java Fundamentals</strong><span>object-oriented programming</span><span>RL System Treinamentos (online) · Feb 2025 · 20 h</span><a class="cv-cert" href="assets/img/certificados/java-basico-rlsystem.webp" target="_blank" rel="noopener">View certificate</a></li><li><strong>Programming Logic</strong><span>algorithms and data structures</span><span>RL System Treinamentos (online) · Mar 2025 · 20 h</span><a class="cv-cert" href="assets/img/certificados/logica-programacao-rlsystem.webp" target="_blank" rel="noopener">View certificate</a></li><li><strong>PHP Fundamentals</strong><span>back-end development</span><span>Self-study (YouTube) · no certificate</span></li><li><strong>Modern JavaScript (ES6+)</strong><span>DOM and APIs</span><span>Self-study (YouTube) · no certificate</span></li><li><strong>MySQL</strong><span>data modelling and SQL queries</span><span>Self-study (YouTube) · no certificate</span></li></ul>
-                        </section>
+                    <section class="cv-section" aria-labelledby="courses-en">
+                        <h2 id="courses-en">Additional courses</h2>
+                        <ul class="cv-list">
+                            <li><strong>Java Fundamentals</strong><span>object-oriented programming</span><span>RL System Treinamentos (online) · Feb 2025 · 20 h</span><a class="cv-cert" href="assets/img/certificados/java-basico-rlsystem.webp" target="_blank" rel="noopener noreferrer">View certificate</a></li>
+                            <li><strong>Programming Logic</strong><span>algorithms and data structures</span><span>RL System Treinamentos (online) · Mar 2025 · 20 h</span><a class="cv-cert" href="assets/img/certificados/logica-programacao-rlsystem.webp" target="_blank" rel="noopener noreferrer">View certificate</a></li>
+                            <li><strong>PHP Fundamentals</strong><span>back-end development</span><span>Self-study (YouTube) · no certificate</span></li>
+                            <li><strong>Modern JavaScript (ES6+)</strong><span>DOM and APIs</span><span>Self-study (YouTube) · no certificate</span></li>
+                            <li><strong>MySQL</strong><span>data modelling and SQL queries</span><span>Self-study (YouTube) · no certificate</span></li>
+                        </ul>
+                    </section>
+
+                    <section class="cv-section" aria-labelledby="self-en">
+                        <h2 id="self-en">Self-directed learning</h2>
+                        <ul class="cv-list">
+                            <li><strong>Laravel</strong><span>routing, controllers, migrations, Eloquent and middleware</span></li>
+                            <li><strong>React</strong><span>components, props, state and API consumption</span></li>
+                            <li><strong>Java + Spring Boot</strong><span>application structure and REST APIs</span></li>
+                            <li><strong>Git best practices</strong><span>branches, commits and pull requests</span></li>
+                            <li><strong>Web security</strong><span>CSRF, XSS, SQL injection and validation</span></li>
+                        </ul>
+                    </section>
 
                     <section class="cv-section" aria-labelledby="lang-en">
                         <h2 id="lang-en">Languages</h2>
-                        <ul class="cv-list"><li><strong>Portuguese</strong><span>Excellent</span></li><li><strong>English</strong><span>Intermediate</span></li></ul>
+                        <ul class="cv-list-inline">
+                            <li><strong>Portuguese</strong><span>Native</span></li>
+                            <li><strong>English</strong><span>Intermediate (technical reading and communication)</span></li>
+                            <li><strong>Changana</strong><span>Oral comprehension and expression</span></li>
+                        </ul>
                     </section>
-                        <section class="cv-section" aria-labelledby="soft-en">
-                            <h2 id="soft-en">Soft skills</h2>
-                            <ul class="cv-chips cv-chips-soft"><li>Problem solving</li><li>Teamwork</li><li>Communication</li><li>Organisation</li><li>Continuous learning</li><li>Time management</li></ul>
-                        </section>
-                    </aside>
-                </div>
-            </article>
+
+                    <section class="cv-section" aria-labelledby="soft-en">
+                        <h2 id="soft-en">Soft skills</h2>
+                        <ul class="cv-chips cv-chips-soft">
+                            <li>Problem solving</li>
+                            <li>Teamwork</li>
+                            <li>Communication</li>
+                            <li>Organisation</li>
+                            <li>Continuous learning</li>
+                            <li>Time management</li>
+                            <li>Proactivity</li>
+                            <li>Adaptability</li>
+                            <li>Attention to detail</li>
+                            <li>Critical thinking</li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </article>
+
     </main>
 
-    <script src="assets/js/i18n.js" defer></script>
-    <script src="assets/js/page.js" defer></script>
+    <!-- ===== Comportamento: idioma, tema, impressão, PDF ===== -->
+    <script>
+        (function () {
+            var root = document.documentElement;
+            var langBtn = document.getElementById('langToggle');
+            var langLabel = document.getElementById('langLabel');
+            var themeBtn = document.getElementById('themeToggle');
+            var printBtn = document.getElementById('printBtn');
+            var pdfLink = document.getElementById('cvDownload');
+
+            function applyLang(lang) {
+                root.setAttribute('data-lang', lang);
+                root.lang = lang;
+                if (langLabel) langLabel.textContent = lang === 'pt' ? 'EN' : 'PT';
+                if (langBtn) langBtn.setAttribute('aria-label', lang === 'pt' ? 'Mudar para inglês' : 'Switch to Portuguese');
+                if (pdfLink) {
+                    var href = lang === 'pt'
+                        ? pdfLink.getAttribute('data-pdf-pt')
+                        : pdfLink.getAttribute('data-pdf-en');
+                    if (href) pdfLink.setAttribute('href', href);
+                }
+                var url = new URL(location.href);
+                if (lang === 'pt') url.searchParams.delete('lang');
+                else url.searchParams.set('lang', 'en');
+                history.replaceState(null, '', url);
+            }
+
+            langBtn && langBtn.addEventListener('click', function () {
+                applyLang(root.getAttribute('data-lang') === 'pt' ? 'en' : 'pt');
+            });
+
+            themeBtn && themeBtn.addEventListener('click', function () {
+                var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('theme', next); } catch (e) {}
+            });
+
+            printBtn && printBtn.addEventListener('click', function () { window.print(); });
+
+            applyLang(root.getAttribute('data-lang') || 'pt');
+        })();
+    </script>
 </body>
 </html>
